@@ -1,0 +1,1 @@
+"""The Skolmat integration."""
