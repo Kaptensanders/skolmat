@@ -1,8 +1,8 @@
 {
-    "version": "0.1.0",
+    "version": "1.0.0",
     "domain": "skolmat",
     "name": "Skolmat",
-    "documentation": "https://www.example.com",
+    "documentation": "https://github.com/Kaptensanders/skolmat",
     "dependencies": [],
     "codeowners": ["@kaptensanders"],
     "requirements": ["feedparser>=6.0.8"]
