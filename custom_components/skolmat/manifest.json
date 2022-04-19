@@ -6,6 +6,7 @@
     "documentation": "https://github.com/Kaptensanders/skolmat",
     "dependencies": [],
     "codeowners": ["@kaptensanders"],
-    "requirements": ["feedparser>=6.0.8"]
+    "requirements": ["feedparser>=6.0.8"],
+    "iot_class": "cloud_polling"
   }
   
