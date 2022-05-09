@@ -2,7 +2,7 @@
     Avanza Personal - Anders Sandberg
 """
 
-import feedparser, voluptuous as vol
+import feedparser, voluptuous as vol, json
 from datetime import datetime
 from logging import getLogger
 
@@ -56,8 +56,14 @@ class SkolmenySensor(Entity):
     def state(self):
         return self._state
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         return self._state_attributes
+    
+    @property
+    def device_state_attributes (self):
+        # just in for bw compability in case needed, extra_state_attributes is used since 2012.12.x
+        return self._state_attributes
+    
     @property
     def force_update(self) -> bool:
         # Write each update to the state machine, even if the data is the same.
@@ -80,6 +86,7 @@ class SkolmenySensor(Entity):
             today = datetime.now().date()
             menuToday = None
             for day in menu["entries"]:
+                
                 weekday = day['title'].split()[0]
                 date = datetime(day['published_parsed'][0], day['published_parsed'][1], day['published_parsed'][2]).date()
                 week = date.isocalendar().week
@@ -88,7 +95,7 @@ class SkolmenySensor(Entity):
                 dayEntry = {
                     "weekday": weekday,
                     "date" : date.isoformat(),
-                    "week": date.isocalendar().week,
+                    "week": week,
                     "courses": day['summary'].split('<br />')
                 }
                 calendar[week].append(dayEntry)
@@ -96,7 +103,7 @@ class SkolmenySensor(Entity):
                     if self._stateFormat == "first":
                         menuToday = dayEntry["courses"][0]
                     elif self._stateFormat == "second":
-                        menuToday = dayEntry["courses"][1] if len(dayEntry["courses"]) > 1  else dayEntry["courses"][0]
+                        menuToday = dayEntry["courses"][1] if len(dayEntry["courses"]) > 1 else dayEntry["courses"][0]
                     else: #"both"
                         menuToday = "\n".join(dayEntry["courses"])
                 
@@ -109,8 +116,8 @@ class SkolmenySensor(Entity):
                 "calendar": calendar,
                 "name": self._name
             }
-
+            
             self._last_menu_fetch = datetime.now()
         
         except Exception as e: 
-            log.error (f"Error fetching/parsing {self._rss}\n{e}")
+            log.critical (f"Error fetching/parsing {self._rss}\n{e}")
