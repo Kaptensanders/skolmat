@@ -1,3 +1,7 @@
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+[![skolmat](https://img.shields.io/github/v/release/Kaptensanders/skolmat?style=for-the-badge)](https://github.com/Kaptensanders/skolmat)
+![Maintenance](https://img.shields.io/maintenance/yes/2022?style=for-the-badge)
+
 # skolmat custom component for Home Assistant
 Skolmat custom component for the food menu in Swedish schools
 
