@@ -2,7 +2,8 @@
     Avanza Personal - Anders Sandberg
 """
 
-import feedparser, voluptuous as vol, json
+import feedparser, voluptuous as vol
+from .menu import Menu
 from datetime import datetime
 from logging import getLogger
 
@@ -16,11 +17,8 @@ AP_ENTITY_DOMAIN = "skolmat"
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
-        vol.Required("name"): cv.string,        
-        vol.Required("rss"): cv.string,
-        # first, second, both - formats the state from the available course alternatives (normal/veg)
-        # courses will be separated with "|" 
-        vol.Optional("format", default = "first"): cv.string 
+        vol.Required("name"): cv.string,
+        vol.Required("rss"): cv.string
     }
 )
 
@@ -32,12 +30,8 @@ async def async_setup_platform(hass, conf, async_add_entities, discovery_info=No
 class SkolmenySensor(Entity):
     def __init__(self, hass, conf):
         super().__init__()
-        self.hass               = hass # will be set again by homeassistant after added to hass
-        self._rss               = conf.get("rss")
-        self._weeks             = 2
+        self.hass               = hass # will be set again by homeassistant after added to hass     
         self._name              = conf.get("name")
-        self._stateFormat       = conf.get("format")
-        self._last_menu_fetch   = None
         self._state             = None
         self._state_attributes  = {}
         self.entity_id          = generate_entity_id  (
@@ -45,6 +39,8 @@ class SkolmenySensor(Entity):
             name = self._name,
             hass = hass
         )
+
+        self.menu               = Menu(rss = conf.get("rss"))
     
     @property
     def name(self):
@@ -70,8 +66,8 @@ class SkolmenySensor(Entity):
         return False
     @property
     def should_poll(self) -> bool:
-        if isinstance(self._last_menu_fetch, datetime):
-            return self._last_menu_fetch.date() != datetime.now().date()
+        if isinstance(self.menu.last_menu_fetch, datetime):
+            return self.menu.last_menu_fetch.date() != datetime.now().date()
         return True
 
     async def async_update(self):
@@ -79,45 +75,19 @@ class SkolmenySensor(Entity):
 
     # does io, call in separate 
     def loadMenu(self):
-        global last_load_date
+
         try:
-            menu = feedparser.parse(f"{self._rss}?limit={self._weeks}")
-            calendar = {}
-            today = datetime.now().date()
-            menuToday = None
-            for day in menu["entries"]:
-                
-                weekday = day['title'].split()[0]
-                date = datetime(day['published_parsed'][0], day['published_parsed'][1], day['published_parsed'][2]).date()
-                week = date.isocalendar().week
-                if not week in calendar:
-                    calendar[week] = []
-                dayEntry = {
-                    "weekday": weekday,
-                    "date" : date.isoformat(),
-                    "week": week,
-                    "courses": day['summary'].split('<br />')
-                }
-                calendar[week].append(dayEntry)
-                if date == today:
-                    if self._stateFormat == "first":
-                        menuToday = dayEntry["courses"][0]
-                    elif self._stateFormat == "second":
-                        menuToday = dayEntry["courses"][1] if len(dayEntry["courses"]) > 1 else dayEntry["courses"][0]
-                    else: #"both"
-                        menuToday = "\n".join(dayEntry["courses"])
-                
-                if menuToday is None:
-                    self._state = "Ingen mat"
-                else:
-                    self._state = menuToday
+            self.menu.loadMenu()
+
+            if self.menu.menuToday is None:
+                self._state = "Ingen mat"
+            else:
+                self._state = "\n".join(self.menu.menuToday)
             
             self._state_attributes = {
-                "calendar": calendar,
+                "calendar": self.menu.menu,
                 "name": self._name
             }
-            
-            self._last_menu_fetch = datetime.now()
         
         except Exception as e: 
             log.critical (f"Error fetching/parsing {self._rss}\n{e}")
