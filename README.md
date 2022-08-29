@@ -17,7 +17,6 @@ sensor:
   - platform: skolmat
     name: Skutehagen # Name of school here
     rss: "https://skolmaten.se/skutehagens-skolan/rss/weeks" # your rss here
-    format: first # Course to show as sensor state. first, second or both (will be separated with |)
 ```
 4. Validate config and restart HA
 5. Your sensor entity will show up as skolmat.[school name]
@@ -25,13 +24,13 @@ sensor:
 
 ## Find the rss feed
 
-### skolmaten.se ###
+#### skolmaten.se ####
   1. Open https://skolmaten.se/ and follow the links to find your school.
-  2. When you arrive at the page with this weeks menu, copy the url
+  2. When you arrive at the page with this weeks menu, copy the url\
     Like: `https://skolmaten.se/skutehagens-skolan/`
 
-### Matilda/webmenu.foodit.se / ###
+#### Matilda/webmenu.foodit.se ####
   1. Open https://webmenu.foodit.se/ and follow the links to find your school.
-  2. When you arrive at the page with this weeks menu, copy the url
-    Like: https://webmenu.foodit.se/?r=6&m=617&p=883&c=10023&w=0&v=Week&l=undefined
+  2. When you arrive at the page with this weeks menu, copy the url\
+    Like: `https://webmenu.foodit.se/?r=6&m=617&p=883&c=10023&w=0&v=Week&l=undefined`
 
