@@ -1,8 +1,8 @@
 """
-    Avanza Personal - Anders Sandberg
+    Skolmat custom component - Anders Sandberg
 """
 
-import feedparser, voluptuous as vol
+import voluptuous as vol
 from .menu import Menu
 from datetime import datetime
 from logging import getLogger
@@ -18,7 +18,8 @@ AP_ENTITY_DOMAIN = "skolmat"
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required("name"): cv.string,
-        vol.Required("rss"): cv.string
+        vol.Optional("url"): cv.string,
+        vol.Optional("rss"): cv.string
     }
 )
 
@@ -40,7 +41,16 @@ class SkolmenySensor(Entity):
             hass = hass
         )
 
-        self.menu               = Menu(rss = conf.get("rss"))
+        url = conf.get("url", None)
+        rss = conf.get("rss", None)
+        if rss:
+            log.error ("'rss' config parameter will be deprecated in next version. Please use 'url' instead")
+            url = rss
+        
+        if not url:
+            raise KeyError("'url' config parameter missing")
+
+        self.menu = Menu.createMenu(conf.get("rss"))
     
     @property
     def name(self):
@@ -73,13 +83,13 @@ class SkolmenySensor(Entity):
     async def async_update(self):
         await self.hass.async_add_executor_job(self.loadMenu)
 
-    # does io, call in separate 
+    # does io, call in separate
     def loadMenu(self):
 
         try:
             self.menu.loadMenu()
 
-            if self.menu.menuToday is None:
+            if not self.menu.menuToday:
                 self._state = "Ingen mat"
             else:
                 self._state = "\n".join(self.menu.menuToday)
