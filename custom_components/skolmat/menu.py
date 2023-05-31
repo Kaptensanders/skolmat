@@ -3,8 +3,10 @@ from abc import ABC, abstractmethod
 from datetime import datetime, date
 from logging import getLogger
 
-import asyncio
-import aiohttp
+import asyncio, aiohttp
+from bs4 import BeautifulSoup
+import json
+
 
 log = getLogger(__name__)
 
@@ -12,17 +14,16 @@ class Menu(ABC):
 
     @staticmethod
     def createMenu (url:str):
-
         url = url.rstrip(" /")
 
-        if "skolmaten.se" in url:
+        if SkolmatenMenu.provider in url:
             return SkolmatenMenu(url)
-        elif "foodit.se" in url:
+        elif FoodItMenu.provider in url:
             return FoodItMenu(url)
-        elif "matildaplatform.com" in url:
+        elif MatildaMenu.provider in url:
             return MatildaMenu(url)
         else:
-            raise Exception("URL not recognized as skolmaten.se, webmenu.foodit.se or matildaplatform.com")
+            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider} or {MatildaMenu.provider}")
 
 
     def __init__(self, url:str):
@@ -39,7 +40,6 @@ class Menu(ABC):
         return
 
     async def loadMenu(self, aiohttp_session):
-        
         cur_menu = self.menu
         cur_menuToday = self.menuToday
         
@@ -54,7 +54,7 @@ class Menu(ABC):
         except Exception as err:
             self.menu = cur_menu
             self.menuToday = cur_menuToday
-            log.Exception(f"Failed to load {self.provider} menu from {self.url}")
+            log.exception(f"Failed to load {self.provider} menu from {self.url}")
             return False
 
     def appendEntry(self, entryDate:date, courses:list):
@@ -129,14 +129,13 @@ class SkolmatenMenu(Menu):
         
         async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
             raw_feed = await response.text()
-            return feedparser.parse(raw_feed)        
+            return feedparser.parse(raw_feed)
         
    
     async def _loadMenu(self, aiohttp_session):
 
         menuFeed = await self._getFeed(aiohttp_session)
         for day in menuFeed["entries"]:
-            
             entryDate = datetime(day['published_parsed'][0], day['published_parsed'][1], day['published_parsed'][2]).date()
             courses = day['summary'].split('<br />')
             self.appendEntry(entryDate, courses)
@@ -144,4 +143,36 @@ class SkolmatenMenu(Menu):
 
 
 class MatildaMenu (Menu):
-    pass
+    provider = "matildaplatform.com"
+
+    def __init__(self, url:str):
+        # https://menu.matildaplatform.com/meals/week/63fc93fcccb95f5ce5711276_indianberget
+        super().__init__(url)
+        self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"}
+
+    async def _getWeek(self, aiohttp_session, url):
+
+        try:
+            async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
+                html = await response.text()
+                soup = BeautifulSoup(html, 'html.parser')
+                jsonData = soup.select("#__NEXT_DATA__")[0].string
+                return json.loads(jsonData)["props"]["pageProps"]
+        except Exception as err:
+            log.exception(f"Failed to retrieve {url}")
+            raise        
+
+
+    async def _loadMenu(self, aiohttp_session):
+
+        w1 = await self._getWeek(aiohttp_session, self.url)
+        w2 = await self._getWeek(aiohttp_session, "https://menu.matildaplatform.com" + w1["nextURL"])
+
+        dayEntries = [*w1["meals"], *w2["meals"]]
+
+        for day in dayEntries:
+            entryDate = datetime.strptime(day["date"], "%Y-%m-%dT%H:%M:%S").date() # 2023-06-02T00:00:00
+            courses = []
+            for course in day["courses"]:
+                courses.append(course["name"])
+            self.appendEntry(entryDate, courses)
