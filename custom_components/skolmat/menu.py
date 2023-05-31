@@ -3,6 +3,9 @@ from abc import ABC, abstractmethod
 from datetime import datetime, date
 from logging import getLogger
 
+import asyncio
+import aiohttp
+
 log = getLogger(__name__)
 
 class Menu(ABC):
@@ -32,10 +35,10 @@ class Menu(ABC):
 
     
     @abstractmethod
-    def _loadMenu (self):
+    async def _loadMenu (self, aiohttp_session):
         return
 
-    def loadMenu(self):
+    async def loadMenu(self, aiohttp_session):
         
         cur_menu = self.menu
         cur_menuToday = self.menuToday
@@ -44,15 +47,15 @@ class Menu(ABC):
         self.menuToday = []
 
         try:
-            self._loadMenu()
+            await self._loadMenu(aiohttp_session)
             self.last_menu_fetch = datetime.now()
+            return True
 
         except Exception as err:
             self.menu = cur_menu
             self.menuToday = cur_menuToday
-            log.critical(f"Failed to load {self.provider} menu from {self.url}")
-            raise
-
+            log.Exception(f"Failed to load {self.provider} menu from {self.url}")
+            return False
 
     def appendEntry(self, entryDate:date, courses:list):
 
@@ -74,7 +77,6 @@ class Menu(ABC):
         self.menu[week].append(dayEntry)
 
 
-
 class FoodItMenu(Menu):
 
     provider = "foodit.se"
@@ -87,12 +89,14 @@ class FoodItMenu(Menu):
         super().__init__(url)
 
 
-    def _getFeed(self):
+    async def _getFeed(self, aiohttp_session):
         # returns only one week at the time
         weekMenus = []
         for week in range(self._weeks):
             rss = re.sub(r'\&w=[0-9]*\&', f"&w={week}&", self.url)
-            weekMenus.append(feedparser.parse(rss))
+            async with aiohttp_session.get(rss) as response:
+                raw_feed = await response.text()
+                weekMenus.append(feedparser.parse(raw_feed))
 
         feed = weekMenus.pop(0)
         for f in weekMenus:
@@ -100,9 +104,9 @@ class FoodItMenu(Menu):
 
         return feed
 
-    def _loadMenu(self):
+    async def _loadMenu(self, aiohttp_session):
 
-        menuFeed = self._getFeed()
+        menuFeed = await self._getFeed(aiohttp_session)
         for day in menuFeed["entries"]:
             
             entryDate = datetime.strptime(day["title"].split()[1], "%Y%m%d").date()
@@ -121,12 +125,16 @@ class SkolmatenMenu(Menu):
 
         super().__init__(url)
 
-    def _getFeed(self):
-        return feedparser.parse(f"{self.url}?limit={self._weeks}")
+    async def _getFeed(self, aiohttp_session):
+        
+        async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
+            raw_feed = await response.text()
+            return feedparser.parse(raw_feed)        
+        
    
-    def _loadMenu(self):
+    async def _loadMenu(self, aiohttp_session):
 
-        menuFeed = self._getFeed()
+        menuFeed = await self._getFeed(aiohttp_session)
         for day in menuFeed["entries"]:
             
             entryDate = datetime(day['published_parsed'][0], day['published_parsed'][1], day['published_parsed'][2]).date()

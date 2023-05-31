@@ -11,6 +11,7 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.helpers.entity import Entity, generate_entity_id
 from homeassistant.const import EVENT_HOMEASSISTANT_STOP
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 log = getLogger(__name__)
 AP_ENTITY_DOMAIN = "skolmat"
@@ -24,11 +25,10 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 )
 
 async def async_setup_platform(hass, conf, async_add_entities, discovery_info=None):
-
-    sensor = SkolmenySensor(hass, conf)
+    sensor = SkolmatSensor(hass, conf)
     async_add_entities([sensor])
   
-class SkolmenySensor(Entity):
+class SkolmatSensor(Entity):
     def __init__(self, hass, conf):
         super().__init__()
         self.hass               = hass # will be set again by homeassistant after added to hass     
@@ -50,7 +50,7 @@ class SkolmenySensor(Entity):
         if not url:
             raise KeyError("'url' config parameter missing")
 
-        self.menu = Menu.createMenu(conf.get("rss"))
+        self.menu = Menu.createMenu(url)
     
     @property
     def name(self):
@@ -81,14 +81,9 @@ class SkolmenySensor(Entity):
         return True
 
     async def async_update(self):
-        await self.hass.async_add_executor_job(self.loadMenu)
 
-    # does io, call in separate
-    def loadMenu(self):
-
-        try:
-            self.menu.loadMenu()
-
+        bResult = await self.menu.loadMenu(async_get_clientsession(self.hass))
+        if bResult:
             if not self.menu.menuToday:
                 self._state = "Ingen mat"
             else:
@@ -98,6 +93,3 @@ class SkolmenySensor(Entity):
                 "calendar": self.menu.menu,
                 "name": self._name
             }
-        
-        except Exception as e: 
-            log.critical (f"Error fetching/parsing {self._rss}\n{e}")
