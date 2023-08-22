@@ -6,7 +6,7 @@
 Skolmat custom component for the food menu in Swedish schools
 
 ## Description
-This component is only valid in Sweden. It leverages data from skolmaten.se, webmenu.foodit.se or menu.matildaplatform.com to create a sensor entity from a configured data source (url).
+This component is only valid in Sweden. It leverages data from skolmaten.se, webmenu.foodit.se, menu.matildaplatform.com or mpi.mashie.com to create a sensor entity from a configured data source (url).
 The sensor state will be todays available course(es) and the attributes will contain the full menu for the next two weeks.
 
 You can use the sensor as you please or install the lovelace custom card to display the menu for today or for the week (https://github.com/Kaptensanders/skolmat-card)
@@ -42,3 +42,8 @@ sensor:
   1. Open https://menu.matildaplatform.com/ and find your school by using the search box
   2. When you arrive at the page with this weeks menu, copy the url\
     Like: `https://menu.matildaplatform.com/meals/week/63fc93fcccb95f5ce5711276_indianberget`
+
+#### mpi.mashie.com ####
+  1. Open https://mpi.mashie.com/public/app and find your school by using the search box
+  2. When you arrive at the page where you can see the menu, copy the url\
+    Like: `https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379`

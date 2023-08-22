@@ -1,12 +1,10 @@
 import feedparser, re
 from abc import ABC, abstractmethod
 from datetime import datetime, date
+from dateparser import parse as dateParse
 from logging import getLogger
-
-import asyncio, aiohttp
 from bs4 import BeautifulSoup
 import json
-
 
 log = getLogger(__name__)
 
@@ -22,8 +20,10 @@ class Menu(ABC):
             return FoodItMenu(url)
         elif MatildaMenu.provider in url:
             return MatildaMenu(url)
+        elif MashieMenu.provider in url:
+            return MashieMenu(url)
         else:
-            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider} or {MatildaMenu.provider}")
+            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, {MatildaMenu.provider} or {MashieMenu.provider}")
 
 
     def __init__(self, url:str):
@@ -176,3 +176,49 @@ class MatildaMenu (Menu):
             for course in day["courses"]:
                 courses.append(course["name"])
             self.appendEntry(entryDate, courses)
+
+
+class MashieMenu(Menu):
+
+    provider = "mpi.mashie.com"
+
+    def __init__(self, url:str):
+        # https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379
+        super().__init__(url)
+        self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36",
+                        "cookie": "cookieLanguage=sv-SE"} # set page lang to Swe
+
+    async def _loadMenu(self, aiohttp_session):
+
+        try:
+
+            async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
+                html = await response.text()
+                soup = BeautifulSoup(html, 'html.parser').select("div.panel-group div.panel")
+                year = datetime.now().year
+                startWeek = None
+                
+                for dayDiv in soup:
+
+                    courses = []
+                    entryDate = dateParse(f"{dayDiv.div.div.string} {year}", date_formats=["%d %b %Y"], settings={'TIMEZONE': 'UTC'}, languages=["sv"]) # month abbr is in sv, see cookie in the req header
+
+                    if startWeek is None:
+                        startWeek = entryDate.isocalendar().week
+
+                    # add only this w and the next
+                    if entryDate.isocalendar().week - startWeek >= 2:
+                        break
+
+                    for course in dayDiv.select("div.app-daymenu-name"):
+                        courses.append(course.string.strip())
+
+                    # remove duplicates
+                    courses = list(dict.fromkeys(courses))
+                    self.appendEntry(entryDate, courses)
+        
+        except Exception as err:
+            log.exception(f"Failed to retrieve {url}")
+            raise
+
+
