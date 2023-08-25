@@ -59,6 +59,9 @@ class Menu(ABC):
 
     def appendEntry(self, entryDate:date, courses:list):
 
+        if type(entryDate) is not date:
+            raise TypeError("entryDate must be date type") 
+
         week = entryDate.isocalendar().week
 
         if not week in self.menu:
@@ -70,9 +73,10 @@ class Menu(ABC):
             "week": week,
             "courses": courses
         }
-        
+
         if entryDate == date.today():
             self.menuToday = courses
+
 
         self.menu[week].append(dayEntry)
 
@@ -202,6 +206,7 @@ class MashieMenu(Menu):
 
                     courses = []
                     entryDate = dateParse(f"{dayDiv.div.div.string} {year}", date_formats=["%d %b %Y"], settings={'TIMEZONE': 'UTC'}, languages=["sv"]) # month abbr is in sv, see cookie in the req header
+                    entryDate = entryDate.date()
 
                     if startWeek is None:
                         startWeek = entryDate.isocalendar().week
