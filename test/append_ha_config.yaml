@@ -2,4 +2,3 @@
 
 sensor: !include skolmat-sensors.yaml
 lovelace: !include skolmat-lovelace.yaml
-

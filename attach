@@ -1,0 +1,2 @@
+#!/bin/bash
+docker exec -it hass-skolmat-dev /bin/bash

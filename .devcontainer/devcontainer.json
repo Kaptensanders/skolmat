@@ -9,14 +9,27 @@
     "source=${localWorkspaceFolder},target=/workspace/skolmat,type=bind",
     "source=${localWorkspaceFolder}/custom_components/skolmat,target=/workspace/ha_config/custom_components/skolmat,type=bind",
     "source=${localWorkspaceFolder}/test/append_ha_config.yaml,target=/workspace/ha_config/append_ha_config.yaml,type=bind",
+    "source=${localWorkspaceFolder}/test/skolmat-logger.yaml,target=/workspace/ha_config/logger.yaml,type=bind",
     "source=${localWorkspaceFolder}/test/skolmat-sensors.yaml,target=/workspace/ha_config/skolmat-sensors.yaml,type=bind",
     "source=${localWorkspaceFolder}/test/skolmat-lovelace.yaml,target=/workspace/ha_config/skolmat-lovelace.yaml,type=bind",
-    "source=${localWorkspaceFolder}/test/skolmat-panel.yaml,target=/workspace/ha_config/skolmat-panel.yaml,type=bind"
+    "source=${localWorkspaceFolder}/test/skolmat-panel.yaml,target=/workspace/ha_config/skolmat-panel.yaml,type=bind",
+    "source=${localWorkspaceFolder}/.vscode,target=/workspace/.vscode,type=bind"
   ],
   "workspaceFolder": "/workspace",
   "runArgs": ["--name", "hass-skolmat-dev"],
   "customizations":{
     "vscode": {
+      "settings": {
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/CVS": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          "**/__pycache__": true
+        }
+      }
     }
   }
 }
