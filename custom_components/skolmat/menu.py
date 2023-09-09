@@ -1,7 +1,7 @@
 import feedparser, re
 from abc import ABC, abstractmethod
-from datetime import datetime, date
-from dateparser import parse as dateParse
+from datetime import datetime, date, timezone
+from dateutil import tz
 from logging import getLogger
 from bs4 import BeautifulSoup
 import json
@@ -28,13 +28,16 @@ class Menu(ABC):
 
     def __init__(self, url:str):
         self.menu = {}
-        self.url = url
+        self.url = self._fixUrl(url)
         self.menuToday = []
         self.last_menu_fetch = None
         self._weeks = 2
         self._weekDays = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag']
 
-    
+    @abstractmethod
+    async def _fixUrl (self, url:str):
+        return url
+
     @abstractmethod
     async def _loadMenu (self, aiohttp_session):
         return
@@ -87,11 +90,13 @@ class FoodItMenu(Menu):
 
     def __init__(self, url:str):
 
-        if not "foodit.se/rss" in url:
-            url = url.replace("foodit.se", "foodit.se/rss")
-
         super().__init__(url)
 
+    def _fixUrl(self, url:str):
+
+        if not "foodit.se/rss" in url:
+            url = url.replace("foodit.se", "foodit.se/rss")
+        return url
 
     async def _getFeed(self, aiohttp_session):
         # returns only one week at the time
@@ -123,11 +128,12 @@ class SkolmatenMenu(Menu):
     provider = "skolmaten.se"
 
     def __init__(self, url:str):
+        super().__init__(url)
 
+    def _fixUrl(self, url:str):
         if not "/rss/weeks" in url: # keep for bw comp, changed to not need rss/weeks in 1.2.0
             url = f"{url}/rss/weeks"
-
-        super().__init__(url)
+        return url
 
     async def _getFeed(self, aiohttp_session):
         
@@ -153,6 +159,9 @@ class MatildaMenu (Menu):
         # https://menu.matildaplatform.com/meals/week/63fc93fcccb95f5ce5711276_indianberget
         super().__init__(url)
         self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"}
+
+    def _fixUrl(self, url: str):
+        return url
 
     async def _getWeek(self, aiohttp_session, url):
 
@@ -181,49 +190,67 @@ class MatildaMenu (Menu):
                 courses.append(course["name"])
             self.appendEntry(entryDate, courses)
 
-
 class MashieMenu(Menu):
 
-    provider = "mpi.mashie.com"
+    provider = "mashie.com"
 
     def __init__(self, url:str):
-        # https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379
+
         super().__init__(url)
         self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36",
                         "cookie": "cookieLanguage=sv-SE"} # set page lang to Swe
 
+    def _fixUrl(self, url):
+        # observed variants:
+        #   mpi.mashie.com/public/app/Laholms%20kommun/a326a379
+        #   sodexo.mashie.com/public/app/Akademikrogen%20skolor/d47bc6bf
+        #
+        #  all subdomains seem to have a corresponding ../menu/.. url to the ../app/..
+        #  the ../menu/.. page contains json data for the menu, so use that instead of scraping the page
+
+        if "/app/" in url:
+            url = url.replace("/app/", "/menu/")
+
+        return url
+
     async def _loadMenu(self, aiohttp_session):
 
-        try:
+        def preserveTs(match_obj):
+            if match_obj.group() is not None:
+                return re.sub(r"[^0-9]", "", match_obj.group())
 
+        se = tz.gettz("Europe/Stockholm")
+
+        try:
             async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
                 html = await response.text()
-                soup = BeautifulSoup(html, 'html.parser').select("div.panel-group div.panel")
-                year = datetime.now().year
-                startWeek = None
-                
-                for dayDiv in soup:
 
-                    courses = []
-                    entryDate = dateParse(f"{dayDiv.div.div.string} {year}", date_formats=["%d %b %Y"], settings={'TIMEZONE': 'UTC'}, languages=["sv"]) # month abbr is in sv, see cookie in the req header
-                    entryDate = entryDate.date()
+                soup = BeautifulSoup(html, 'html.parser')
+                jsonData = soup.select_one("script").string
+                # discard javascript variable assignment, weekMenues = {...
+                jsonData = jsonData[jsonData.find("{") - 1:]
+                # replace javascipt dates (new Date(1234567...) with only the ts
+                jsonData = re.sub(r"new Date\([0-9]+\)", preserveTs, jsonData)
+                # json should be fine now
+                data = json.loads(jsonData)
 
-                    if startWeek is None:
-                        startWeek = entryDate.isocalendar().week
-
-                    # add only this w and the next
-                    if entryDate.isocalendar().week - startWeek >= 2:
+                w = 1
+                for week in data["Weeks"]:
+                    for day in week["Days"]:
+                        entryDate = datetime.fromtimestamp(day["DayMenuDate"] / 1000, timezone.utc)
+                        entryDate = entryDate.astimezone(tz=se).date()
+                        courses = []
+                        for course in day["DayMenus"]:
+                            courses.append(course["DayMenuName"].strip())
+                        
+                        self.appendEntry(entryDate, courses)
+                    
+                    w = w + 1 
+                    if w > 2:
                         break
 
-                    for course in dayDiv.select("div.app-daymenu-name"):
-                        courses.append(course.string.strip())
-
-                    # remove duplicates
-                    courses = list(dict.fromkeys(courses))
-                    self.appendEntry(entryDate, courses)
-        
         except Exception as err:
-            log.exception(f"Failed to retrieve {url}")
+            log.exception(f"Failed to retrieve {self.url}")
             raise
 
 

@@ -10,7 +10,6 @@ from logging import getLogger
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.helpers.entity import Entity, generate_entity_id
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 log = getLogger(__name__)

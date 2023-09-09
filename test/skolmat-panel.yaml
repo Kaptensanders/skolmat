@@ -4,18 +4,55 @@ views:
     path: skolmat
     cards:
       - type: custom:skolmat-card
-        entity: skolmat.skutehagen
+        entity: skolmat.skolmaten_se_skutehagen
         menu_type: today
         header: full
       - type: custom:skolmat-card
-        entity: skolmat.laholms_kommun
+        entity: skolmat.skolmaten_se_skutehagen
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: skolmat.foodit_se_backaskolan
         menu_type: today
         header: full
       - type: custom:skolmat-card
-        entity: skolmat.laholms_kommun
+        entity: skolmat.foodit_se_backaskolan
         menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: skolmat.menu_matildaplatform_com_skolmat_alvkarleby
+        menu_type: today
         header: full
       - type: custom:skolmat-card
-        entity: skolmat.laholms_kommun
+        entity: skolmat.menu_matildaplatform_com_skolmat_alvkarleby
         menu_type: week
         header: full
+
+      - type: custom:skolmat-card
+        entity: skolmat.mpi_mashie_com_ballstabergsskolan
+        menu_type: today
+        header: full
+      - type: custom:skolmat-card
+        entity: skolmat.mpi_mashie_com_ballstabergsskolan
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: skolmat.mpi_mashie_com_laholms_kommun
+        menu_type: today
+        header: full
+      - type: custom:skolmat-card
+        entity: skolmat.mpi_mashie_com_laholms_kommun
+        menu_type: week
+        header: full
+
+
+
+
+
+
+
+
+
