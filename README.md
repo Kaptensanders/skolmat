@@ -43,7 +43,10 @@ sensor:
   2. When you arrive at the page with this weeks menu, copy the url\
     Like: `https://menu.matildaplatform.com/meals/week/63fc93fcccb95f5ce5711276_indianberget`
 
-#### mpi.mashie.com ####
+#### mashie.com ####
+  NOTE: mashie.com has different subdomains like mpi, sodexo, and possibly more. Example below is for mpi.mashie.com and you may have another way of obtaining the url depending on your subdomain.
+  If the url to your weekly menu contains .../public/app/... or .../public/app/... you should be fine. Otherwise let me know.
+
   1. Open https://mpi.mashie.com/public/app and find your school by using the search box
   2. When you arrive at the page where you can see the menu, copy the url\
     Like: `https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379`
