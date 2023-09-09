@@ -1,0 +1,8 @@
+mode: storage
+dashboards:
+  lovelace-padpanel:
+    mode: yaml
+    title: Skolmat
+    icon: mdi:home
+    show_in_sidebar: true
+    filename: skolmat-panel.yaml

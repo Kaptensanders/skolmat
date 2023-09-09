@@ -1,0 +1,15 @@
+- platform: skolmat
+  name: Skutehagen
+  url: "https://skolmaten.se/skutehagens-skolan/"
+
+- platform: skolmat
+  name: Bäckaskolan
+  url: "https://webmenu.foodit.se/?r=6&m=617&p=883&c=10023&w=0&v=Week"
+
+- platform: skolmat
+  name: Älvkarleby
+  url: "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor"
+
+- platform: skolmat
+  name: Laholms Kommun
+  url: "https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379"

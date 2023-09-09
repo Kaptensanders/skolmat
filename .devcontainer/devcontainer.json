@@ -2,21 +2,21 @@
   "name": "hass-skolmat-dev",
   /* "image": "kaptensanders/hass-custom-devcontainer", */
   "image": "hass_dev_image",
-  "postCreateCommand": "sudo -E ENV_FILE=/workspace/.devcontainer/setup.env container setup-project",
-  "containerEnv": {
-    "DEVCONTAINER": "1"
-  },
-  "forwardPorts": [8123],
+  "postCreateCommand": "sudo -E ENV_FILE=/workspace/skolmat/.devcontainer/setup.env container setup-project",
+  "containerEnv": {},
+  "appPort": ["8123:8123"],
   "mounts": [
-    "source=${localWorkspaceFolder},target=/config/workspace,type=bind",
-    "source=${localWorkspaceFolder}/test,target=/config/test,type=bind",
-    "source=${localWorkspaceFolder}/test/append_ha_config.yaml,target=/config/append_ha_config.yaml,type=bind",
-    "source=${localWorkspaceFolder}/custom_components/skolmat,target=/config/custom_components/skolmat,type=bind"
+    "source=${localWorkspaceFolder},target=/workspace/skolmat,type=bind",
+    "source=${localWorkspaceFolder}/custom_components/skolmat,target=/workspace/ha_config/custom_components/skolmat,type=bind",
+    "source=${localWorkspaceFolder}/test/append_ha_config.yaml,target=/workspace/ha_config/append_ha_config.yaml,type=bind",
+    "source=${localWorkspaceFolder}/test/skolmat-sensors.yaml,target=/workspace/ha_config/skolmat-sensors.yaml,type=bind",
+    "source=${localWorkspaceFolder}/test/skolmat-lovelace.yaml,target=/workspace/ha_config/skolmat-lovelace.yaml,type=bind",
+    "source=${localWorkspaceFolder}/test/skolmat-panel.yaml,target=/workspace/ha_config/skolmat-panel.yaml,type=bind"
   ],
-  "workspaceFolder": "/config/",
+  "workspaceFolder": "/workspace",
   "runArgs": ["--name", "hass-skolmat-dev"],
   "customizations":{
-    "vscode": {  
+    "vscode": {
     }
   }
 }

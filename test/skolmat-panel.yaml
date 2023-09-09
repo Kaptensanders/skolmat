@@ -1,0 +1,21 @@
+title: Skolmat
+views:
+  - title: Skolmat
+    path: skolmat
+    cards:
+      - type: custom:skolmat-card
+        entity: skolmat.skutehagen
+        menu_type: today
+        header: full
+      - type: custom:skolmat-card
+        entity: skolmat.laholms_kommun
+        menu_type: today
+        header: full
+      - type: custom:skolmat-card
+        entity: skolmat.laholms_kommun
+        menu_type: week
+        header: full
+      - type: custom:skolmat-card
+        entity: skolmat.laholms_kommun
+        menu_type: week
+        header: full
