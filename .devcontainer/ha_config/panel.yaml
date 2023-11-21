@@ -3,6 +3,7 @@ views:
   - title: Skolmat
     path: skolmat
     cards:
+
       - type: custom:skolmat-card
         entity: skolmat.skolmaten_se_skutehagen
         menu_type: today
@@ -47,6 +48,11 @@ views:
         entity: skolmat.mpi_mashie_com_laholms_kommun
         menu_type: week
         header: full
+
+
+
+
+
 
 
 

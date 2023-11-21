@@ -1,0 +1,4 @@
+# project specific config 
+
+sensor: !include sensors.yaml
+lovelace: !include lovelace.yaml
