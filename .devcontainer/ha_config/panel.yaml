@@ -23,15 +23,6 @@ views:
         header: full
 
       - type: custom:skolmat-card
-        entity: skolmat.menu_matildaplatform_com_skolmat_alvkarleby
-        menu_type: today
-        header: full
-      - type: custom:skolmat-card
-        entity: skolmat.menu_matildaplatform_com_skolmat_alvkarleby
-        menu_type: week
-        header: full
-
-      - type: custom:skolmat-card
         entity: skolmat.mpi_mashie_com_ballstabergsskolan
         menu_type: today
         header: full

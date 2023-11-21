@@ -1,0 +1,23 @@
+- platform: skolmat
+  name: "skolmaten.se - Skutehagen"
+  url: "https://skolmaten.se/skutehagens-skolan/"
+
+- platform: skolmat
+  name: "foodit.se - Bäckaskolan"
+  url: "https://webmenu.foodit.se/?r=6&m=617&p=883&c=10023&w=0&v=Week"
+
+- platform: skolmat
+  name: "menu.matildaplatform.com - Älvkarleby"
+  url: "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor"
+
+- platform: skolmat
+  name: mpi.mashie.com - Laholms Kommun
+  url: "https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379"
+
+- platform: skolmat
+  name: mpi.mashie.com - Bällstabergsskolan
+  url: "https://mpi.mashie.com/public/menu/vallentuna+kommun/10b58ecf"
+
+- platform: skolmat
+  name: sodexo.mashie.com - Västra skolan 
+  url: "https://sodexo.mashie.com/public/menu/Akademikrogen%20skolor/d47bc6bf"
