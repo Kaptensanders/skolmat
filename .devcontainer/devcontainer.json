@@ -14,6 +14,31 @@
   ],
   "customizations":{
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/ha_core/venv/bin/python",
+        "python.analysis.extraPaths": [
+          "/workspaces/ha_core",
+          "/workspaces/ha_core/venv/lib/python3.13/site-packages"
+        ],
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/CVS": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          "**/__pycache__": true
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "esbenp.prettier-vscode",
+        "ms-python.debugpy",
+        "charliermarsh.ruff",
+        "dbaeumer.vscode-eslint",
+        "ms-python.autopep8"
+      ]
     }
   }
 }
