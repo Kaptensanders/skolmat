@@ -9,8 +9,10 @@ from logging import getLogger
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
-from homeassistant.helpers.entity import Entity, generate_entity_id
+from homeassistant.helpers.restore_state import RestoreEntity
+from homeassistant.helpers.entity import generate_entity_id
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
+
 
 log = getLogger(__name__)
 AP_ENTITY_DOMAIN = "skolmat"
@@ -27,7 +29,7 @@ async def async_setup_platform(hass, conf, async_add_entities, discovery_info=No
     sensor = SkolmatSensor(hass, conf)
     async_add_entities([sensor])
   
-class SkolmatSensor(Entity):
+class SkolmatSensor(RestoreEntity):
     def __init__(self, hass, conf):
         super().__init__()
         self.hass               = hass # will be set again by homeassistant after added to hass     
@@ -59,10 +61,10 @@ class SkolmatSensor(Entity):
     def extra_state_attributes(self):
         return self._state_attributes
     
-    @property
-    def device_state_attributes (self):
-        # just in for bw compability in case needed, extra_state_attributes is used since 2012.12.x
-        return self._state_attributes
+    # @property
+    # def device_state_attributes (self):
+    #     # just in for bw compability in case needed, extra_state_attributes is used since 2012.12.x
+    #     return self._state_attributes
     
     @property
     def force_update(self) -> bool:
@@ -87,3 +89,15 @@ class SkolmatSensor(Entity):
                 "calendar": self.menu.menu,
                 "name": self._name
             }
+
+    async def async_added_to_hass(self):
+        # Restore state
+        last_state = await self.async_get_last_state()
+        if last_state:
+            # Restore the calendar attribute
+            self._state = last_state.state
+
+            self._state_attributes = last_state.attributes.copy()
+        else:
+            log.info(f"No previous state found for {self._name}")
+
