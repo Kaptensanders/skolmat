@@ -1,10 +1,14 @@
 {
 	"folders": [
+
 		{
-			"path": ".."
+			"path": "."
 		},
 		{
-			"path": "/usr/src/homeassistant"
+			"path": "/home/vscode/ha_core"
+		},
+		{
+			"path": "/home/vscode/ha_config"
 		}
 	],
 	"settings": {

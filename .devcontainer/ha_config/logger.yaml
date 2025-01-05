@@ -1,2 +1,4 @@
+# override default logger.yaml
+default: info
 logs:
   custom_components.skolmat: debug

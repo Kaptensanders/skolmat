@@ -11,12 +11,12 @@
   url: "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor"
 
 - platform: skolmat
-  name: mpi.mashie.com - Laholms Kommun
-  url: "https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379"
+  name: mpi.mashie.com - Kyrkebyskolan
+  url: "https://mpi.mashie.com/public/app/Arvika%20Kommun/43242677"
 
 - platform: skolmat
-  name: mpi.mashie.com - Bällstabergsskolan
-  url: "https://mpi.mashie.com/public/menu/vallentuna+kommun/10b58ecf"
+  name: mpi.mashie.com - Scheeleskolan
+  url: "https://mpi.mashie.com/public/app/K%C3%B6pings%20kommun/d0767b9e"
 
 - platform: skolmat
   name: sodexo.mashie.com - Västra skolan 

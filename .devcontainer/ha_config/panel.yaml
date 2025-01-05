@@ -23,20 +23,20 @@ views:
         header: full
 
       - type: custom:skolmat-card
-        entity: skolmat.mpi_mashie_com_ballstabergsskolan
+        entity: skolmat.mpi_mashie_com_kyrkebyskolan
         menu_type: today
         header: full
       - type: custom:skolmat-card
-        entity: skolmat.mpi_mashie_com_ballstabergsskolan
+        entity: skolmat.mpi_mashie_com_kyrkebyskolan
         menu_type: week
         header: full
 
       - type: custom:skolmat-card
-        entity: skolmat.mpi_mashie_com_laholms_kommun
+        entity: skolmat.mpi_mashie_com_scheeleskolan
         menu_type: today
         header: full
       - type: custom:skolmat-card
-        entity: skolmat.mpi_mashie_com_laholms_kommun
+        entity: skolmat.mpi_mashie_com_scheeleskolan
         menu_type: week
         header: full
 

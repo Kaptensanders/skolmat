@@ -1,0 +1,9 @@
+name: Home
+latitude: 57.688219
+longitude: 11.755695
+elevation: 5
+unit_system: metric
+currency: SEK
+country: SE
+time_zone: "Europe/Stockholm"
+legacy_templates: false
