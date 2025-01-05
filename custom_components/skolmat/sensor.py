@@ -49,7 +49,7 @@ class SkolmatSensor(Entity):
         if not url:
             raise KeyError("'url' config parameter missing")
 
-        self.menu = Menu.createMenu(url)
+        self.menu = Menu.createMenu(hass, url)
     
     @property
     def name(self):
