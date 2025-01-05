@@ -1,6 +1,5 @@
 ![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=)
-![Version](https://img.shields.io/github/v/release/Kaptensanders/skolmat-card)
-![Installs](https://img.shields.io/badge/dynamic/json?label=Installs&logo=home-assistant&query=%24.skolmat.total&url=https%3A%2F%2Fanalytics.home-assistant.io%2Fcustom_integrations.json)
+![Version](https://img.shields.io/github/v/release/Kaptensanders/skolmat)
 
 # skolmat custom component for Home Assistant
 Skolmat custom component for the food menu in Swedish schools
