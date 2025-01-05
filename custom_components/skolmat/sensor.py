@@ -41,11 +41,6 @@ class SkolmatSensor(Entity):
         )
 
         url = conf.get("url", None)
-        rss = conf.get("rss", None)
-        if rss:
-            log.error ("'rss' config parameter will be deprecated in next version. Please use 'url' instead")
-            url = rss
-        
         if not url:
             raise KeyError("'url' config parameter missing")
 
