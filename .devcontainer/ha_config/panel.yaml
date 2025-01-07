@@ -13,6 +13,26 @@ views:
         menu_type: week
         header: full
 
+      # show_dates
+      - type: custom:skolmat-card
+        entity: skolmat.skolmaten_se_skutehagen
+        menu_type: week
+        header: full
+        show_dates: True
+
+      # rolling-week (should default to 5 days)
+      - type: custom:skolmat-card
+        entity: skolmat.skolmaten_se_skutehagen
+        menu_type: rolling-week
+        header: full
+      
+      # max_display_days (rolling week, 10 days)
+      - type: custom:skolmat-card
+        entity: skolmat.skolmaten_se_skutehagen
+        menu_type: rolling-week
+        header: full
+        rolling_week_max_days: 10
+
       - type: custom:skolmat-card
         entity: skolmat.foodit_se_backaskolan
         menu_type: today
