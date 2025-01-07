@@ -1,0 +1,3 @@
+[submodule "skolmat-card"]
+	path = skolmat-card
+	url = https://github.com/Kaptensanders/skolmat-card.git
