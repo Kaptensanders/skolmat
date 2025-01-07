@@ -9,6 +9,7 @@
   "workspaceFolder": "/workspaces/skolmat",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/skolmat,type=bind",
   "mounts": [
+     "source=${localWorkspaceFolder}/skolmat-card,target=/home/vscode/ha_config/www/skolmat-card,type=bind"
   ],
   "runArgs": [
     "--name", "hass-skolmat-dev",

@@ -5,3 +5,5 @@ echo "--- begin project specific setup for Skolmat --"
 # TODO
 # Add project specific setup directives to this file
 # It will be called by "container setup-project" (see devcontainer.json postCreateCommand)
+
+add_ha_resource /local/skolmat-card/skolmat-card.js
