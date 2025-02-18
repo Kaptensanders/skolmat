@@ -30,7 +30,7 @@ sensor:
 #### skolmaten.se ####
   1. Open https://skolmaten.se/ and follow the links to find your school.
   2. When you arrive at the page with this weeks menu, copy the url\
-    Like: `https://skolmaten.se/skutehagens-skolan/`
+    Like: `https://skolmaten.se/menu/29f13515-185f-4df5-b39b-bca0a2bc4fc8?school=157fa289-ef68-411d-b2b5-d98014555c02`
 
 #### webmenu.foodit.se ####
   1. Open https://webmenu.foodit.se/ and follow the links to find your school.
