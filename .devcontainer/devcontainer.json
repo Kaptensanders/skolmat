@@ -4,6 +4,7 @@
   "image": "hass_dev_image_2025.1.0",
   "postCreateCommand": "container setup-project",
   "containerEnv": {},
+  "forwardPorts": [5678],
   "appPort": ["8123:8123"],
   "remoteUser": "vscode",
   "workspaceFolder": "/workspaces/skolmat",

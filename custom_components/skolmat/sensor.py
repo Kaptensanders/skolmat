@@ -4,7 +4,7 @@
 
 import voluptuous as vol
 from .menu import Menu
-from datetime import datetime
+from datetime import datetime, timedelta
 from logging import getLogger
 
 import homeassistant.helpers.config_validation as cv
@@ -46,7 +46,7 @@ class SkolmatSensor(RestoreEntity):
         if not url:
             raise KeyError("'url' config parameter missing")
 
-        self.menu = Menu.createMenu(hass, url)
+        self.menu = Menu.createMenu(hass.async_add_executor_job, url)
     
     @property
     def name(self):
@@ -61,19 +61,25 @@ class SkolmatSensor(RestoreEntity):
     def extra_state_attributes(self):
         return self._state_attributes
     
-    # @property
-    # def device_state_attributes (self):
-    #     # just in for bw compability in case needed, extra_state_attributes is used since 2012.12.x
-    #     return self._state_attributes
-    
     @property
     def force_update(self) -> bool:
         # Write each update to the state machine, even if the data is the same.
         return False
     @property
     def should_poll(self) -> bool:
+
         if isinstance(self.menu.last_menu_fetch, datetime):
-            return self.menu.last_menu_fetch.date() != datetime.now().date()
+            
+            now = datetime.now()
+
+            if now.date() != self.menu.last_menu_fetch.date():
+                return True
+        
+            if now - self.menu.last_menu_fetch >= timedelta(hours=4):
+                return True
+            
+            return False
+
         return True
 
     async def async_update(self):

@@ -12,35 +12,26 @@
       "justMyCode": false,
       "args": ["--debug", "-c", "ha_config"],
     },
+
     {
-      // Debug by attaching to local Home Assistant server using Remote Python Debugger.
-      // See https://www.home-assistant.io/integrations/debugpy/
-      "name": "Home Assistant: Attach Local",
-      "type": "python",
+      "name": "Attach to Home Assistant",
+      "type": "debugpy",
       "request": "attach",
-      "port": 5678,
-      "host": "localhost",
+      "connect": {
+        "port": 5678,
+        "host": "localhost"
+      },
       "pathMappings": [
         {
-          "localRoot": "${workspaceFolder}",
-          "remoteRoot": "./homeassistant"
-        }
-      ]
-    },
-    {
-      // Debug by attaching to remote Home Assistant server using Remote Python Debugger.
-      // See https://www.home-assistant.io/integrations/debugpy/
-      "name": "Home Assistant: Attach Remote",
-      "type": "python",
-      "request": "attach",
-      "port": 5678,
-      "host": "homeassistant.local",
-      "pathMappings": [
+          "localRoot": "${workspaceFolder}/custom_components/skolmat",
+          "remoteRoot": "/workspaces/skolmat/custom_components/skolmat"
+        },
         {
           "localRoot": "${workspaceFolder}",
-          "remoteRoot": "/workspace/homeassistant"
+          "remoteRoot": "/workspaces/skolmat"
         }
       ]
     }
+    
   ]
 }
