@@ -21,7 +21,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required("name"): cv.string,
         vol.Optional("url"): cv.string,
-        vol.Optional("rss"): cv.string
+        vol.Optional("unique_id"): cv.string
     }
 )
 
@@ -34,6 +34,8 @@ class SkolmatSensor(RestoreEntity):
         super().__init__()
         self.hass               = hass # will be set again by homeassistant after added to hass     
         self._name              = conf.get("name")
+        if conf.get("unique_id", None):
+            self._attr_unique_id = conf.get("unique_id")
         self._state             = None
         self._state_attributes  = {}
         self.entity_id          = generate_entity_id  (
