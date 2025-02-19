@@ -20,6 +20,7 @@ sensor:
   - platform: skolmat
     name: Skutehagen # Name of school here
     url: "https://skolmaten.se/skutehagens-skolan/rss/weeks" # url to your rss here
+    unique_id: "my_skolmat_sensor" # Optional, better for managing entities, but will change the entity type.
 ```
 4. Validate config and restart HA
 5. Your sensor entity will show up as skolmat.[school name]
