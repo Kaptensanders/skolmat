@@ -22,3 +22,13 @@
 - platform: skolmat
   name: sodexo.mashie.com - Västra skolan 
   url: "https://sodexo.mashie.com/public/menu/Akademikrogen%20skolor/d47bc6bf"
+
+
+- platform: skolmat
+  name: skolmaten.se - Stadsskogen skola
+  url: "https://skolmaten.se/menu/18b53bff-437d-4bb8-a6a4-2380a039557d?school=82c5bb98-79c3-4ba0-a1e2-73b55944c9c5"
+
+
+
+
+  

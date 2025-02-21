@@ -91,7 +91,21 @@ class SkolmatSensor(RestoreEntity):
             if not self.menu.menuToday:
                 self._state = "Ingen mat"
             else:
-                self._state = "\n".join(self.menu.menuToday)
+
+                # state can only be 255 chars, if longer, truncate each item equally
+                state = ("\n".join(self.menu.menuToday))
+                if len(state) > 255:
+                    maxCourseLength = (255 // len(self.menu.menuToday)) - 5 # ...\n
+                    courses = []
+                    for i in range(len(self.menu.menuToday)):
+                        if len(self.menu.menuToday[i]) >= maxCourseLength:
+                            courses.append(self.menu.menuToday[i][:maxCourseLength] + "...")
+                        else: 
+                            courses.append(self.menu.menuToday[i])
+
+                    state = "\n".join(courses)
+                        
+                self._state = state
             
             self._state_attributes = {
                 "calendar": self.menu.menu,
