@@ -155,67 +155,105 @@ class SkolmatenMenu(Menu):
     provider = "skolmaten.se"
 
     def __init__(self, asyncExecutor, url:str):
-        #"https://skolmaten.se/menu/29f13515-185f-4df5-b39b-bca0a2bc4fc8?school=157fa289-ef68-411d-b2b5-d98014555c02",
-
         super().__init__(asyncExecutor, url)
-        self.headers = {"Content-Type": "application/json", "Accept": "application/json", "Referer": f"https://{self.provider}/"}
 
-    def _fixUrl(self, url: str):
+    def _fixUrl(self, url:str):
+        # https://skolmaten.se/skutehagens-skolan
 
-        query_params = parse_qs(urlparse(url).query)
-        schoolId = query_params.get("school", [None])[0]
-        if schoolId is None:
-            raise ValueError("school query parameter missing in url")
+        parsed = urlparse(url)
+        schoolName = parsed.path.lstrip("/")
 
-        newUrl = "https://skolmaten.se/api/4/menu/" + schoolId
+        if schoolName is None:
+            raise ValueError("school name could not be extracted from url")
+
+        newUrl = "https://skolmaten.se/api/4/rss/week/" + schoolName + "?locale=en"
         return newUrl
 
-    async def _getWeek(self, aiohttp_session, url):
-
-        def remove_images(obj):
-            if isinstance(obj, dict):
-                return {k: remove_images(v) for k, v in obj.items() if k != "image"}
-            elif isinstance(obj, list):
-                return [remove_images(i) for i in obj]
-            return obj
-
-        try:
-            async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
-                html = await response.text()
-                return json.loads(html, object_hook=remove_images)
-        except Exception as err:
-
-            log.exception(f"Failed to retrieve {url}")
-            raise
+    async def _getFeed(self, aiohttp_session):
+        
+        async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
+            raw_feed = await response.text()
+            return await self.parse_feed(raw_feed)
+        
 
     async def _loadMenu(self, aiohttp_session):
 
-        try:
-            shoolName = "Skutehagens skolan F-3, 4-6"
-            thisWeek  = self.getWeek()
-            nextWeek  = self.getWeek(nextWeek=True)
+        menuFeed = await self._getFeed(aiohttp_session)
+        
+        for day in menuFeed["entries"]:
+            entryDate = date(day['published_parsed'].tm_year, day['published_parsed'].tm_mon, day['published_parsed'].tm_mday)
+            courses = day["summary"].split("<br />")
+            self.appendEntry(entryDate, courses)
 
-            w1Url = f"{self.url}?year={thisWeek[0]}&week={thisWeek[1]}"
-            w2Url = f"{self.url}?year={nextWeek[0]}&week={nextWeek[1]}"
 
-            w1 = await self._getWeek(aiohttp_session, w1Url)
-            w2 = await self._getWeek(aiohttp_session, w2Url)
+# class SkolmatenMenu(Menu):
+
+#     provider = "skolmaten.se"
+
+#     def __init__(self, asyncExecutor, url:str):
+#         # https://skolmaten.se/skutehagens-skolan
+
+#         super().__init__(asyncExecutor, url)
+#         self.headers = {"Content-Type": "application/json", "Accept": "application/json", "Referer": f"https://{self.provider}/"}
+
+#     def _fixUrl(self, url: str):
+
+#         parsed = urlparse(url)
+#         schoolName = parsed.path.lstrip("/")
+
+#         if schoolName is None:
+#             raise ValueError("school name could not be extracted from url")
+
+
+#         newUrl = "https://skolmaten.se/api/4/menu/school/" + schoolName
+#         return newUrl
+
+#     async def _getWeek(self, aiohttp_session, url):
+
+#         def remove_images(obj):
+#             if isinstance(obj, dict):
+#                 return {k: remove_images(v) for k, v in obj.items() if k != "image"}
+#             elif isinstance(obj, list):
+#                 return [remove_images(i) for i in obj]
+#             return obj
+
+#         try:
+#             async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
+#                 html = await response.text()
+#                 return json.loads(html, object_hook=remove_images)
+#         except Exception as err:
+
+#             log.exception(f"Failed to retrieve {url}")
+#             raise
+
+#     async def _loadMenu(self, aiohttp_session):
+
+#         try:
+#             shoolName = "Skutehagens skolan F-3, 4-6"
+#             thisWeek  = self.getWeek()
+#             nextWeek  = self.getWeek(nextWeek=True)
+
+#             w1Url = f"{self.url}?year={thisWeek[0]}&week={thisWeek[1]}"
+#             w2Url = f"{self.url}?year={nextWeek[0]}&week={nextWeek[1]}"
+
+#             w1 = await self._getWeek(aiohttp_session, w1Url)
+#             w2 = await self._getWeek(aiohttp_session, w2Url)
   
-            dayEntries = [
-                *(w1["WeekState"]["Days"] if isinstance(w1.get("WeekState"), dict) else []),
-                *(w2["WeekState"]["Days"] if isinstance(w2.get("WeekState"), dict) else [])
-            ]
+#             dayEntries = [
+#                 *(w1["WeekState"]["Days"] if isinstance(w1.get("WeekState"), dict) else []),
+#                 *(w2["WeekState"]["Days"] if isinstance(w2.get("WeekState"), dict) else [])
+#             ]
           
-            for day in dayEntries:
-                entryDate = parser.isoparse(day["date"]).date()
-                courses = []
-                for course in day["Meals"]:
-                    courses.append(course["name"])
-                self.appendEntry(entryDate, courses)
+#             for day in dayEntries:
+#                 entryDate = parser.isoparse(day["date"]).date()
+#                 courses = []
+#                 for course in day["Meals"]:
+#                     courses.append(course["name"])
+#                 self.appendEntry(entryDate, courses)
 
-        except Exception as err:
-            log.exception(f"Failed to process:\n{w1Url}\nor\n{w2Url} ", exc_info=err)
-            raise
+#         except Exception as err:
+#             log.exception(f"Failed to process:\n{w1Url}\nor\n{w2Url} ", exc_info=err)
+#             raise
 
 class MatildaMenu (Menu):
     provider = "matildaplatform.com"

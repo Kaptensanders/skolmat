@@ -1,6 +1,9 @@
 ![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=)
 ![Version](https://img.shields.io/github/v/release/Kaptensanders/skolmat)
 
+<h3 style="color:red; font-weight:bold;">Note: skolmaten.se has updated their url's and api, please update your config accordingly and upgrade to latest version:</h3>
+
+
 # skolmat custom component for Home Assistant
 Skolmat custom component for the food menu in Swedish schools
 
@@ -19,7 +22,7 @@ You can use the sensor as you please or install the lovelace custom card to disp
 sensor:
   - platform: skolmat
     name: Skutehagen # Name of school here
-    url: "https://skolmaten.se/skutehagens-skolan/rss/weeks" # url to your rss here
+    url: "https://myprovider.se/myschoolname" # url to your school page, see below
     unique_id: "my_skolmat_sensor" # Optional, better for managing entities, but will change the entity type.
 ```
 4. Validate config and restart HA
@@ -31,7 +34,7 @@ sensor:
 #### skolmaten.se ####
   1. Open https://skolmaten.se/ and follow the links to find your school.
   2. When you arrive at the page with this weeks menu, copy the url\
-    Like: `https://skolmaten.se/menu/29f13515-185f-4df5-b39b-bca0a2bc4fc8?school=157fa289-ef68-411d-b2b5-d98014555c02`
+    Like: `https://skolmaten.se/skutehagens-skolan`
 
 #### webmenu.foodit.se ####
   1. Open https://webmenu.foodit.se/ and follow the links to find your school.

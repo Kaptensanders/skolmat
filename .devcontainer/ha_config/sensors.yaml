@@ -1,7 +1,7 @@
 - platform: skolmat
   name: "skolmaten.se - Skutehagen"
   unique_id: "foo_bar_skutehag"
-  url: "https://skolmaten.se/menu/29f13515-185f-4df5-b39b-bca0a2bc4fc8?school=157fa289-ef68-411d-b2b5-d98014555c02"
+  url: "https://skolmaten.se/skutehagens-skolan"
 
 - platform: skolmat
   name: "foodit.se - Bäckaskolan"
@@ -25,8 +25,16 @@
 
 
 - platform: skolmat
-  name: skolmaten.se - Stadsskogen skola
-  url: "https://skolmaten.se/menu/18b53bff-437d-4bb8-a6a4-2380a039557d?school=82c5bb98-79c3-4ba0-a1e2-73b55944c9c5"
+  name: skolmaten.se - Sjötorpsskolan
+  url: "https://skolmaten.se/sjotorpsskolan"
+
+- platform: skolmat
+  name: skolmaten.se - StadaStadsskogen skola
+  url: "  https://skolmaten.se/aktivitetshuset-stadsskogen-skola"
+
+
+
+
 
 
 
