@@ -182,8 +182,10 @@ class SkolmatenMenu(Menu):
         
         for day in menuFeed["entries"]:
             entryDate = date(day['published_parsed'].tm_year, day['published_parsed'].tm_mon, day['published_parsed'].tm_mday)
-            courses = day["summary"].split("<br />")
-            self.appendEntry(entryDate, courses)
+            log.info(day["summary"])
+            courses = re.sub(r"\s*\([^)]*\)", "", day["summary"])
+            log.info(courses)
+            self.appendEntry(entryDate, courses.split("<br />"))
 
 
 # class SkolmatenMenu(Menu):

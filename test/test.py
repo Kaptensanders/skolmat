@@ -10,7 +10,6 @@ logging.basicConfig(level=logging.INFO)
 
 conf = {
     "foodit": "https://webmenu.foodit.se/?r=6&m=617&p=883&c=10023&w=0&v=Week&l=undefined",
-    #"skolmaten": "https://skolmaten.se/menu/29f13515-185f-4df5-b39b-bca0a2bc4fc8?school=157fa289-ef68-411d-b2b5-d98014555c02",
     "skolmaten": "https://skolmaten.se/skutehagens-skolan",
     "matilda1": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor",
     "matilda2": "https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang?startDate=2023-05-22&endDate=2023-05-28",
@@ -18,7 +17,7 @@ conf = {
     "skolmaten2": "https://skolmaten.se/annerstaskolan"
 }
 
-menu = Menu.createMenu(asyncio.to_thread, url=conf["skolmaten2"])
+menu = Menu.createMenu(asyncio.to_thread, url=conf["skolmaten"])
 async def main ():
     async with aiohttp.ClientSession() as session:
         await menu.loadMenu(session)
