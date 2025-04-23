@@ -53,3 +53,8 @@ sensor:
   1. Open https://mpi.mashie.com/public/app and find your school by using the search box
   2. When you arrive at the page where you can see the menu, copy the url\
     Like: `https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379`
+
+#### mateo.se ####
+  1. Open https://meny.mateo.se and find your school by using the search box
+  2. When you arrive at the page where you can see the menu, copy the url\
+    Like: `https://meny.mateo.se/kavlinge-utbildning/91`

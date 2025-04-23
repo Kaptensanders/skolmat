@@ -24,8 +24,10 @@ class Menu(ABC):
             return MatildaMenu(asyncExecutor, url)
         elif MashieMenu.provider in url:
             return MashieMenu(asyncExecutor, url)
+        elif MateoMenu.provider in url:
+            return MateoMenu(asyncExecutor, url)
         else:
-            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, {MatildaMenu.provider} or {MashieMenu.provider}")
+            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, {MatildaMenu.provider}, {MashieMenu.provider} or {MateoMenu.provider}")
 
 
     def __init__(self, asyncExecutor, url:str):
@@ -360,4 +362,120 @@ class MashieMenu(Menu):
             log.exception(f"Failed to retrieve {self.url}")
             raise
 
+class MateoMenu(Menu):
+    provider = "mateo.se"
 
+    def __init__(self, asyncExecutor, url:str):
+        # https://meny.mateo.se/kavlinge-utbildning/31
+        super().__init__(asyncExecutor, url)
+        self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36",
+                        "cookie": "cookieLanguage=sv-SE"} # set page lang to Swe
+        self.jsUrl = "https://meny.mateo.se/"
+        self.municipalities = "/mateo-menu/municipalities.json"
+        self.mateo_menu_shared_path = "/mateo.shared"
+
+    def _fixUrl(self, url):
+       return url
+
+    async def _constructJsUrl(self, url:str, aiohttp_session):
+        try:
+            async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
+                html = await response.text()
+                soup = BeautifulSoup(html, 'html.parser')
+
+                 # Find all <script> tags
+                scripts = soup.find_all('script')
+
+                # Extract the 'src' attribute from each <script> tag
+                jsUrl = ""
+                script_sources = []
+                for script in scripts:
+                    src = script.get('src')
+                    if src and '.js' in src:
+                        return f"{self.jsUrl}{src}" #https://meny.mateo.se/_expo/static/js/web/entry-61ca128073f368b722e0ab176fd2ee99.js similar to this
+                        break
+
+        except Exception as err:
+            log.exception(f"Failed to retrieve js url from {url}")
+            raise      
+
+    async def _getJsonBaseUrl(self, jsUrl, url, aiohttp_session):
+        try:
+            async with aiohttp_session.get(jsUrl, headers=self.headers, raise_for_status=True) as response:
+                jsContent = await response.text()
+
+                if self.municipalities not in jsContent:
+                    log.exception(f"Failed to find {self.municipalities} in js content on url {jsUrl}")
+                    raise ValueError(f"Failed to find {self.municipalities} in js content on url {jsUrl}")
+
+                base_url = self._find_base_url(jsContent, self.municipalities)
+                if not base_url:
+                    raise ValueError(f"Failed to base url in js content on url {jsUrl}")
+                return base_url
+        except Exception as err:
+            log.exception(f"Failed to retrieve js url from {jsUrl}")
+            raise      
+    
+    # Search for the target URL within the text and extract the base URL, similar to https://objects.dc-fbg1.glesys.net
+    def _find_base_url(self, text, target):
+        match = re.search(r'(https?://[^\s]+)?' + re.escape(target), text)
+        if match:
+            base_url = match.group(1)
+            base_url = base_url.replace(self.mateo_menu_shared_path, "")
+            return base_url
+        else:
+            log.exception(f"Target {target} not found in js content")
+            return None
+
+    def _construct_base_menu_file_url(self, url, base_url):
+        stripped_from_url = url.replace(self.jsUrl, "")
+        # Split by '/'
+        path, number = stripped_from_url.split('/')
+
+        # Replace hyphen with dot
+        modified_path = path.replace('-', '.')
+
+        # modified_path example: kavlinge.utbildning
+        # number example: 31
+        return  f"{base_url}/mateo.{modified_path}/menus/app/{number}" # Similar to https://objects.dc-fbg1.glesys.net/mateo.kavlinge.utbildning/menus/app/82
+
+    async def _loadMenu(self, aiohttp_session):
+
+        jsUrl = await self._constructJsUrl(self.url, aiohttp_session)
+        json_base_url = await self._getJsonBaseUrl(jsUrl, self.url, aiohttp_session)
+        base_menu_file_url = self._construct_base_menu_file_url(self.url, json_base_url)
+
+         # Get today's date
+        today = date.today()
+
+        # Get ISO calendar (year, week, weekday)
+        _, iso_week, _ = today.isocalendar()
+        next_week_date = today + timedelta(weeks=1)
+        _, iso_week_2, _ = next_week_date.isocalendar()
+
+        menus_url_w1 = f"{base_menu_file_url}_{iso_week}.json"
+        menus_url_w2 = f"{base_menu_file_url}_{iso_week_2}.json"
+
+        def append_meals(self, menus_response):
+            data = json.loads(menus_response)
+            for item in data:
+                if isinstance(item, dict) and isinstance(item.get("meals"), list):
+                    meals = []
+                    entry_date = datetime.strptime(item["date"], "%Y-%m-%dT%H:%M:%S.%fZ").date()
+                    for meal in item["meals"]:
+                        meals.append(meal["name"] )
+                    
+                    self.appendEntry(entry_date, meals)
+
+        try:
+            async with aiohttp_session.get(menus_url_w1, headers=self.headers, raise_for_status=True) as response:
+                menus_response = await response.text()
+                append_meals(self, menus_response)               
+
+            async with aiohttp_session.get(menus_url_w2, headers=self.headers, raise_for_status=True) as response:
+                menus_response = await response.text()
+                append_meals(self, menus_response)
+
+        except Exception as err:
+            log.exception(f"Failed to retrieve {base_menu_file_url}")
+            raise
