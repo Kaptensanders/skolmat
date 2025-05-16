@@ -32,7 +32,9 @@
   name: skolmaten.se - StadaStadsskogen skola
   url: "  https://skolmaten.se/aktivitetshuset-stadsskogen-skola"
 
-
+- platform: skolmat
+  name: mateo.se - Kävlinge utbildning
+  url: "https://meny.mateo.se/kavlinge-utbildning/31"
 
 
 

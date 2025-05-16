@@ -14,7 +14,8 @@ conf = {
     "matilda1": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor",
     "matilda2": "https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang?startDate=2023-05-22&endDate=2023-05-28",
     "mashie": "https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379",
-    "skolmaten2": "https://skolmaten.se/annerstaskolan"
+    "skolmaten2": "https://skolmaten.se/annerstaskolan",    
+    "mateo": "https://meny.mateo.se/kavlinge-utbildning/31"
 }
 
 menu = Menu.createMenu(asyncio.to_thread, url=conf["skolmaten"])
