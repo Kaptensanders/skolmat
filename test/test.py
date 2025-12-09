@@ -15,15 +15,15 @@ conf = {
     "matilda2": "https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang?startDate=2023-05-22&endDate=2023-05-28",
     "mashie": "https://mpi.mashie.com/public/app/Laholms%20kommun/a326a379",
     "skolmaten2": "https://skolmaten.se/annerstaskolan",    
-    "mateo": "https://meny.mateo.se/kavlinge-utbildning/31"
+    "mateo": "https://meny.mateo.se/kavlinge-utbildning/31",
+    "matilda3":"https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola"
 }
 
-menu = Menu.createMenu(asyncio.to_thread, url=conf["skolmaten"])
+menu = Menu.createMenu(asyncio.to_thread, url=conf["matilda2"])
 async def main ():
     async with aiohttp.ClientSession() as session:
         await menu.loadMenu(session)
         print (json.dumps(menu.menu, indent=4))
         print ("Today:" + "\n".join(menu.menuToday))
-
 
 asyncio.run(main())

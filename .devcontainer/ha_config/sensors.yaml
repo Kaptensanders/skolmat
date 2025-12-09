@@ -11,6 +11,11 @@
   name: "menu.matildaplatform.com - Älvkarleby"
   url: "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor"
 
+
+- platform: skolmat
+  name: "menu.matildaplatform.com - Dalajärs förskola"
+  url: "https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola"
+
 - platform: skolmat
   name: mpi.mashie.com - Kyrkebyskolan
   url: "https://mpi.mashie.com/public/app/Arvika%20Kommun/43242677"
@@ -34,7 +39,7 @@
 
 - platform: skolmat
   name: mateo.se - Kävlinge utbildning
-  url: "https://meny.mateo.se/kavlinge-utbildning/31"
+  url: "https://meny.mateo.se/kavlinge-utbildning/106"
 
 
 

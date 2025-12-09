@@ -101,6 +101,40 @@ class Menu(ABC):
 
         self.menu[week].append(dayEntry)
 
+    def updateEntry(self, entryDate: date, courses: list):
+        if type(entryDate) is not date:
+            raise TypeError("entryDate must be date type")
+
+        week = entryDate.isocalendar().week
+
+        if week not in self.menu:
+            raise KeyError(f"No entries found for week {week}")
+
+        entry_iso = entryDate.isoformat()
+
+        for dayEntry in self.menu[week]:
+            if dayEntry["date"] == entry_iso:
+                dayEntry["courses"] = courses
+
+                if entryDate == date.today():
+                    self.menuToday = courses
+
+                return
+
+        raise KeyError(f"No entry exists for date {entry_iso}")
+
+
+    def entryExists(self, entryDate: date) -> bool:
+
+        week = entryDate.isocalendar().week
+        # No entries at all for this week
+        if week not in self.menu:
+            return False
+
+        entry_iso = entryDate.isoformat()
+
+        return any(day["date"] == entry_iso for day in self.menu[week])
+
 
     async def parse_feed(self, raw_feed):
 
@@ -291,9 +325,17 @@ class MatildaMenu (Menu):
         for day in dayEntries:
             entryDate = datetime.strptime(day["date"], "%Y-%m-%dT%H:%M:%S").date() # 2023-06-02T00:00:00
             courses = []
+
             for course in day["courses"]:
                 courses.append(course["name"])
-            self.appendEntry(entryDate, courses)
+
+            # some schools have several entries for the same day, frukost, lunch, mellanmål, etc 
+            if self.entryExists (entryDate):
+                # owerwrite if name=Lunch, sketchy approach, "Lunch" as key may be set by the schools, we'll see
+                if day["name"] == "Lunch":
+                    self.updateEntry(entryDate, courses)
+            else:
+                self.appendEntry(entryDate, courses)
 
 class MashieMenu(Menu):
 
@@ -331,9 +373,15 @@ class MashieMenu(Menu):
         try:
             async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
                 html = await response.text()
-
+                
+                log.info(f"Parsing html from {self.url}")
                 soup = BeautifulSoup(html, 'html.parser')
-                jsonData = soup.select_one("script").string
+                scriptTag = soup.select_one("script")
+                if scriptTag is None:
+                    log.exception(f"Malformatted data in {self.url}")
+                    raise ValueError(f"Failed to find script tag in {self.url}")
+                
+                jsonData = scriptTag.string
                 # discard javascript variable assignment, weekMenues = {...
                 jsonData = jsonData[jsonData.find("{") - 1:]
                 # replace javascipt dates (new Date(1234567...) with only the ts

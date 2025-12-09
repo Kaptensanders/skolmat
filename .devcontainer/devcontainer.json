@@ -1,7 +1,8 @@
 {
   "name": "skolmat-dev",
   "//image": "kaptensanders/hass_dev_image",
-  "image": "hass_dev_image_2025.1.0",
+  "///image": "hass_dev_image_2025.1.0",
+  "image": "hass_dev_image_2025.12.2", 
   "postCreateCommand": "container setup-project",
   "containerEnv": {},
   "forwardPorts": [5678],
