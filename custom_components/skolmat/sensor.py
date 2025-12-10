@@ -70,18 +70,9 @@ class SkolmatSensor(RestoreEntity):
     @property
     def should_poll(self) -> bool:
 
-        if isinstance(self.menu.last_menu_fetch, datetime):
-            
-            now = datetime.now()
-
-            if now.date() != self.menu.last_menu_fetch.date():
-                return True
-        
-            if now - self.menu.last_menu_fetch >= timedelta(hours=4):
-                return True
-            
+        if self.menu.isMenuValid():
             return False
-
+        
         return True
 
     async def async_update(self):

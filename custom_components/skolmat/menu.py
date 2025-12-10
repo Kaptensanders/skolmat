@@ -1,12 +1,11 @@
-import feedparser, re
+import feedparser, re, asyncio
 from abc import ABC, abstractmethod
 from datetime import datetime, date, timezone, timedelta
-from dateutil import tz, parser
+from dateutil import tz
 from logging import getLogger
 from bs4 import BeautifulSoup
 import json
-from urllib.parse import urlparse, parse_qs
-
+from urllib.parse import urlparse
 
 log = getLogger(__name__)
 
@@ -30,7 +29,7 @@ class Menu(ABC):
             raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, {MatildaMenu.provider}, {MashieMenu.provider} or {MateoMenu.provider}")
 
 
-    def __init__(self, asyncExecutor, url:str):
+    def __init__(self, asyncExecutor, url:str, menuValidHours:int = 4):
         self.asyncExecutor = asyncExecutor
         self.menu = {}
         self.url = self._fixUrl(url)
@@ -38,6 +37,8 @@ class Menu(ABC):
         self.last_menu_fetch = None
         self._weeks = 2
         self._weekDays = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag']
+        self._menuValidHours = menuValidHours
+        self._lock = asyncio.Lock()
 
     def getWeek(self, nextWeek=False):
         # if sunday, return next week
@@ -60,23 +61,43 @@ class Menu(ABC):
     async def _loadMenu (self, aiohttp_session):
         return
 
-    async def loadMenu(self, aiohttp_session):
-        cur_menu = self.menu
-        cur_menuToday = self.menuToday
-        
-        self.menu = {}
-        self.menuToday = []
+    def isMenuValid (self) -> bool:
 
-        try:
-            await self._loadMenu(aiohttp_session)
-            self.last_menu_fetch = datetime.now()
-            return True
-
-        except Exception as err:
-            self.menu = cur_menu
-            self.menuToday = cur_menuToday
-            log.exception(f"Failed to load {self.provider} menu from {self.url}")
+        if not isinstance(self.last_menu_fetch, datetime):
             return False
+
+        now = datetime.now()
+        if now.date() != self.last_menu_fetch.date():
+            return False
+    
+        if now - self.last_menu_fetch >= timedelta(hours=self._menuValidHours):
+            return False
+        
+        return True
+
+    async def loadMenu(self, aiohttp_session, force:bool=False):
+
+        async with self._lock:
+
+            if not force and self.isMenuValid():
+                return True
+
+            cur_menu = self.menu
+            cur_menuToday = self.menuToday
+            
+            self.menu = {}
+            self.menuToday = []
+
+            try:
+                await self._loadMenu(aiohttp_session)
+                self.last_menu_fetch = datetime.now()
+                return True
+
+            except Exception as err:
+                self.menu = cur_menu
+                self.menuToday = cur_menuToday
+                log.exception(f"Failed to load {self.provider} menu from {self.url}")
+                return False
 
     def appendEntry(self, entryDate:date, courses:list):
 
