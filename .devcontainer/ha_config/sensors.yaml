@@ -1,6 +1,5 @@
 - platform: skolmat
   name: "skolmaten.se - Skutehagen"
-  unique_id: "foo_bar_skutehag"
   url: "https://skolmaten.se/skutehagens-skolan"
 
 - platform: skolmat

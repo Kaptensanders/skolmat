@@ -13,7 +13,6 @@ from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.helpers.entity import generate_entity_id
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
-
 log = getLogger(__name__)
 AP_ENTITY_DOMAIN = "skolmat"
 
@@ -21,7 +20,6 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required("name"): cv.string,
         vol.Optional("url"): cv.string,
-        vol.Optional("unique_id"): cv.string
     }
 )
 
@@ -34,8 +32,7 @@ class SkolmatSensor(RestoreEntity):
         super().__init__()
         self.hass               = hass # will be set again by homeassistant after added to hass     
         self._name              = conf.get("name")
-        if conf.get("unique_id", None):
-            self._attr_unique_id = conf.get("unique_id")
+
         self._state             = None
         self._state_attributes  = {}
         self.entity_id          = generate_entity_id  (
@@ -48,6 +45,7 @@ class SkolmatSensor(RestoreEntity):
         if not url:
             raise KeyError("'url' config parameter missing")
 
+        self._attr_unique_id = f"skolmat_{abs(hash(url))}"
         self.menu = Menu.createMenu(hass.async_add_executor_job, url)
     
     @property
