@@ -1,114 +1,108 @@
-"""
-    Skolmat custom component - Anders Sandberg
-"""
+"""Sensor platform for Skolmat."""
 
-import voluptuous as vol
-from .menu import Menu
-from datetime import datetime, timedelta
-from logging import getLogger
+from __future__ import annotations
 
-import homeassistant.helpers.config_validation as cv
-from homeassistant.components.sensor import PLATFORM_SCHEMA
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.entity import generate_entity_id
+from datetime import datetime
+import logging
+from typing import Any
+
+from homeassistant.components.sensor import SensorEntity
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from homeassistant.helpers.restore_state import RestoreEntity
+from homeassistant.helpers.entity import DeviceInfo
 
-log = getLogger(__name__)
-AP_ENTITY_DOMAIN = "skolmat"
+from .const import DOMAIN, CONF_NAME, CONF_URL
+from .menu import Menu
 
-PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
-    {
-        vol.Required("name"): cv.string,
-        vol.Optional("url"): cv.string,
-    }
-)
+_LOGGER = logging.getLogger(__name__)
 
-async def async_setup_platform(hass, conf, async_add_entities, discovery_info=None):
-    sensor = SkolmatSensor(hass, conf)
-    async_add_entities([sensor])
-  
-class SkolmatSensor(RestoreEntity):
-    def __init__(self, hass, conf):
-        super().__init__()
-        self.hass               = hass # will be set again by homeassistant after added to hass     
-        self._name              = conf.get("name")
 
-        self._state             = None
-        self._state_attributes  = {}
-        self.entity_id          = generate_entity_id  (
-            entity_id_format = AP_ENTITY_DOMAIN + '.{}',
-            name = self._name,
-            hass = hass
-        )
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, add_entities):
+    data = hass.data[DOMAIN][entry.entry_id]
+    menu: Menu = data["menu"]
+    url_hash: str = data["url_hash"]
 
-        url = conf.get("url", None)
-        if not url:
-            raise KeyError("'url' config parameter missing")
+    add_entities(
+        [
+            SkolmatSensor(
+                hass=hass,
+                entry=entry,
+                menu=menu,
+                url_hash=url_hash,
+            )
+        ],
+        update_before_add=True,
+    )
 
-        self._attr_unique_id = f"skolmat_{abs(hash(url))}"
-        self.menu = Menu.createMenu(hass.async_add_executor_job, url)
-    
+class SkolmatSensor(RestoreEntity, SensorEntity):
+
+    _attr_icon = "mdi:food"
+
+    def __init__(self, hass, entry, menu, url_hash):
+        self.hass = hass
+        self._entry = entry
+        self._menu = menu
+
+        self._name = entry.data[CONF_NAME]
+        self._url = entry.data[CONF_URL]
+
+        self._attr_unique_id = f"skolmat_sensor_{url_hash}"
+
+        self._state: str | None = None
+        self._attrs: dict[str, Any] = {}
+
     @property
     def name(self):
         return self._name
+
     @property
-    def icon(self):
-        return "mdi:food"
-    @property
-    def state(self):
+    def native_value(self):
         return self._state
+
     @property
     def extra_state_attributes(self):
-        return self._state_attributes
-    
+        return self._attrs
+
     @property
-    def force_update(self) -> bool:
-        # Write each update to the state machine, even if the data is the same.
-        return False
-    @property
-    def should_poll(self) -> bool:
-
-        if self.menu.isMenuValid():
-            return False
-        
-        return True
-
-    async def async_update(self):
-
-        bResult = await self.menu.loadMenu(async_get_clientsession(self.hass))
-        if bResult:
-            if not self.menu.menuToday:
-                self._state = "Ingen mat"
-            else:
-
-                # state can only be 255 chars, if longer, truncate each item equally
-                state = ("\n".join(self.menu.menuToday))
-                if len(state) > 255:
-                    maxCourseLength = (255 // len(self.menu.menuToday)) - 5 # ...\n
-                    courses = []
-                    for i in range(len(self.menu.menuToday)):
-                        if len(self.menu.menuToday[i]) >= maxCourseLength:
-                            courses.append(self.menu.menuToday[i][:maxCourseLength] + "...")
-                        else: 
-                            courses.append(self.menu.menuToday[i])
-
-                    state = "\n".join(courses)
-                        
-                self._state = state
-            
-            self._state_attributes = {
-                "calendar": self.menu.menu,
-                "name": self._name
-            }
+    def device_info(self):
+        return DeviceInfo(
+            identifiers={(DOMAIN, self._entry.entry_id)},
+            name=self._name,
+            manufacturer="Skolmat",
+        )
 
     async def async_added_to_hass(self):
         # Restore state
-        last_state = await self.async_get_last_state()
-        if last_state:
-            # Restore the calendar attribute
-            self._state = last_state.state
+        await super().async_added_to_hass()
 
-            self._state_attributes = last_state.attributes.copy()
+        last = await self.async_get_last_state()
+        if last is not None:
+            self._state = last.state
+            self._attrs = dict(last.attributes)
+
+    async def async_update(self) -> None:
+
+        session = async_get_clientsession(self.hass)
+        await self._menu.loadMenu(session)
+
+        today_courses = self._menu.menuToday or []
+
+        if not today_courses:
+            state = "Ingen meny idag"
         else:
-            log.info(f"No previous state found for {self._name}")
+            state = ", ".join(today_courses)
 
+        if len(state) > 255:
+            state = state[:252] + "..."
+
+        self._state = state
+
+        self._attrs = {
+            "url": self._url,
+            "updated": datetime.now().isoformat(),
+            "calendar": self._menu.menu,
+            "name": self._name,
+        }

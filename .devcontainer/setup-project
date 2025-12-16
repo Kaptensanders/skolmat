@@ -11,3 +11,30 @@ add_ha_resource /local/skolmat-card/skolmat-card.js
 # link lovelace panel for the skolmat-card (sub module repo)
 echo "Linking $WORKSPACE_DIR/skolmat-card/lovelace-panel.yaml to $HA_CONFIG_DIR/panel.yaml"
 ln -sf $WORKSPACE_DIR/skolmat-card/lovelace-panel.yaml $HA_CONFIG_DIR/panel.yaml
+
+# ---------------------------------------------------------------
+# Bootstrap Home Assistant .storage from repo snapshot
+
+BOOTSTRAP_STORAGE="$WORKSPACE_DIR/.devcontainer/ha_config_bootstrap/.storage"
+HA_STORAGE="$HA_CONFIG_DIR/.storage"
+
+if [ -d "$BOOTSTRAP_STORAGE" ]; then
+  echo "Bootstrapping Home Assistant .storage from repo snapshot"
+
+  mkdir -p "$HA_STORAGE"
+
+  cp -v \
+    "$BOOTSTRAP_STORAGE/core.config_entries" \
+    "$BOOTSTRAP_STORAGE/core.device_registry" \
+    "$BOOTSTRAP_STORAGE/core.entity_registry" \
+    "$HA_STORAGE/"
+
+else
+  echo "No HA bootstrap storage found, skipping"
+fi
+
+
+# ---------------------------------------------------------------
+# Bootstrap Home Assistant .storage from repo snapshot
+
+

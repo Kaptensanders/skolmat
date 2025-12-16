@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Skolmat",
+        "data": {
+          "name": "School name",
+          "url": "Menu URL",
+          "lunch_begin": "Lunch start time (HH:MM)",
+          "lunch_end": "Lunch end time (HH:MM)"
+        }
+      },
+      "init": {
+        "title": "Skolmat options",
+        "data": {
+          "name": "School name",
+          "url": "Menu URL",
+          "lunch_begin": "Lunch start time (HH:MM)",
+          "lunch_end": "Lunch end time (HH:MM)"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Invalid URL",
+      "invalid_lunch_interval": "Lunch end time must be after lunch start time"
+    }
+  }
+}

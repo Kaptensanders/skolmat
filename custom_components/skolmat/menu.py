@@ -96,7 +96,7 @@ class Menu(ABC):
             except Exception as err:
                 self.menu = cur_menu
                 self.menuToday = cur_menuToday
-                log.exception(f"Failed to load {self.provider} menu from {self.url}")
+                log.error(f"Failed to load {self.provider} menu from {self.url} - {str(err)}")
                 return False
 
     def appendEntry(self, entryDate:date, courses:list):
@@ -399,8 +399,7 @@ class MashieMenu(Menu):
                 soup = BeautifulSoup(html, 'html.parser')
                 scriptTag = soup.select_one("script")
                 if scriptTag is None:
-                    log.exception(f"Malformatted data in {self.url}")
-                    raise ValueError(f"Failed to find script tag in {self.url}")
+                    raise ValueError(f"Malformatted/unexpected data")
                 
                 jsonData = scriptTag.string
                 # discard javascript variable assignment, weekMenues = {...
@@ -425,8 +424,7 @@ class MashieMenu(Menu):
                     if w > 2:
                         break
 
-        except Exception as err:
-            log.exception(f"Failed to retrieve {self.url}")
+        except Exception:
             raise
 
 class MateoMenu(Menu):
