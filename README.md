@@ -21,7 +21,7 @@ From version 2.0, the integration exposes **two entities per configured school**
 
 The sensor attributes contain the full parsed menu data and are used by the calendar entity and the corresponding lovelace card.
 
-You can use the entities as you please or install the lovelace custom card to display the menu for today or for the week:
+Use the entities as you please or install the companion lovelace custom card to display the menu for today or for the week:
 https://github.com/Kaptensanders/skolmat-card
 
 ![image](https://user-images.githubusercontent.com/24979195/154963878-013bb9c0-80df-4449-9a8e-dc54ef0a3271.png)
