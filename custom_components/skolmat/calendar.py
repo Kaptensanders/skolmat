@@ -171,16 +171,24 @@ class SkolmatCalendarEntity(CalendarEntity):
         self._current_or_next = self._find_current_or_next(events)
 
     def _build_event(self, d: date, course: str) -> CalendarEvent:
-        start = dt_util.start_of_local_day(d)
-        end = start + timedelta(days=1)
+        # ALL-DAY event → use date objects
+        if not (self._lunch_begin and self._lunch_end):
+            return CalendarEvent(
+                summary=course,
+                description=course,
+                start=d,
+                end=d + timedelta(days=1),
+            )
 
-        if self._lunch_begin and self._lunch_end:
-            start = start.replace(
-                hour=self._lunch_begin.hour, minute=self._lunch_begin.minute
-            )
-            end = start.replace(
-                hour=self._lunch_end.hour, minute=self._lunch_end.minute
-            )
+        # TIMED event → use datetime objects
+        start = dt_util.start_of_local_day(d).replace(
+            hour=self._lunch_begin.hour,
+            minute=self._lunch_begin.minute,
+        )
+        end = dt_util.start_of_local_day(d).replace(
+            hour=self._lunch_end.hour,
+            minute=self._lunch_end.minute,
+        )
 
         return CalendarEvent(
             summary=course,
@@ -188,6 +196,7 @@ class SkolmatCalendarEntity(CalendarEntity):
             start=start,
             end=end,
         )
+
 
     @staticmethod
     def _normalize(value: Any) -> datetime:
