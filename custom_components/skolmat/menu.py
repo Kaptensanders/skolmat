@@ -11,6 +11,8 @@ log = getLogger(__name__)
 
 class Menu(ABC):
 
+    _NO_MENU_MESSAGE = ""
+
     @staticmethod
     def createMenu (asyncExecutor, url:str):
         url = url.rstrip(" /")
@@ -365,9 +367,10 @@ class MashieMenu(Menu):
     def __init__(self, asyncExecutor, url:str):
 
         super().__init__(asyncExecutor, url)
+        self._NO_MENU_MESSAGE = "ingen matsedel"
         self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36",
                         "cookie": "cookieLanguage=sv-SE"} # set page lang to Swe
-
+ 
     def _fixUrl(self, url):
         # observed variants:
         #   mpi.mashie.com/public/app/Laholms%20kommun/a326a379
@@ -397,8 +400,14 @@ class MashieMenu(Menu):
                 
                 log.info(f"Parsing html from {self.url}")
                 soup = BeautifulSoup(html, 'html.parser')
+
                 scriptTag = soup.select_one("script")
                 if scriptTag is None:
+
+                    if soup.find("h2", string=lambda s: s and self._NO_MENU_MESSAGE in s.lower()):
+                        log.info("No menu available (holiday/weekend) for %s", self.url)
+                        return
+
                     raise ValueError(f"Malformatted/unexpected data")
                 
                 jsonData = scriptTag.string
