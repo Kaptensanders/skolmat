@@ -428,15 +428,15 @@ class Menu(ABC):
             return feedparser.parse(raw_feed)
 
         data = await self.asyncExecutor(parse_helper, raw_feed)
-        log.info(data)
-        if isinstance(data, str):
-            raise ValueError(f"Feed parse returned only a string: {data}")
-        if not isinstance(data, (dict, list)):
-            raise ValueError(f"Feed parse returned unexpected type: {type(data).__name__}")
+        if data.get("bozo"): # feedparser sets bozo=1 if not cleanly parsed, but records could still exist
+            bozo_exception = data.get("bozo_exception")
+            if not data.get("entries"):
+                raise ValueError(f"RSS parsing failed: {bozo_exception}")
+            log.warning("RSS not cleanly parsed, but entries exist: %s", bozo_exception)
         return data
     
     def _createMenuEntry (self, order: int, meal_raw: str | None, dish_raw: str, label: str | None) -> MenuEntry:
-        
+
         return  {
 #            "meal_raw": meal_raw,
             "meal": normalizeString(meal_raw),

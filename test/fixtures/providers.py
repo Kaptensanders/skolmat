@@ -6,6 +6,7 @@ from processors.arhem_aldreboende import entryProcessor as mashie3bProcessor
 
 PROVIDERS = {
     "foodit":       {"name": "Blåsut/Dalen förskolor",  "url": "https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmaten0":   {"name": "Skolmaten broken URL",    "url": "https://skolmaten.se/skutehagens-sk", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},    
     "skolmaten1":   {"name": "Skutehagsskolan",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmaten1b":  {"name": "Skutehagsskolan",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": skolmaten1bProcessor, "readableDaySummaryCB": None},
     "skolmaten2":   {"name": "Påskbergsskolan", "url": "https://skolmaten.se/paskbergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
@@ -28,12 +29,11 @@ PROVIDERS = {
 }
 
 
-
 # ha bootstrap standard set
 
 # PROVIDERS = {
 #     "foodit":       {"name": "foodit - Blåsut/Dalen förskolor",  "url": "https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-#     "skolmaten1":   {"name": "skolmaten - Skutehagsskolan- Org",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmaten1":   {"name": "skolmaten - Skutehagsskolan - Org",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "skolmaten1b":  {"name": "skolmaten - Skutehagsskolan - Processed",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": skolmaten1bProcessor, "readableDaySummaryCB": None},
 #     "skolmaten2":   {"name": "skolmaten - Påskbergsskolan", "url": "https://skolmaten.se/paskbergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "mateo1":       {"name": "mateo - Bosgårdsskolan", "url": "https://meny.mateo.se/molndal/66", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},

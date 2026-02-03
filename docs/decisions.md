@@ -228,3 +228,9 @@ Template:
 - Context: The named `/home/vscode/.vscode-server` volume must be writable by the `vscode` user to preserve extension state across rebuilds.
 - Impact: `container setup-project` now creates the folder (if needed) and chowns it to `vscode:vscode`.
 - References: .devcontainer/setup-project, .devcontainer/devcontainer.json
+
+- Date: 2026-02-03
+- Decision: Treat RSS feeds with `bozo` set and no parsed entries as invalid and raise.
+- Context: `feedparser.parse` returns a dict even on malformed RSS; we need a reliable failure signal.
+- Impact: RSS fetches now fail fast on malformed feeds while still allowing `bozo` feeds that produce entries.
+- References: custom_components/skolmat/menu.py
