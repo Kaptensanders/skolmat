@@ -1,0 +1,602 @@
+[
+    {
+        "name": null,
+        "date": "2025-12-29T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Jullov",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Kökets eget val",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2025-12-30T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Jullov",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Kökets eget val ",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2025-12-31T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Stängt",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Nyårsafton",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-01T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Stängt ~ Röd dag",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Nyårsdagen",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-02T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Jullov",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Kökets eget val",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Jullov",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Kökets eget val",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Stängt ~ Röd dag",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Trettondagen",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Studiedag",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Kökets eget val ",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kebabkryddade bites och kall sås",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Havreris",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Stekt kebab och kall sås",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Ris",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Broccolisoppa med ost",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Pannkaka och sylt",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Bröd, pålägg, dryck och grönt",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    }
+]

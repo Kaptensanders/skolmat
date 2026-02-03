@@ -1,0 +1,872 @@
+[
+    {
+        "name": "Lunch",
+        "date": "2025-12-29T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Köttbullar, stuvad makaroner, grönsak, råkost, nyponsoppa",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2025-12-29T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Korv- och rotsaksgryta, potatis",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2025-12-30T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Varmrökt lax, romsås, potatis, grönsak, råkost, hallonkräm",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2025-12-30T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Blomkålssoppa med bacon, pålägg",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2025-12-31T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fläskfilé, pepparsås, potatisgratäng, grönsak, råkost, After eight mousse",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2025-12-31T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Torsk med räkor, vitvinssås, potatis, grönsak ",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-01T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kyckling, dragonsås, stekt potatis, grönsak, råkost, Key lime paj",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-01T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Alspånsrökt karré, legymsallad, potatis, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-02T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kebabgryta med tomat, vitlökssås, potatis, grönsak, råkost, tropisk saftkräm",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-02T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Räkomelett, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-03T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Biff Stroganoff, potatis, grönsak, råkost, fruktsallad, grädde",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-03T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Inlagd sill, gräddfil, potatis, kokt ägg, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-04T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Moussaka, grönsak, råkost, Chokladkaka med frosting, grädde",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-04T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Skinklåda, stuvad spenat, stekt potatis",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fläskkarré, äpple/lingonsky, potatisgratäng, grönsak, råkost, marängsviss",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kycklingsoppa på farmors vis, pålägg",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fiskgratäng med morot, (Hoki), potatis, grönsak, råkost, Prinsesstårta",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kokt skinka, potatis, mimosasallad, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kycklingwok, pasta, råkost, mangosoppa",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Grön ärtpurésoppa, pålägg",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kokt fisk, potatis, ägg- och persiljesås, grönsak, råkost, tropisk saftkräm",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Baconsås med soltorkad tomat, pasta, grönsak, råkost, tropisk saftkräm",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kalvsylta, potatis, rödbetssallad, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Korv à la Forsell, potatis, grönsak, råkost, saftsoppa",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Köttfärslimpa, potatis, sås, grönsak, råkost, saftsoppa",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Prinskorv, potatis, champinjonstuvning, grönsaker",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Oxbringa, potatis, pepparrotsås, grönsak, Vaniljpannacotta",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Janssons frestelse, ägg, grönsak",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Dillkött, potatis, grönsak, råkost, ananastosca, grädde",
+                "optionName": null,
+                "description": null,
+                "order": 0,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Middag",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 5,
+        "description": "Med reservation för ändringar",
+        "distributor": {
+            "id": "682308b1e431ee42ec97f4c3",
+            "name": "Äldreboenden "
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fläskpannkaka, grönsaker",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    }
+]

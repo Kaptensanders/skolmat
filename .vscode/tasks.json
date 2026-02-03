@@ -4,7 +4,7 @@
     {
       "label": "Run Home Assistant Core",
       "type": "shell",
-      "command": "hass -c ./ha_config -v",
+      "command": "cd ${env:HA_DIR} && ./script/run-in-env.sh hass -v -c ${env:HA_CONFIG_DIR}",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -18,7 +18,7 @@
     {
       "label": "Run Home Assistant Core - DEBUG",
       "type": "shell",
-      "command": "hass -c ./ha_config -v --debug",
+      "command": "cd ${env:HA_DIR} && ./script/run-in-env.sh hass -v -c ${env:HA_CONFIG_DIR} --debug",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -32,7 +32,7 @@
     {
       "label": "Pytest",
       "type": "shell",
-      "command": "pytest --timeout=10 tests",
+      "command": "pytest --timeout=10 test",
       "dependsOn": [
         "Install all Test Requirements"
       ],

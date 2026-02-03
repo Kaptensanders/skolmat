@@ -1,0 +1,118 @@
+{
+  "UC-A": {
+    "description": "Simple Lunch (single meal), labels may exist (Alt 1/Alt 2) or be null",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": "Alt 1", "order": 1 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish B", "dish": "Dish B", "label": "Alt 2", "order": 2 }
+    ]
+  },
+
+  "UC-B": {
+    "description": "Flat misuse: variant encoded in meal name (Lunch husman, Middag 1, etc.)",
+    "entries": [
+      { "meal_raw": "Lunch husman", "meal": "Lunch husman", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Lunch vegetariskt", "meal": "Lunch vegetariskt", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 },
+      { "meal_raw": "Middag 1", "meal": "Middag 1", "dish_raw": "Dish C", "dish": "Dish C", "label": null, "order": 3 }
+    ]
+  },
+
+  "UC-C": {
+    "description": "Normalized meal + label (typically achieved via processor on messy sources)",
+    "entries": [
+      { "meal_raw": "Lunch husman", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": "Husman", "order": 1 },
+      { "meal_raw": "Lunch dagens", "meal": "Lunch", "dish_raw": "Dish B", "dish": "Dish B", "label": "Dagens", "order": 2 },
+      { "meal_raw": "Lunch vegetariskt", "meal": "Lunch", "dish_raw": "Dish C", "dish": "Dish C", "label": "Vegetariskt", "order": 3 }
+    ]
+  },
+  "UC-D1": {
+    "description": "Generic/opaque meal identifiers used as separate meals (multiple meal buckets)",
+    "entries": [
+      { "meal_raw": "Kökets rätt", "meal": "Kökets rätt", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Kökets gröna 1", "meal": "Kökets gröna 1", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 }
+    ]
+  },
+
+  "UC-D2": {
+    "description": "Generic/opaque single meal bucket with multiple dishes (e.g. Måltid 1)",
+    "entries": [
+      { "meal_raw": "Måltid 1", "meal": "Måltid 1", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Måltid 1", "meal": "Måltid 1", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 }
+    ]
+  },
+
+  "UC-E1": {
+    "description": "Lunch + Middag present",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Middag", "meal": "Middag", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 }
+    ]
+  },
+
+  "UC-E2": {
+    "description": "Lunch + Dessert present as separate meals",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Dessert", "meal": "Dessert", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 }
+    ]
+  },
+
+  "UC-F1": {
+    "description": "Institution multi-meal: Lunch + Middag + Kvällsmat (clean buckets)",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Middag", "meal": "Middag", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 },
+      { "meal_raw": "Kvällsmat", "meal": "Kvällsmat", "dish_raw": "Dish C", "dish": "Dish C", "label": null, "order": 3 }
+    ]
+  },
+
+  "UC-F2": {
+    "description": "Institution exploded buckets: diet variants and extras represented as separate meals (pre-processor shape)",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": null, "order": 1 },
+      { "meal_raw": "Dessert", "meal": "Dessert", "dish_raw": "Dish B", "dish": "Dish B", "label": null, "order": 2 },
+      { "meal_raw": "Fiskalternativ", "meal": "Fiskalternativ", "dish_raw": "Dish C", "dish": "Dish C", "label": null, "order": 3 }
+    ]
+  },
+
+  "UC-G1": {
+    "description": "Holiday single-line entry with no meal/label signal",
+    "entries": [
+      { "meal_raw": null, "meal": null, "dish_raw": "Julafton", "dish": "Julafton", "label": null, "order": 1 }
+    ]
+  },
+
+  "UC-G2": {
+    "description": "Discovery day with stable Lunch labels for keyword extraction",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish A", "dish": "Dish A", "label": "Alt 1", "order": 1 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish B", "dish": "Dish B", "label": "Alt 2", "order": 2 }
+    ]
+  },
+
+  "UC-G3": {
+    "description": "Alternative day with additional meals/labels to trigger discovery warning",
+    "entries": [
+      { "meal_raw": "Middag", "meal": "Middag", "dish_raw": "Dish C", "dish": "Dish C", "label": null, "order": 1 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Dish D", "dish": "Dish D", "label": "Vegetariskt", "order": 2 }
+    ]
+  },
+
+  "UC-H1": {
+    "description": "Preference stacking across labels and regex matches",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Veg stew", "dish": "Veg stew", "label": "Husman", "order": 1 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Veg curry", "dish": "Veg curry", "label": "Dagens", "order": 2 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Stew", "dish": "Stew", "label": "Special", "order": 3 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Chicken", "dish": "Chicken", "label": "Husman", "order": 4 }
+    ]
+  },
+
+  "UC-H2": {
+    "description": "Targeted matching against dish strings",
+    "entries": [
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Fish soup", "dish": "Fish soup", "label": "Alt 1", "order": 1 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Chicken curry", "dish": "Chicken curry", "label": "Alt 2", "order": 2 },
+      { "meal_raw": "Lunch", "meal": "Lunch", "dish_raw": "Veg stew", "dish": "Veg stew", "label": "Alt 3", "order": 3 }
+    ]
+  }
+}

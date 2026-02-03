@@ -1,2 +1,5 @@
 __pycache__/
-.homeassistant/
+.pytest_cache/
+temp/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,417 @@
+// provider: foodit.se, URL: https://webmenu.foodit.se/rss/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined
+
+{
+    "bozo": false,
+    "entries": [
+        {
+            "id": "Monday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=0&p=1035&c=10228&w=0&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=0&p=1035&c=10228&w=0&v=Day",
+            "title": "Måndag 20260105",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Måndag 20260105"
+            },
+            "summary": ": Lasagnette med vegetarisk sås.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Lasagnette med vegetarisk sås."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Tuesday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=1&p=1035&c=10228&w=0&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=1&p=1035&c=10228&w=0&v=Day",
+            "title": "Tisdag 20260106",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Tisdag 20260106"
+            },
+            "summary": ": Fisk med dragonsås och potatis. : Tofu med dragonsås och potatis.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Fisk med dragonsås och potatis. : Tofu med dragonsås och potatis."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Wednesday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=2&p=1035&c=10228&w=0&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=2&p=1035&c=10228&w=0&v=Day",
+            "title": "Onsdag 20260107",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Onsdag 20260107"
+            },
+            "summary": ": Djungelgryta med bulgur. : Vegetarisk djungelgryta med bulgur.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Djungelgryta med bulgur. : Vegetarisk djungelgryta med bulgur."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Thursday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=3&p=1035&c=10228&w=0&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=3&p=1035&c=10228&w=0&v=Day",
+            "title": "Torsdag 20260108",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Torsdag 20260108"
+            },
+            "summary": ": Blomkålssoppa med bröd.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Blomkålssoppa med bröd."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Friday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=4&p=1035&c=10228&w=0&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=4&p=1035&c=10228&w=0&v=Day",
+            "title": "Fredag 20260109",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Fredag 20260109"
+            },
+            "summary": ": Pannbiff med löksky, potatis och saltgurka. : Vegobiff med löksky, potatis och saltgurka.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Pannbiff med löksky, potatis och saltgurka. : Vegobiff med löksky, potatis och saltgurka."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Monday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=0&p=1035&c=10228&w=1&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=0&p=1035&c=10228&w=1&v=Day",
+            "title": "Måndag 20260112",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Måndag 20260112"
+            },
+            "summary": ": Thaigryta med gröncurry, kokosmjölk med ris.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Thaigryta med gröncurry, kokosmjölk med ris."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Tuesday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=1&p=1035&c=10228&w=1&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=1&p=1035&c=10228&w=1&v=Day",
+            "title": "Tisdag 20260113",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Tisdag 20260113"
+            },
+            "summary": ": Blodpudding med keso, lingon och apelsin. : Ärtbiff med potatis, lingon, keso och apelsin.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Blodpudding med keso, lingon och apelsin. : Ärtbiff med potatis, lingon, keso och apelsin."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Wednesday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=2&p=1035&c=10228&w=1&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=2&p=1035&c=10228&w=1&v=Day",
+            "title": "Onsdag 20260114",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Onsdag 20260114"
+            },
+            "summary": ": Pasta och tonfisksås med tomat, oliver. : Vegetarisks pastasås med tomat och oliver.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Pasta och tonfisksås med tomat, oliver. : Vegetarisks pastasås med tomat och oliver."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Thursday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=3&p=1035&c=10228&w=1&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=3&p=1035&c=10228&w=1&v=Day",
+            "title": "Torsdag 20260115",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Torsdag 20260115"
+            },
+            "summary": ": Spenatsoppa med ägghalva och bröd.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Spenatsoppa med ägghalva och bröd."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "id": "Friday",
+            "guidislink": false,
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://webmenu.foodit.se/?r=1&m=180&d=4&p=1035&c=10228&w=1&v=Day"
+                }
+            ],
+            "link": "https://webmenu.foodit.se/?r=1&m=180&d=4&p=1035&c=10228&w=1&v=Day",
+            "title": "Fredag 20260116",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Fredag 20260116"
+            },
+            "summary": ": Stekt kyckling med potatis och tzatziki. : Stekt halloumi med potatis och tzatziki.",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ": Stekt kyckling med potatis och tzatziki. : Stekt halloumi med potatis och tzatziki."
+            },
+            "updated": "2026-01-06T21:05:58+01:00",
+            "updated_parsed": [
+                2026,
+                1,
+                6,
+                20,
+                5,
+                58,
+                1,
+                6,
+                0
+            ]
+        }
+    ],
+    "feed": {
+        "title": "Enskede-Årsta-Vantör",
+        "title_detail": {
+            "type": "text/plain",
+            "language": null,
+            "base": "",
+            "value": "Enskede-Årsta-Vantör"
+        },
+        "links": [
+            {
+                "rel": "alternate",
+                "type": "text/html",
+                "href": "https://webmenu.foodit.se/rss/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined"
+            }
+        ],
+        "link": "https://webmenu.foodit.se/rss/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined",
+        "subtitle": "Blåsut/Dalen förskolor 2026-01-05 - 2026-01-11",
+        "subtitle_detail": {
+            "type": "text/html",
+            "language": null,
+            "base": "",
+            "value": "Blåsut/Dalen förskolor 2026-01-05 - 2026-01-11"
+        }
+    },
+    "headers": {},
+    "encoding": "utf-8",
+    "version": "rss20",
+    "namespaces": {
+        "": "http://www.w3.org/2005/Atom"
+    }
+}

@@ -10,7 +10,7 @@
       "request": "launch",
       "module": "homeassistant",
       "justMyCode": false,
-      "args": ["--debug", "-c", "ha_config"],
+      "args": ["--debug", "-c", "/home/vscode/ha_config"],
     },
 
     {

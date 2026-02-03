@@ -1,0 +1,2104 @@
+// provider: menu.matildaplatform.com, URL: https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel
+
+[
+    {
+        "name": "Lunch",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": "Trettondagsafton",
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "a3505271-592a-4438-8e21-243b4b1fc1c9",
+                "name": "Kassler, (potatissallad), (grönsallad)",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": "Trettondagsafton",
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "27968c8d-0aeb-4aa4-a8dd-21d4c7a43572",
+                "name": "Fiskgratäng, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": "Trettondagsafton",
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "8bfe96ad-602d-484d-a1c3-7c3a5fcb838b",
+                "name": "Biff Lindström, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": "Trettondagsafton",
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "acddd285-db13-4f92-9349-34e1707f7f82",
+                "name": "Chokladpudding",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-05T00:00:00",
+        "dateDescription": "Trettondagsafton",
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "52bba905-a646-4c39-ba3f-271b4fe39fac",
+                "name": "Falafel, salsa (klyftpotatis)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": "Trettondagen",
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "afcee886-5a05-4b54-a650-e1ecaac84cde",
+                "name": "Kokt fisk, dragon och citronsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": "Trettondagen",
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "a535f0b3-f111-4a7b-bd24-ffcf937e1466",
+                "name": "Sprödbakad fisk, bostonsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": "Trettondagen",
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "a701ac22-dff6-4e68-8e53-b2bdff1e351c",
+                "name": "Grekiska färsbiffar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": "Trettondagen",
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "091df054-13f4-436a-9ee3-b33f00e1a1ab",
+                "name": "Blåbärssoppa",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-06T00:00:00",
+        "dateDescription": null,
+        "holidayName": "Trettondagen",
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "e0b3f813-bee9-4937-ab63-5f58980d8279",
+                "name": "Slät grön ärtsoppa, creme fraiche, (smörgås)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "55613875-4e88-4d80-b7cf-4aafe77c3a1c",
+                "name": "Kålpudding, sås, (potatis), grönsaker, (lingonsylt)",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "cc196619-ad19-4c14-a81a-9e8dc44b1c07",
+                "name": "Fiskgryta, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "bb6d2b42-7016-45c8-a4c8-a87f9bd98a54",
+                "name": "Kåldolmar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "9751e721-3fb6-4030-bede-543f3ea8c981",
+                "name": "Nyponsoppa",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-07T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "e3d616b3-4a3a-44af-a9ff-4b8b0e565635",
+                "name": "Crepes med champinjoner, (sallad)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "576420a3-d396-45b8-a776-cec1fb3390f3",
+                "name": "Ajvarsoppa med smak av paprika & vitlök",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "4554f951-e55c-4e94-af80-5393a2b2546f",
+                "name": "Fisk med tomattäcke, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "ebb6101a-3153-44cc-a60f-d88a51ae11da",
+                "name": "Köttbullar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "3902bb10-2d3b-480b-8dad-3258179e0ca7",
+                "name": "Plättar, (sylt)",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-08T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "14725475-ef56-4f2b-9993-b3fbe32ecb68",
+                "name": "Skinka, legymsallad, (potatis)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "dc69e8d1-6ea2-4997-9c70-8c1a9dabea37",
+                "name": "Korv Stroganoff, (ris), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "81bb2d76-290b-48b7-a9d3-ea3f5aa49e8b",
+                "name": "Fisk med krämigt dilltäcke, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "d115e72e-8460-4fd6-acca-b4579d7c3c27",
+                "name": "Kycklingpannbiff, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "6fa77119-a77a-464a-8904-51dda1f51382",
+                "name": "Frukt",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-09T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "49955125-13df-44ca-9600-608e6bfc9087",
+                "name": "Tacokryddad köttfärsgratäng med potatis, (grönsallad)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "9062d5f9-ae5c-4d62-ac37-235f99fa851c",
+                "name": "Köttgryta a la Erland (dragon & svamp), (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "d40a8c43-4f6b-43a8-b09c-6c5455a5e1f4",
+                "name": "Fiskbullar, hummersås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "f047658c-0758-433d-b591-0a8b0d832595",
+                "name": "Pannbiff, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "611680ec-e74b-40b7-8cd2-531793b3bdf8",
+                "name": "Hemkokt jordgubbskräm, mjölk",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-10T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "27c69b89-4599-4423-a91e-81f35cebce07",
+                "name": "Smörgås med köttbullar & rödbetssallad",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "14cd53d6-6620-410a-a333-b33f00c86bb7",
+                "name": "Plommonspäckad karré, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "e8bc34f0-8b9e-4918-86cd-c3282b2886a4",
+                "name": "Torskpanett, kall citronsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "47eccf03-7996-422d-ad2b-81546df6077e",
+                "name": "Kycklingköttbullar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "140242cb-09d9-4b14-b359-b33f00891c22",
+                "name": "Äppelpaj, vaniljsås",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-11T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "71a106bd-7b25-468b-bbdc-b377007ebd40",
+                "name": "Makaronipudding, skirat smör",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-12T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "66443098-efe4-4a65-9035-b33f00dd7ebb",
+                "name": "Fisk Duglére, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-12T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "50ab84f2-cbf5-46be-84f5-80584e3039c2",
+                "name": "Fiskgratäng, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-12T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "ca89b1d4-f6a1-42b6-b68d-7ab325b496a9",
+                "name": "Biff Lindström, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-12T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "4d5846bf-f030-45bf-80a0-50de5d31c619",
+                "name": "Hallonkräm, mjölk",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-12T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "a016c7b7-bf4b-42f6-a8cc-73bbce0ca566",
+                "name": "Kesokaka, (sylt)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-13T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "f78bca14-c347-4da9-ad79-6eca36bb28c0",
+                "name": "Köttkorv, (rotmos), (sallad)",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-13T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "02e9f9a1-45f9-45e8-8c24-ac89e5aafac5",
+                "name": "Sprödbakad fisk, bostonsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-13T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "2d4486cc-c079-4372-b0d6-1e09893f82ad",
+                "name": "Grekiska färsbiffar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-13T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "ded71d5a-2f78-4fc0-947b-c46eb377f20b",
+                "name": "Äppelkräm, mjölk",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-13T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "b6847458-9b54-449f-9134-d3fcb78c5417",
+                "name": "Köttfärssoppa",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-14T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "ccf49638-94cc-4424-ba05-0400a23f0839",
+                "name": "Kycklingfärsbiffar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-14T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "01e66f91-d4b5-4e5c-b7e7-face15f1cf2f",
+                "name": "Fiskgryta, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-14T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "17265473-d255-4aee-9d3d-c879d1845bfb",
+                "name": "Kåldolmar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-14T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "8b11f476-50de-4f33-9a3a-8b5d4a4d8cea",
+                "name": "Saftsoppa",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-14T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "d8a33e9a-97c5-4b11-b72b-784fc64027fa",
+                "name": "Fiskbullar, hummersås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-15T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "e783e3ca-e5f9-46f4-8655-29ab14b7064e",
+                "name": "Ängasoppa ",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-15T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "c314c6da-4d17-430b-b28d-37dc909eda21",
+                "name": "Fisk med tomattäcke, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-15T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "ebedb1ae-6b7c-4333-a378-a29f1f6b500b",
+                "name": "Köttbullar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-15T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "d3d3b6b2-79ff-4adc-95b0-49e440bf5091",
+                "name": "Pannkaka, (sylt)",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-15T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "80b8dd16-0654-4094-852d-accbb87bbba0",
+                "name": "Fiskrätt, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-16T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "34cee8c4-b5c1-432a-a4f7-8c4422064fc2",
+                "name": "Köttbullar, sås, (potatis), grönsaker, (lingonsylt)",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-16T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "dace7ac4-f1d8-41fe-b142-90e735caf7e0",
+                "name": "Fisk med krämigt dilltäcke, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-16T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "b82b147c-da85-46d7-9cb4-fa06450d0ff6",
+                "name": "Kycklingpannbiff, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-16T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "036f872b-4af9-4f90-8f95-29a1c3bbf8f8",
+                "name": "Frukt",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-16T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "d9d38a51-ca21-4a39-8144-4ebb233db336",
+                "name": "Korv, (bröd), (potatismos), (grillgurka)",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-17T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "94e70425-fdc4-437f-aabf-efcd392684ff",
+                "name": "Gratinerad kassler, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-17T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "61cb039e-35e1-44ce-838b-020df3b6bda4",
+                "name": "Fiskbullar, hummersås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-17T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "99b894fa-1b4e-4a1f-a220-be19e982f7f7",
+                "name": "Pannbiff, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-17T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "cbd8b559-5736-42cc-93cb-401711588422",
+                "name": "Himmelsk blåbärskaka",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-17T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "37c7f0a5-6430-4ba8-b70c-001bb9fcff87",
+                "name": "Omelett, räkstuvning, tomat",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Lunch",
+        "date": "2026-01-18T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 2,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "f3538c5a-ae80-4064-b959-b33f00c96e20",
+                "name": "Sprödbakad fisk, bostonsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Fiskalternativ",
+        "date": "2026-01-18T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "a1b60eaf-b97d-47f8-9d2d-1a5533700db5",
+                "name": "Torskpanett, kall citronsås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Färsalternativ",
+        "date": "2026-01-18T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 4,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "9ccc19e7-e4ce-4916-9dc7-5a823daf674a",
+                "name": "Kycklingköttbullar, sås, (potatis), grönsaker",
+                "optionName": "",
+                "description": null,
+                "order": 4,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Dessert",
+        "date": "2026-01-18T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 8,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "bd0c6efa-9406-45a4-9b61-b3f0094d2945",
+                "name": "Hemkokt fruktkräm, mjölk",
+                "optionName": "",
+                "description": null,
+                "order": 8,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": "Kvällsmat",
+        "date": "2026-01-18T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 9,
+        "description": null,
+        "distributor": {
+            "id": "67b816e201a159adbb065685",
+            "name": "Äldreomsorg matsedel"
+        },
+        "courses": [
+            {
+                "id": "9df98ae9-8686-45da-a31d-8be407ec1d28",
+                "name": "Kycklingsallad med pasta, dressing",
+                "optionName": "",
+                "description": null,
+                "order": 9,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    }
+]

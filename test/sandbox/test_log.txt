@@ -1,0 +1,700 @@
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: foodit: Blåsut/Dalen förskolor-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined
+url (rewritten): https://webmenu.foodit.se/rss/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Djungelgryta med bulgur.",
+        "dish": "Djungelgryta med bulgur.",
+        "label": "Alt 1",
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Vegetarisk djungelgryta med bulgur.",
+        "dish": "Vegetarisk djungelgryta med bulgur.",
+        "label": "Alt 2",
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: skolmaten1: Skutehagsskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://skolmaten.se/skutehagens-skolan
+url (rewritten): https://skolmaten.se/api/4/rss/week/skutehagens-skolan?locale=en
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-08:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Grönsaksbiffar med kokt bulgur och vitlökssås (Vegetariskt), ",
+        "dish": "Grönsaksbiffar med kokt bulgur och vitlökssås (Vegetariskt)",
+        "label": "Alt 1",
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets val (Vegetariskt)",
+        "dish": "Kökets val (Vegetariskt)",
+        "label": "Alt 2",
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: skolmaten1b: Skutehagsskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://skolmaten.se/skutehagens-skolan
+url (rewritten): https://skolmaten.se/api/4/rss/week/skutehagens-skolan?locale=en
+🧩 Custom MenuEntry processor: [32mYES[0m
+✅ Menu loaded: OK
+📋 data entries for 2026-01-08:
+
+[
+    {
+        "meal_raw": null,
+        "meal": "Lunch",
+        "dish_raw": "Grönsaksbiffar med kokt bulgur och vitlökssås (Vegetariskt), ",
+        "dish": "Grönsaksbiffar med kokt bulgur och vitlökssås",
+        "label": "Vegetariskt",
+        "order": 1
+    },
+    {
+        "meal_raw": null,
+        "meal": "Lunch",
+        "dish_raw": "Kökets val (Vegetariskt)",
+        "dish": "Kökets val",
+        "label": "Vegetariskt",
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: skolmaten2: Påskbergsskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://skolmaten.se/paskbergsskolan
+url (rewritten): https://skolmaten.se/api/4/rss/week/paskbergsskolan?locale=en
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Korvbuffé med pasta",
+        "dish": "Korvbuffé med pasta",
+        "label": "Alt 1",
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: skolmaten3: Klarebergsskolan 4-6, 7-9-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://skolmaten.se/klarebergsskolan
+url (rewritten): https://skolmaten.se/api/4/rss/week/klarebergsskolan?locale=en
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-08:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Pasta fusilli med ost&amp;broccolisås (Vegetariskt), ",
+        "dish": "Pasta fusilli med ost&amp;broccolisås (Vegetariskt)",
+        "label": "Alt 1",
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets gröna val (Vegetariskt)",
+        "dish": "Kökets gröna val (Vegetariskt)",
+        "label": "Alt 2",
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mateo1: Bosgårdsskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://meny.mateo.se/molndal/66
+url (rewritten): https://meny.mateo.se/molndal/66
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets val ",
+        "dish": "Kökets val",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets val av vegetarisk",
+        "dish": "Kökets val av vegetarisk",
+        "label": null,
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mateo2: Stallbackens förskola-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://meny.mateo.se/molndal/29
+url (rewritten): https://meny.mateo.se/molndal/29
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets val ",
+        "dish": "Kökets val",
+        "label": null,
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mateo3: Emyhills förskola-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://meny.mateo.se/kavlinge-utbildning/88
+url (rewritten): https://meny.mateo.se/kavlinge-utbildning/88
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kökets val",
+        "dish": "Kökets val",
+        "label": null,
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda1: Skolor: Älvkarleby, Skutskär-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor
+url (rewritten): https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Måltid 1",
+        "meal": "Måltid 1",
+        "dish_raw": "Studiedag",
+        "dish": "Studiedag",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Måltid 1",
+        "meal": "Måltid 1",
+        "dish_raw": "Kökets eget val ",
+        "dish": "Kökets eget val",
+        "label": null,
+        "order": 2
+    },
+    {
+        "meal_raw": "Måltid 1",
+        "meal": "Måltid 1",
+        "dish_raw": "Grönsaker, bröd och dryck",
+        "dish": "Grönsaker, bröd och dryck",
+        "label": null,
+        "order": 3
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda2: Parkskolan restaurang-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang
+url (rewritten): https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Måltid 1",
+        "meal": "Måltid 1",
+        "dish_raw": "Pasta med färssås av svenska baljväxter",
+        "dish": "Pasta med färssås av svenska baljväxter",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Måltid 1",
+        "meal": "Måltid 1",
+        "dish_raw": "Pasta med ost och broccolisås",
+        "dish": "Pasta med ost och broccolisås",
+        "label": null,
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda3: Dalajärs förskola-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola
+url (rewritten): https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola
+🧩 Custom MenuEntry processor: NO
+❌ Menu loaded: No Data
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda4: Kramfors kommun, Äldreboenden-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/682308b1e431ee42ec97f4c3_aldreboenden
+url (rewritten): https://menu.matildaplatform.com/meals/week/682308b1e431ee42ec97f4c3_aldreboenden
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kycklingwok, pasta, råkost, mangosoppa",
+        "dish": "Kycklingwok, pasta, råkost, mangosoppa",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Middag",
+        "meal": "Middag",
+        "dish_raw": "Grön ärtpurésoppa, pålägg",
+        "dish": "Grön ärtpurésoppa, pålägg",
+        "label": null,
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda5: Karlskoga, Äldreomsorg matsedel-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel
+url (rewritten): https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kålpudding, sås, (potatis), grönsaker, (lingonsylt)",
+        "dish": "Kålpudding, sås, (potatis), grönsaker, (lingonsylt)",
+        "label": "",
+        "order": 1
+    },
+    {
+        "meal_raw": "Fiskalternativ",
+        "meal": "Fiskalternativ",
+        "dish_raw": "Fiskgryta, (potatis), grönsaker",
+        "dish": "Fiskgryta, (potatis), grönsaker",
+        "label": "",
+        "order": 1
+    },
+    {
+        "meal_raw": "Färsalternativ",
+        "meal": "Färsalternativ",
+        "dish_raw": "Kåldolmar, sås, (potatis), grönsaker",
+        "dish": "Kåldolmar, sås, (potatis), grönsaker",
+        "label": "",
+        "order": 1
+    },
+    {
+        "meal_raw": "Dessert",
+        "meal": "Dessert",
+        "dish_raw": "Nyponsoppa",
+        "dish": "Nyponsoppa",
+        "label": "",
+        "order": 1
+    },
+    {
+        "meal_raw": "Kvällsmat",
+        "meal": "Kvällsmat",
+        "dish_raw": "Crepes med champinjoner, (sallad)",
+        "dish": "Crepes med champinjoner, (sallad)",
+        "label": "",
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: matilda5b: Karlskoga, Äldreomsorg matsedel-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel
+url (rewritten): https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel
+🧩 Custom MenuEntry processor: [32mYES[0m
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Kålpudding, sås, (potatis), grönsaker, (lingonsylt)",
+        "dish": "Kålpudding, sås, (potatis), grönsaker, (lingonsylt)",
+        "label": "",
+        "order": 1
+    },
+    {
+        "meal_raw": "Fiskalternativ",
+        "meal": "Lunch",
+        "dish_raw": "Fiskgryta, (potatis), grönsaker",
+        "dish": "Fiskgryta, (potatis), grönsaker",
+        "label": "Fiskalternativ",
+        "order": 1
+    },
+    {
+        "meal_raw": "Färsalternativ",
+        "meal": "Lunch",
+        "dish_raw": "Kåldolmar, sås, (potatis), grönsaker",
+        "dish": "Kåldolmar, sås, (potatis), grönsaker",
+        "label": "Färsalternativ",
+        "order": 1
+    },
+    {
+        "meal_raw": "Dessert",
+        "meal": "Lunch",
+        "dish_raw": "Nyponsoppa",
+        "dish": "Nyponsoppa",
+        "label": "Dessert",
+        "order": 1
+    },
+    {
+        "meal_raw": "Kvällsmat",
+        "meal": "Kvällsmat",
+        "dish_raw": "Crepes med champinjoner, (sallad)",
+        "dish": "Crepes med champinjoner, (sallad)",
+        "label": "",
+        "order": 1
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie1: Ekhaga-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://mpi.mashie.com/public/app/Bjuvs%20kommun/c19fee26
+url (rewritten): https://mpi.mashie.matildaplatform.com/public/menu/Bjuvs%20kommun/c19fee26
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Pannbiff med stekt lök serveras med gräddsås, kokt potatis och lingonsylt",
+        "dish": "Pannbiff med stekt lök serveras med gräddsås, kokt potatis och lingonsylt",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Dessert",
+        "meal": "Dessert",
+        "dish_raw": "Bärkräm med gräddmjölk",
+        "dish": "Bärkräm med gräddmjölk",
+        "label": null,
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie2: Ekhaga-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://mpi.mashie.matildaplatform.com/public/app/Bjuvs%20kommun/c19fee26
+url (rewritten): https://mpi.mashie.matildaplatform.com/public/menu/Bjuvs%20kommun/c19fee26
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch",
+        "meal": "Lunch",
+        "dish_raw": "Pannbiff med stekt lök serveras med gräddsås, kokt potatis och lingonsylt",
+        "dish": "Pannbiff med stekt lök serveras med gräddsås, kokt potatis och lingonsylt",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Dessert",
+        "meal": "Dessert",
+        "dish_raw": "Bärkräm med gräddmjölk",
+        "dish": "Bärkräm med gräddmjölk",
+        "label": null,
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie3: Arhem äldreboende-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a
+url (rewritten): https://mpi.mashie.matildaplatform.com/public/menu/Sigtuna%20Kommun/c32fae7a
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch husman",
+        "meal": "Lunch husman",
+        "dish_raw": "Oxjärpar med gräddsås och kokt potatis",
+        "dish": "Oxjärpar med gräddsås och kokt potatis",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch dagens",
+        "meal": "Lunch dagens",
+        "dish_raw": "Kyckling med svamp och rotfrukter*, grönsaker",
+        "dish": "Kyckling med svamp och rotfrukter, grönsaker",
+        "label": null,
+        "order": 2
+    },
+    {
+        "meal_raw": "Lunch vegetariskt",
+        "meal": "Lunch vegetariskt",
+        "dish_raw": "Blomkål & broccoligratäng",
+        "dish": "Blomkål & broccoligratäng",
+        "label": null,
+        "order": 3
+    },
+    {
+        "meal_raw": "Lunch Grov Paté ",
+        "meal": "Lunch Grov Paté",
+        "dish_raw": "Oxjärpar med gräddsås och kokt potatis",
+        "dish": "Oxjärpar med gräddsås och kokt potatis",
+        "label": null,
+        "order": 4
+    },
+    {
+        "meal_raw": "Lunch Timbal ",
+        "meal": "Lunch Timbal",
+        "dish_raw": "A: Fiskbullar med dillsås*, potatismos*, ärttimbal*",
+        "dish": "Fiskbullar med dillsås, potatismos, ärttimbal",
+        "label": null,
+        "order": 5
+    },
+    {
+        "meal_raw": "Middag 1",
+        "meal": "Middag 1",
+        "dish_raw": "Lasagne med keso och spenat*, grönsallad och dressing",
+        "dish": "Lasagne med keso och spenat, grönsallad och dressing",
+        "label": null,
+        "order": 6
+    },
+    {
+        "meal_raw": "Middag 2",
+        "meal": "Middag 2",
+        "dish_raw": "Frukostkorv*, gräslöksstuvad potatis*, grönsaker",
+        "dish": "Frukostkorv, gräslöksstuvad potatis, grönsaker",
+        "label": null,
+        "order": 7
+    },
+    {
+        "meal_raw": "Middag vegetariskt",
+        "meal": "Middag vegetariskt",
+        "dish_raw": "Grönsaksbiff*, skysås*, potatis, grönsaker",
+        "dish": "Grönsaksbiff, skysås, potatis, grönsaker",
+        "label": null,
+        "order": 8
+    },
+    {
+        "meal_raw": "Middag Grov Paté ",
+        "meal": "Middag Grov Paté",
+        "dish_raw": "Lasagne med keso och spenat*, grönsallad och dressing",
+        "dish": "Lasagne med keso och spenat, grönsallad och dressing",
+        "label": null,
+        "order": 9
+    },
+    {
+        "meal_raw": "Middag Timbal ",
+        "meal": "Middag Timbal",
+        "dish_raw": "A: Järptimbal*, brunsås*, potatismos*, morotstimbal*",
+        "dish": "Järptimbal, brunsås, potatismos, morotstimbal",
+        "label": null,
+        "order": 10
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie3b: Arhem äldreboende-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a
+url (rewritten): https://mpi.mashie.matildaplatform.com/public/menu/Sigtuna%20Kommun/c32fae7a
+🧩 Custom MenuEntry processor: [32mYES[0m
+✅ Menu loaded: OK
+📋 data entries for 2026-01-07:
+
+[
+    {
+        "meal_raw": "Lunch husman",
+        "meal": "Lunch",
+        "dish_raw": "Oxjärpar med gräddsås och kokt potatis",
+        "dish": "Oxjärpar med gräddsås och kokt potatis",
+        "label": "Husman",
+        "order": 1
+    },
+    {
+        "meal_raw": "Lunch dagens",
+        "meal": "Lunch",
+        "dish_raw": "Kyckling med svamp och rotfrukter*, grönsaker",
+        "dish": "Kyckling med svamp och rotfrukter, grönsaker",
+        "label": "Dagens",
+        "order": 2
+    },
+    {
+        "meal_raw": "Lunch vegetariskt",
+        "meal": "Lunch",
+        "dish_raw": "Blomkål & broccoligratäng",
+        "dish": "Blomkål & broccoligratäng",
+        "label": "Vegetariskt",
+        "order": 3
+    },
+    {
+        "meal_raw": "Lunch Grov Paté ",
+        "meal": "Lunch",
+        "dish_raw": "Oxjärpar med gräddsås och kokt potatis",
+        "dish": "Oxjärpar med gräddsås och kokt potatis",
+        "label": "Grov Paté",
+        "order": 4
+    },
+    {
+        "meal_raw": "Lunch Timbal ",
+        "meal": "Lunch",
+        "dish_raw": "A: Fiskbullar med dillsås*, potatismos*, ärttimbal*",
+        "dish": "Fiskbullar med dillsås, potatismos, ärttimbal",
+        "label": "Timbal",
+        "order": 5
+    },
+    {
+        "meal_raw": "Middag 1",
+        "meal": "Middag",
+        "dish_raw": "Lasagne med keso och spenat*, grönsallad och dressing",
+        "dish": "Lasagne med keso och spenat, grönsallad och dressing",
+        "label": "Alt 1",
+        "order": 6
+    },
+    {
+        "meal_raw": "Middag 2",
+        "meal": "Middag",
+        "dish_raw": "Frukostkorv*, gräslöksstuvad potatis*, grönsaker",
+        "dish": "Frukostkorv, gräslöksstuvad potatis, grönsaker",
+        "label": "Alt 2",
+        "order": 7
+    },
+    {
+        "meal_raw": "Middag vegetariskt",
+        "meal": "Middag",
+        "dish_raw": "Grönsaksbiff*, skysås*, potatis, grönsaker",
+        "dish": "Grönsaksbiff, skysås, potatis, grönsaker",
+        "label": "Vegetariskt",
+        "order": 8
+    },
+    {
+        "meal_raw": "Middag Grov Paté ",
+        "meal": "Middag",
+        "dish_raw": "Lasagne med keso och spenat*, grönsallad och dressing",
+        "dish": "Lasagne med keso och spenat, grönsallad och dressing",
+        "label": "Grov Paté",
+        "order": 9
+    },
+    {
+        "meal_raw": "Middag Timbal ",
+        "meal": "Middag",
+        "dish_raw": "A: Järptimbal*, brunsås*, potatismos*, morotstimbal*",
+        "dish": "Järptimbal, brunsås, potatismos, morotstimbal",
+        "label": "Timbal",
+        "order": 10
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie4: Brinkskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://sodexo.mashie.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3
+url (rewritten): https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-12:
+
+[
+    {
+        "meal_raw": "Kökets gröna 1",
+        "meal": "Kökets gröna 1",
+        "dish_raw": "Tofu teriyaki - tofugryta med teriyaki och ris",
+        "dish": "Tofu teriyaki - tofugryta med teriyaki och ris",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Kökets rätt",
+        "meal": "Kökets rätt",
+        "dish_raw": "Korv Stroganoff - Krämig tomatsås med strimlad kycklingkorv serveras med kökets blandris",
+        "dish": "Korv Stroganoff - Krämig tomatsås med strimlad kycklingkorv serveras med kökets blandris",
+        "label": null,
+        "order": 2
+    }
+]
+
+-----------------------------------------------------------------------------------------------------------------
+--- ▶️ Running: mashie4b: Brinkskolan-------
+-----------------------------------------------------------------------------------------------------------------
+url (original):  https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3
+url (rewritten): https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3
+🧩 Custom MenuEntry processor: NO
+✅ Menu loaded: OK
+📋 data entries for 2026-01-12:
+
+[
+    {
+        "meal_raw": "Kökets gröna 1",
+        "meal": "Kökets gröna 1",
+        "dish_raw": "Tofu teriyaki - tofugryta med teriyaki och ris",
+        "dish": "Tofu teriyaki - tofugryta med teriyaki och ris",
+        "label": null,
+        "order": 1
+    },
+    {
+        "meal_raw": "Kökets rätt",
+        "meal": "Kökets rätt",
+        "dish_raw": "Korv Stroganoff - Krämig tomatsås med strimlad kycklingkorv serveras med kökets blandris",
+        "dish": "Korv Stroganoff - Krämig tomatsås med strimlad kycklingkorv serveras med kökets blandris",
+        "label": null,
+        "order": 2
+    }
+]

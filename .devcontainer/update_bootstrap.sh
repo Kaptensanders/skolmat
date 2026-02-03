@@ -14,9 +14,8 @@ set -euo pipefail
 
 # ---- Ensure running inside container -----------------------------
 
-if ! grep -qa docker /proc/1/cgroup; then
+if [ ! -f /.dockerenv ]; then
   echo "ERROR: This script must be run from inside the devcontainer."
-  echo "Aborting."
   exit 1
 fi
 

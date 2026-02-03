@@ -1,49 +1,100 @@
 {
-  "name": "skolmat-dev",
-  "//image": "kaptensanders/hass_dev_image",
-  "///image": "hass_dev_image_2025.1.0",
-  "image": "hass_dev_image_2025.12.2", 
-  "postCreateCommand": "container setup-project",
-  "containerEnv": {},
-  "forwardPorts": [5678],
-  "appPort": ["8123:8123"],
-  "remoteUser": "vscode",
-  "workspaceFolder": "/workspaces/skolmat",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/skolmat,type=bind",
-  "mounts": [
-     "source=${localWorkspaceFolder}/skolmat-card,target=/home/vscode/ha_config/www/skolmat-card,type=bind"
-  ],
-  "runArgs": [
-    "--name", "hass-skolmat-dev",
-    "--env-file",".devcontainer/container.env"
-  ],
-  "customizations":{
-    "vscode": {
-      "settings": {
-        "python.defaultInterpreterPath": "/workspaces/ha_core/venv/bin/python",
-        "python.analysis.extraPaths": [
-          "/workspaces/ha_core",
-          "/workspaces/ha_core/venv/lib/python3.13/site-packages"
-        ],
-        "files.exclude": {
-          "**/.git": true,
-          "**/.svn": true,
-          "**/.hg": true,
-          "**/CVS": true,
-          "**/.DS_Store": true,
-          "**/Thumbs.db": true,
-          "**/__pycache__": true
+    "name": "skolmat-dev",
+    "image": "hass_dev_image_2025.1.3",
+    "postCreateCommand": "container setup-project",
+    "containerEnv": {},
+    "forwardPorts": [
+        5678
+    ],
+    "appPort": [
+        "8123:8123"
+    ],
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/skolmat",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/skolmat,type=bind",
+    "mounts": [
+        "source=${localWorkspaceFolder}/skolmat-card,target=${env:HA_CONFIG_DIR}/www/skolmat-card,type=bind"
+    ],
+    "runArgs": [
+        "--name",
+        "hass-skolmat-dev",
+        "--env-file",
+        ".devcontainer/container.env"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "${env:HA_DIR}/venv/bin/python",
+                "python.analysis.extraPaths": [
+                    "${env:HA_DIR}",
+                    "${env:HA_DIR}/venv/lib/python3.13/site-packages"
+                ],
+                "python.analysis.include": [
+                    "${env:WORKSPACE_DIR}/custom_components",
+                    "${env:WORKSPACE_DIR}/test",
+                    "${env:WORKSPACE_DIR}/skolmat-card"
+                ],
+                "python.analysis.exclude": [
+                    "${env:HA_DIR}/**",
+                    "${env:HA_CONFIG_DIR}/**",
+                    "${env:WORKSPACE_DIR}/.devcontainer/**",
+                    "${env:WORKSPACE_DIR}/.git/**",
+                    "${env:WORKSPACE_DIR}/.github/**",
+                    "${env:WORKSPACE_DIR}/.vscode/**",
+                    "${env:WORKSPACE_DIR}/.pytest_cache/**",
+                    "${env:WORKSPACE_DIR}/temp/**",
+                    "${env:WORKSPACE_DIR}/skolmat-card/node_modules/**"
+                ],
+                "files.exclude": {
+                    "**/.git": true,
+                    "**/.svn": true,
+                    "**/.hg": true,
+                    "**/CVS": true,
+                    "**/.DS_Store": true,
+                    "**/Thumbs.db": true,
+                    "**/__pycache__": true,
+                    "**/.pytest_cache": true,
+                    "**/temp": true,
+                    "**/node_modules": true
+                },
+                "search.exclude": {
+                    "**/.git": true,
+                    "**/.svn": true,
+                    "**/.hg": true,
+                    "**/CVS": true,
+                    "**/.DS_Store": true,
+                    "**/Thumbs.db": true,
+                    "**/__pycache__": true,
+                    "**/.pytest_cache": true,
+                    "**/temp": true,
+                    "**/node_modules": true
+                },
+                "files.watcherExclude": {
+                    "**/.git/**": true,
+                    "**/.svn/**": true,
+                    "**/.hg/**": true,
+                    "**/CVS/**": true,
+                    "**/__pycache__/**": true,
+                    "**/.pytest_cache/**": true,
+                    "**/temp/**": true,
+                    "**/node_modules/**": true
+                },
+                "ruff.exclude": [
+                    ".pytest_cache",
+                    "temp",
+                    "skolmat-card/node_modules",
+                    "ha_core",
+                    "ha_config"
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "esbenp.prettier-vscode",
+                "ms-python.debugpy",
+                "charliermarsh.ruff",
+                "dbaeumer.vscode-eslint"
+            ]
         }
-      },
-      "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "esbenp.prettier-vscode",
-        "ms-python.debugpy",
-        "charliermarsh.ruff",
-        "dbaeumer.vscode-eslint",
-        "ms-python.autopep8"
-      ]
     }
-  }
 }

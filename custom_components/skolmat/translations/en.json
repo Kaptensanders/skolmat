@@ -10,19 +10,68 @@
           "lunch_end": "Lunch end time (HH:MM)"
         }
       },
-      "init": {
-        "title": "Skolmat options",
+      "configure": {
+        "title": "Configure daily summary",
+        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n*Press submit to see changes.\n*Check I'm done configuring when you are happy.",
         "data": {
-          "name": "School name",
-          "url": "Menu URL",
-          "lunch_begin": "Lunch start time (HH:MM)",
-          "lunch_end": "Lunch end time (HH:MM)"
+          "selected_date": "Date",
+          "display_input": "Input data (read-only)",
+          "display_summary": "State and Calendar summary (read-only)",
+          "meals_selected": "Meals found in data, choose what to include (none selected = all, always)",
+          "exclude_label": "Exclude dishes containing:",
+          "exclude_regex": "Exclude keywords (press Enter, /regex/ optional)",
+          "prefer_label": "Prefer dishes containing (only have effect if Max dishes is set)",
+          "prefer_regex": "Prefer keywords (press Enter, /regex/ optional)",
+          "max_entries": "Max dishes to merge (0 or blank = unlimited)",
+          "processor_label": "Custom data processor (advanced)",
+          "processor_file": "Processor file (under processors/)",
+          "processor_fn": "Processor function name",
+          "reload_processor": "Reload menu + processor",
+          "done_configuring": "I'm done configuring"
         }
       }
     },
     "error": {
       "invalid_url": "Invalid URL",
-      "invalid_lunch_interval": "Lunch end time must be after lunch start time"
+      "invalid_lunch_interval": "Lunch end time must be after lunch start time",
+      "menu_fetch_failed": "Failed to fetch menu. Check URL, check logs.",
+      "processor_missing_fields": "Provide both processor file and function name.",
+      "processor_file_missing": "Processor file not found under processors/.",
+      "processor_import_failed": "Processor module could not be loaded.",
+      "processor_fn_missing": "Processor function not found or not callable."
     }
+  },
+  "options": {
+    "step": {
+      "configure": {
+        "title": "Configure summary",
+        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n*Press submit to see changes.\n*Check I'm done configuring when you are happy.",
+        "data": {
+          "selected_date": "Date",
+          "display_input": "Input data (read-only)",
+          "display_summary": "State and Calendar summary (read-only)",
+          "meals_selected": "Meals found in data, choose what to include (none selected = all, always)",
+          "exclude_label": "Exclude dishes containing:",
+          "exclude_regex": "Exclude keywords (press Enter, /regex/ optional)",
+          "prefer_label": "Prefer dishes containing (only have effect if Max dishes is set)",
+          "prefer_regex": "Prefer keywords (press Enter, /regex/ optional)",
+          "max_entries": "Max dishes to merge (0 or blank = unlimited)",
+          "processor_label": "Custom data processor (advanced)",
+          "processor_file": "Processor file",
+          "processor_fn": "Processor function name",
+          "reload_processor": "Reload menu + processor on submit",
+          "done_configuring": "I'm done configuring"
+        }
+      }
+    },
+    "error": {
+      "processor_missing_fields": "Provide both processor file and function name.",
+      "processor_file_missing": "Processor file not found under processors/.",
+      "processor_import_failed": "Processor function could not be loaded.",
+      "processor_fn_missing": "Processor function not found or not callable."
+    }
+  },
+  "state": {
+    "no_food_today": "No menu today"
   }
 }

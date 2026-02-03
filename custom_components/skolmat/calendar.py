@@ -13,6 +13,7 @@ from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.storage import Store
 from homeassistant.util import dt as dt_util
+from homeassistant.util import slugify
 
 from .const import (
     DOMAIN,
@@ -49,7 +50,7 @@ class SkolmatCalendarEntity(CalendarEntity):
 
     _attr_icon = "mdi:calendar"
 
-    def __init__(self, hass, entry, menu, url_hash):
+    def __init__(self, hass, entry, menu:Menu, url_hash):
         self.hass = hass
         self._entry = entry
         self._menu = menu
@@ -57,7 +58,9 @@ class SkolmatCalendarEntity(CalendarEntity):
         self._name = entry.data[CONF_NAME]
         self._url = entry.data[CONF_URL]
 
-        self._attr_unique_id = f"skolmat_calendar_{url_hash}"
+        name_slug = slugify(self._name) or "unnamed"
+        self._attr_unique_id = f"skolmat_calendar_{name_slug}_{entry.entry_id}"
+        self._attr_available = True
 
         self._lunch_begin = self._parse_time(entry.data.get(CONF_LUNCH_BEGIN))
         self._lunch_end = self._parse_time(entry.data.get(CONF_LUNCH_END))
@@ -66,7 +69,7 @@ class SkolmatCalendarEntity(CalendarEntity):
         self._current_or_next = None
 
         self._store = Store(hass, 1, f"{DOMAIN}_{entry.entry_id}_calendar")
-        self._history = {}
+        self._history: dict[str, dict[str, str]] = {}
         self._history_dirty = False
 
     @staticmethod
@@ -101,9 +104,15 @@ class SkolmatCalendarEntity(CalendarEntity):
             self._history = {}
             return
 
-        hist = {}
+        hist: dict[str, dict[str, str]] = {}
         for item in data.get("events", []):
-            hist[item["date"]] = item["course"]
+            date_str = item.get("date")
+            if not date_str:
+                continue
+            hist[date_str] = {
+                "summary": item.get("summary") or item.get("course") or "",
+                "menu": item.get("menu") or item.get("description") or "",
+            }
 
         self._history = hist
 
@@ -111,30 +120,40 @@ class SkolmatCalendarEntity(CalendarEntity):
         if not self._history_dirty:
             return
 
-        events = [{"date": d, "course": c} for d, c in sorted(self._history.items())]
+        events = [
+            {
+                "date": d,
+                "course": info.get("summary", ""),
+                "menu": info.get("menu", ""),
+            }
+            for d, info in sorted(self._history.items())
+        ]
         await self._store.async_save({"events": events})
         self._history_dirty = False
 
     async def async_update(self):
         session = async_get_clientsession(self.hass)
-        await self._menu.loadMenu(session)
+        menu_data = await self._menu.getMenu(session)
+        if menu_data is None:
+            self._attr_available = False
+            self._events = []
+            self._current_or_next = None
+            return
+        self._attr_available = True
 
         today = dt_util.now().date()
         today_str = today.isoformat()
 
         # Add today's menu to history if needed
-        courses = self._menu.menuToday or []
-        if courses:
-            course = courses[0]
-            if self._history.get(today_str) != course:
-                self._history[today_str] = course
-                self._history_dirty = True
+        summary = self._menu.getReadableDaySummary(today)
+        menu_text = self._menu.getReadableDayMenu(today)
+        if self._history.get(today_str) != {"summary": summary, "menu": menu_text}:
+            self._history[today_str] = {"summary": summary, "menu": menu_text}
+            self._history_dirty = True
 
         # Prune history older than N days
         cutoff = today - timedelta(days=CALENDAR_HISTORY_DAYS)
-        to_remove = [
-            d for d in self._history if date.fromisoformat(d) < cutoff
-        ]
+        to_remove = [d for d in self._history if date.fromisoformat(d) < cutoff]
         for d in to_remove:
             self._history.pop(d, None)
             self._history_dirty = True
@@ -144,59 +163,74 @@ class SkolmatCalendarEntity(CalendarEntity):
         # Build event list
         events = []
 
-        # --------------------------------------------------------------
-        # FIX: Only add *past* events from history.
-        # Do NOT include today's event here, otherwise it is duplicated,
-        # because the present/future loop below already includes today.
-        # --------------------------------------------------------------
-        for d, course in self._history.items():
+        # Past events come from history to avoid rewriting summaries.
+        # Today's event is built from menu data below unless missing.
+        menu_dates: set[date] = set()
+        for d, info in self._history.items():
             day_date = date.fromisoformat(d)
             if day_date < today:
-                events.append(self._build_event(day_date, course))
+                description = info.get("menu") or self._menu.getReadableDayMenu(day_date)
+                events.append(
+                    self._build_event(
+                        day=day_date,
+                        summary=info.get("summary", ""),
+                        description=description,
+                    )
+                )
 
         # Present + future events (today included)
-        for week in self._menu.menu.values():
-            for day in week:
-                d = date.fromisoformat(day["date"])
-                if d < today:
-                    continue
-                c = day["courses"]
-                if not c:
-                    continue
-                events.append(self._build_event(d, c[0]))
+        for iso in menu_data:
+            day_date = date.fromisoformat(iso)
+            menu_dates.add(day_date)
+            if day_date < today:
+                continue
+            events.append(
+                self._build_event(
+                    day=day_date,
+                    summary=self._menu.getReadableDaySummary(day_date),
+                    description=self._menu.getReadableDayMenu(day_date),
+                )
+            )
+
+        if today not in menu_dates and today_str in self._history:
+            info = self._history[today_str]
+            description = info.get("menu") or menu_text
+            events.append(
+                self._build_event(
+                    day=today,
+                    summary=info.get("summary", ""),
+                    description=description,
+                )
+            )
 
         events.sort(key=lambda e: self._normalize(e.start))
 
         self._events = events
         self._current_or_next = self._find_current_or_next(events)
 
-    def _build_event(self, d: date, course: str) -> CalendarEvent:
-        # ALL-DAY event → use date objects
+    def _build_event(self, day: date, summary: str, description: str) -> CalendarEvent:
+
         if not (self._lunch_begin and self._lunch_end):
-            return CalendarEvent(
-                summary=course,
-                description=course,
-                start=d,
-                end=d + timedelta(days=1),
+            # ALL-DAY event → use date objects
+            start = day
+            end = day + timedelta(days=1)
+        else:
+            # TIMED event → use datetime objects
+            start = dt_util.start_of_local_day(day).replace(
+                hour=self._lunch_begin.hour,
+                minute=self._lunch_begin.minute,
+            )
+            end = dt_util.start_of_local_day(day).replace(
+                hour=self._lunch_end.hour,
+                minute=self._lunch_end.minute,
             )
 
-        # TIMED event → use datetime objects
-        start = dt_util.start_of_local_day(d).replace(
-            hour=self._lunch_begin.hour,
-            minute=self._lunch_begin.minute,
-        )
-        end = dt_util.start_of_local_day(d).replace(
-            hour=self._lunch_end.hour,
-            minute=self._lunch_end.minute,
-        )
-
         return CalendarEvent(
-            summary=course,
-            description=course,
+            summary=summary or "",
+            description=description or "",
             start=start,
             end=end,
         )
-
 
     @staticmethod
     def _normalize(value: Any) -> datetime:
@@ -219,6 +253,8 @@ class SkolmatCalendarEntity(CalendarEntity):
 
     async def async_get_events(self, hass, start_date, end_date):
         await self.async_update()
+        if not self.available:
+            return []
         result = []
 
         for e in self._events:

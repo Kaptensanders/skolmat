@@ -1,0 +1,240 @@
+// provider: skolmaten.se, URL: https://skolmaten.se/api/4/rss/week/skutehagens-skolan?locale=en
+
+{
+    "bozo": false,
+    "entries": [
+        {
+            "title": "Måndag - Vecka 2",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Måndag - Vecka 2"
+            },
+            "summary": "Kökets val, <br />Kökets val",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Kökets val, <br />Kökets val"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "9669fcb7-8028-40d2-b4b2-b410fbae0d30",
+            "guidislink": false,
+            "published": "Mon, 05 Jan 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                1,
+                5,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0
+            ]
+        },
+        {
+            "title": "Tisdag - Vecka 2",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Tisdag - Vecka 2"
+            },
+            "summary": "",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ""
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "a37eba5a-2262-4564-a4f4-b76f2c26180a",
+            "guidislink": false,
+            "published": "Tue, 06 Jan 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                1,
+                6,
+                0,
+                0,
+                0,
+                1,
+                6,
+                0
+            ]
+        },
+        {
+            "title": "Onsdag - Vecka 2",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Onsdag - Vecka 2"
+            },
+            "summary": "",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": ""
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "1682f238-8b7b-4af4-a292-2e56749e9328",
+            "guidislink": false,
+            "published": "Wed, 07 Jan 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                1,
+                7,
+                0,
+                0,
+                0,
+                2,
+                7,
+                0
+            ]
+        },
+        {
+            "title": "Torsdag - Vecka 2",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Torsdag - Vecka 2"
+            },
+            "summary": "Milanesesoppa med mjuk smörgås och pålägg (Vegetariskt), <br />Grön ärtsoppa med mjuk smörgås och pålägg (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Milanesesoppa med mjuk smörgås och pålägg (Vegetariskt), <br />Grön ärtsoppa med mjuk smörgås och pålägg (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "cfbe0300-1a61-4ca2-b888-837c47d74548",
+            "guidislink": false,
+            "published": "Thu, 08 Jan 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                1,
+                8,
+                0,
+                0,
+                0,
+                3,
+                8,
+                0
+            ]
+        },
+        {
+            "title": "Fredag - Vecka 2",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Fredag - Vecka 2"
+            },
+            "summary": "Kyckling pannbiff med kokt potatis och brunsås (Fågel), <br />Vegetarisk biff med kokt potatis och brunsås (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Kyckling pannbiff med kokt potatis och brunsås (Fågel), <br />Vegetarisk biff med kokt potatis och brunsås (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "d148711e-407e-4cb6-b710-a125a716e8ec",
+            "guidislink": false,
+            "published": "Fri, 09 Jan 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                1,
+                9,
+                0,
+                0,
+                0,
+                4,
+                9,
+                0
+            ]
+        }
+    ],
+    "feed": {
+        "links": [
+            {
+                "href": "https://skolmaten.se/skutehagens-skolan",
+                "rel": "self",
+                "type": "application/rss+xml"
+            },
+            {
+                "rel": "alternate",
+                "type": "text/html",
+                "href": "https://skolmaten.se/skutehagens-skolan"
+            }
+        ],
+        "title": "Skolmaten - Skutehagens skolan F-3, 4-6",
+        "title_detail": {
+            "type": "text/plain",
+            "language": null,
+            "base": "",
+            "value": "Skolmaten - Skutehagens skolan F-3, 4-6"
+        },
+        "subtitle": "Menyinformation för skolan",
+        "subtitle_detail": {
+            "type": "text/html",
+            "language": null,
+            "base": "",
+            "value": "Menyinformation för skolan"
+        },
+        "link": "https://skolmaten.se/skutehagens-skolan",
+        "language": "sv",
+        "rights": "© https://skolmaten.se",
+        "rights_detail": {
+            "type": "text/plain",
+            "language": null,
+            "base": "",
+            "value": "© https://skolmaten.se"
+        }
+    },
+    "headers": {},
+    "encoding": "utf-8",
+    "version": "rss20",
+    "namespaces": {
+        "": "http://www.w3.org/2005/Atom"
+    }
+}
