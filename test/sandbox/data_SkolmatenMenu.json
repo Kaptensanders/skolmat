@@ -1,0 +1,240 @@
+// provider: skolmaten.se, URL: https://skolmaten.se/api/4/rss/week/skutehagens-skolan?locale=en
+
+{
+    "bozo": false,
+    "entries": [
+        {
+            "title": "Måndag - Vecka 6",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Måndag - Vecka 6"
+            },
+            "summary": "Köttbullar med makaroner (Fläsk), <br />Vegobullar med makaroner (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Köttbullar med makaroner (Fläsk), <br />Vegobullar med makaroner (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "34589d58-64ed-40e9-a7f6-7bb47e16e267",
+            "guidislink": false,
+            "published": "Mon, 02 Feb 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                2,
+                2,
+                0,
+                0,
+                0,
+                0,
+                33,
+                0
+            ]
+        },
+        {
+            "title": "Tisdag - Vecka 6",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Tisdag - Vecka 6"
+            },
+            "summary": "Fiskbullar i dillsås med kokt potatis  (Fisk), <br />Moussaka med sojafärs (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Fiskbullar i dillsås med kokt potatis  (Fisk), <br />Moussaka med sojafärs (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "beb42df6-ac11-4621-bfa1-0198b57bb67a",
+            "guidislink": false,
+            "published": "Tue, 03 Feb 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                2,
+                3,
+                0,
+                0,
+                0,
+                1,
+                34,
+                0
+            ]
+        },
+        {
+            "title": "Onsdag - Vecka 6",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Onsdag - Vecka 6"
+            },
+            "summary": "Kycklingkebabgryta med bulgur (Fågel), <br />Green nuggets med bulgur och sweet chili sås (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Kycklingkebabgryta med bulgur (Fågel), <br />Green nuggets med bulgur och sweet chili sås (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "206b5262-2a62-4c8c-90d6-e3c15f2257e8",
+            "guidislink": false,
+            "published": "Wed, 04 Feb 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                2,
+                4,
+                0,
+                0,
+                0,
+                2,
+                35,
+                0
+            ]
+        },
+        {
+            "title": "Torsdag - Vecka 6",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Torsdag - Vecka 6"
+            },
+            "summary": "Krämig tomatsoppa med makaroner mjukt bröd och ost  (Vegetariskt), <br />Vegetarisk gulashsoppa med mjukt bröd (Vegetariskt)",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Krämig tomatsoppa med makaroner mjukt bröd och ost  (Vegetariskt), <br />Vegetarisk gulashsoppa med mjukt bröd (Vegetariskt)"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "40a84fe9-103f-46b7-99d8-b062654a4d70",
+            "guidislink": false,
+            "published": "Thu, 05 Feb 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                2,
+                5,
+                0,
+                0,
+                0,
+                3,
+                36,
+                0
+            ]
+        },
+        {
+            "title": "Fredag - Vecka 6",
+            "title_detail": {
+                "type": "text/plain",
+                "language": null,
+                "base": "",
+                "value": "Fredag - Vecka 6"
+            },
+            "summary": "Morotslasagne  (Vegetariskt), <br />Kökets val",
+            "summary_detail": {
+                "type": "text/html",
+                "language": null,
+                "base": "",
+                "value": "Morotslasagne  (Vegetariskt), <br />Kökets val"
+            },
+            "links": [
+                {
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "href": "https://skolmaten.se/skutehagens-skolan"
+                }
+            ],
+            "link": "https://skolmaten.se/skutehagens-skolan",
+            "id": "722fcfe1-3b6f-4af7-93cb-608edf6dc654",
+            "guidislink": false,
+            "published": "Fri, 06 Feb 2026 00:00:00 GMT",
+            "published_parsed": [
+                2026,
+                2,
+                6,
+                0,
+                0,
+                0,
+                4,
+                37,
+                0
+            ]
+        }
+    ],
+    "feed": {
+        "links": [
+            {
+                "href": "https://skolmaten.se/skutehagens-skolan",
+                "rel": "self",
+                "type": "application/rss+xml"
+            },
+            {
+                "rel": "alternate",
+                "type": "text/html",
+                "href": "https://skolmaten.se/skutehagens-skolan"
+            }
+        ],
+        "title": "Skolmaten - Skutehagens skolan F-3, 4-6",
+        "title_detail": {
+            "type": "text/plain",
+            "language": null,
+            "base": "",
+            "value": "Skolmaten - Skutehagens skolan F-3, 4-6"
+        },
+        "subtitle": "Menyinformation för skolan",
+        "subtitle_detail": {
+            "type": "text/html",
+            "language": null,
+            "base": "",
+            "value": "Menyinformation för skolan"
+        },
+        "link": "https://skolmaten.se/skutehagens-skolan",
+        "language": "sv",
+        "rights": "© https://skolmaten.se",
+        "rights_detail": {
+            "type": "text/plain",
+            "language": null,
+            "base": "",
+            "value": "© https://skolmaten.se"
+        }
+    },
+    "headers": {},
+    "encoding": "utf-8",
+    "version": "rss20",
+    "namespaces": {
+        "": "http://www.w3.org/2005/Atom"
+    }
+}

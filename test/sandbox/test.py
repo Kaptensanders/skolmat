@@ -1,14 +1,15 @@
 import sys, os, json, aiohttp, asyncio, logging
 from datetime import date, timedelta
-from fixtures.providers import PROVIDERS
 
-ROOT = os.path.dirname(os.path.dirname(sys.path[0]))
-sys.path.append(os.path.join(ROOT, 'custom_components', 'skolmat'))
-sys.path.append(os.path.join(ROOT, 'test'))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "test"))
+
+from tests.helpers import bootstrap  # noqa: F401
+
+from fixtures.providers import PROVIDERS
+from menu import Menu
 
 logging.basicConfig(level=logging.INFO)
-
-from menu import Menu
 
 def createMenu(conf: dict):
     customMenuEntryProcessorCB = conf.get("customMenuEntryProcessorCB", None)
@@ -21,7 +22,7 @@ def createMenu(conf: dict):
                            )
 
 # override default with script argument "p test.py mashie4b"
-default_entry = "skolmaten1b"
+default_entry = "skolmaten1"
 
 async def main ():
 

@@ -422,13 +422,18 @@ class Menu(ABC):
 
             menu[isodate].append(entry)
 
-
     async def _parse_feed(self, raw_feed):
 
         def parse_helper(raw_feed):
             return feedparser.parse(raw_feed)
 
-        return await self.asyncExecutor(parse_helper, raw_feed)        
+        data = await self.asyncExecutor(parse_helper, raw_feed)
+        log.info(data)
+        if isinstance(data, str):
+            raise ValueError(f"Feed parse returned only a string: {data}")
+        if not isinstance(data, (dict, list)):
+            raise ValueError(f"Feed parse returned unexpected type: {type(data).__name__}")
+        return data
     
     def _createMenuEntry (self, order: int, meal_raw: str | None, dish_raw: str, label: str | None) -> MenuEntry:
         

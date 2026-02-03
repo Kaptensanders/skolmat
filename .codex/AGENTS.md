@@ -24,15 +24,8 @@ This file is the canonical guardrails + pointers for Codex work in this repo.
 - `docs/design/sensor-contract.md`
 
 ## Context for Codex
-- `docs/context.md`
 - `docs/decisions.md`
 - `test/fixtures/usecases.json` (UC catalog)
-
-## Legacy references
-- `docs/resume_prompt.txt` (legacy backup)
-- `docs/design/filtering-design-checkpoint.md` (legacy backup)
-- `docs/design/filtering-config-flow-design.md` (legacy backup)
-- `docs/vibe/context.md` (legacy, empty)
 
 ## Project file structure (in-file)
 - `custom_components/skolmat/`: Home Assistant integration code.
@@ -47,6 +40,12 @@ This file is the canonical guardrails + pointers for Codex work in this repo.
 - Mounts `skolmat-card/` into HA config `www/`.
 - Bootstraps HA `.storage` from `.devcontainer/ha_config_bootstrap/.storage`.
 - Ports: 8123 (HA) and 5678 (debugpy).
+
+## Home Assistant system model
+- `/home/vscode/ha_config/`: Home Assistant configuration dir
+- `/home/vscode/ha_core/`: Home Assistant Core repository and installation dir
+- `/workspace/skolmat`: Repo mount dir
+- `/workspace/skolmat/.devcontainer/`: devcontainer setup dir. Usefull for understanding system setup and installation procedure
 
 ## Generic guardrails (in-file)
 - Do not modify design contracts unless explicitly requested.

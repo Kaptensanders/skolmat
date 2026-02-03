@@ -13,6 +13,12 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-02-03
+- Decision: Centralize test import bootstrapping in a shared helper module.
+- Context: Sandbox scripts and pytest needed consistent path setup and menu module aliasing.
+- Impact: Tests now call a shared bootstrap helper to align import resolution with pytest.
+- References: test/tests/helpers/bootstrap.py, test/tests/conftest.py, test/sandbox/test.py
+
 - Date: 2026-01-24
 - Decision: Implement discovery keyword derivation with UI help text and low-signal day skipping.
 - Context: Config flow discovery needs meals/labels, and holiday-only days can yield empty keyword lists without user feedback.

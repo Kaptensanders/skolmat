@@ -12,7 +12,7 @@
       },
       "configure": {
         "title": "Configure daily summary",
-        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n*Press submit to see changes.\n*Check I'm done configuring when you are happy.",
+        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n\n*Press submit/save to see changes.\n*Check I'm done configuring when you are happy.",
         "data": {
           "selected_date": "Date",
           "display_input": "Input data (read-only)",
@@ -45,7 +45,7 @@
     "step": {
       "configure": {
         "title": "Configure summary",
-        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n*Press submit to see changes.\n*Check I'm done configuring when you are happy.",
+        "description": "Configure the menu summary that will be displayed as calendar entries and sensor state. Switch between available dates and make sure everything looks good.\n\n*Press submit/save to see changes.\n*Check I'm done configuring when you are happy.",
         "data": {
           "selected_date": "Date",
           "display_input": "Input data (read-only)",

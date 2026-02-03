@@ -1,0 +1,99 @@
+title: Skolmat
+views:
+  - title: UI Variants
+    path: skolmat_variants
+    cards:
+
+      - type: custom:skolmat-card
+        entity: sensor.skolmaten_se_skutehagen
+        menu_type: today
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.skolmaten_se_skutehagen
+        menu_type: week
+        header: full
+
+      # show_dates
+      - type: custom:skolmat-card
+        entity: sensor.skolmaten_se_skutehagen
+        menu_type: week
+        header: full
+        show_dates: True
+
+      # rolling-week (should default to 5 days)
+      - type: custom:skolmat-card
+        entity: sensor.skolmaten_se_skutehagen
+        menu_type: rolling-week
+        header: full
+      
+      # max_display_days (rolling week, 10 days)
+      - type: custom:skolmat-card
+        entity: sensor.skolmaten_se_skutehagen
+        menu_type: rolling-week
+        header: full
+        rolling_week_max_days: 10
+
+  - title: Multiple Full
+    path: multiple_week
+    cards:
+
+      - type: custom:skolmat-card
+        entity: sensor.foodit_se_backaskolan
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.mpi_mashie_com_scheeleskolan
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.mateo_se_kavlinge_utbildning
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.menu_matildaplatform_com_dalajars_forskola
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.arhem_aldreboende
+        menu_type: week
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.ekhaga
+        menu_type: week
+        header: full
+
+
+  - title: Multiple Full
+    path: multiple_day
+    cards:
+
+      - type: custom:skolmat-card
+        entity: sensor.arhem_aldreboende
+        menu_type: today
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.mpi_mashie_com_scheeleskolan
+        menu_type: today
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.foodit_se_backaskolan
+        menu_type: today
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.mateo_se_kavlinge_utbildning
+        menu_type: today
+        header: full
+
+      - type: custom:skolmat-card
+        entity: sensor.ekhaga
+        menu_type: today
+        header: full

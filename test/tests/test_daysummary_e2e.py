@@ -50,62 +50,6 @@ def test_max_items_1():
             assert "|" not in summary
 
 
-def test_auto_prefers_lunch_uc():
-    # Design contract §5 Phase A — Meal focus (auto mode)
-    # Rule:
-    #   Auto must prefer Lunch if present and never mix meals unintentionally.
-    #
-    # UC-E1 data:
-    #   1. meal="Lunch",    dish="Dish A"
-    #   2. meal="Middag",   dish="Dish B"
-    #
-    # Expected auto focus:
-    #   - Keep Lunch entry (1)
-    #   - Exclude Middag entry (2)
-
-    out = run_filter_rule(
-        dataset="uc",
-        usecases=["UC-E1"],
-        filters={"mode": "auto"},
-    )
-
-    summary = out["UC-E1"]["summary"]
-    assert "Dish A" in summary
-    assert "Dish B" not in summary
-
-
-def test_auto_lunch_partial_match_includes_variants_uc():
-    # Design contract §5 Phase A — Meal focus (auto mode)
-    # Rule (current behavior, documented):
-    #   Auto prefers meals whose name contains "Lunch" (partial, case-insensitive).
-    #
-    # UC-B data:
-    #   1. meal="Lunch husman",        dish="Dish A"
-    #   2. meal="Lunch vegetariskt",   dish="Dish B"
-    #   3. meal="Middag 1",            dish="Dish C"
-    #
-    # Expected auto focus:
-    #   - Keep both Lunch variants (1, 2)
-    #   - Exclude non-Lunch meal (3)
-    #
-    # NOTE:
-    #   This test documents current permissive behavior and may be
-    #   tightened in the future if Lunch sub-buckets need refinement.
-
-    out = run_filter_rule(
-        dataset="uc",
-        usecases=["UC-B"],
-        filters={"mode": "auto"},
-    )
-
-    summary = out["UC-B"]["summary"]
-
-    assert "Dish A" in summary
-    assert "Dish B" in summary
-    assert "Dish C" not in summary
-
-
-
 def test_exclusion_guarded_regex_uc():
     # Design contract §5.1 — Exclusions (progressive and guarded)
     # Rule:

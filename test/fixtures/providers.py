@@ -29,4 +29,24 @@ PROVIDERS = {
 
 
 
+# ha bootstrap standard set
+
+# PROVIDERS = {
+#     "foodit":       {"name": "foodit - Blåsut/Dalen förskolor",  "url": "https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmaten1":   {"name": "skolmaten - Skutehagsskolan- Org",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmaten1b":  {"name": "skolmaten - Skutehagsskolan - Processed",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": skolmaten1bProcessor, "readableDaySummaryCB": None},
+#     "skolmaten2":   {"name": "skolmaten - Påskbergsskolan", "url": "https://skolmaten.se/paskbergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "mateo1":       {"name": "mateo - Bosgårdsskolan", "url": "https://meny.mateo.se/molndal/66", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "mateo2":       {"name": "mateo- Stallbackens förskola", "url": "https://meny.mateo.se/molndal/29", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "matilda1":     {"name": "matilda - Skutskär skola", "url": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "matilda4":     {"name": "matilda - Kramfors Äldreboenden", "url": "https://menu.matildaplatform.com/meals/week/682308b1e431ee42ec97f4c3_aldreboenden", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "matilda5":     {"name": "matilda - Karlskoga Äldreomsorg - Org", "url": "https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "matilda5b":    {"name": "matilda - Karlskoga Äldreomsorg - Processed", "url": "https://menu.matildaplatform.com/meals/week/67b816e201a159adbb065685_aldreomsorg-matsedel", "customMenuEntryProcessorCB": matilda5bProcessor, "readableDaySummaryCB": None},
+#     "mashie3":      {"name": "mashie - Arhem äldreboende - Org", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "mashie3b":     {"name": "mashie - Arhem äldreboende - Processed", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": mashie3bProcessor, "readableDaySummaryCB": None},
+#     "mashie4b":     {"name": "mashie - Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
+# }
+
+
+
 
