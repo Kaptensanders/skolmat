@@ -22,6 +22,7 @@ This file is the canonical guardrails + pointers for Codex work in this repo.
 - `docs/design/config-flow-contract.md`
 - `docs/design/calendar-contract.md`
 - `docs/design/sensor-contract.md`
+- `docs/design/card-contract.md`
 
 ## Context for Codex
 - `docs/decisions.md`

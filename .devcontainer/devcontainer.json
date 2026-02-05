@@ -9,11 +9,14 @@
     "appPort": [
         "8123:8123"
     ],
+
     "remoteUser": "vscode",
+    /* set on host side before anything, so no ${containerEnv:XX} usage here*/
     "workspaceFolder": "/workspaces/skolmat",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/skolmat,type=bind",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
     "mounts": [
-        "source=${localWorkspaceFolder}/skolmat-card,target=${env:HA_CONFIG_DIR}/www/skolmat-card,type=bind"
+        /* mount happens before container is started, so no ${containerEnv:XX} usage here*/
+        "source=${localWorkspaceFolder}/skolmat-card,target=/home/vscode/ha_config/www/skolmat-card,type=bind"
     ],
     "runArgs": [
         "--name",
@@ -22,28 +25,29 @@
         ".devcontainer/container.env"
     ],
     "customizations": {
+        /* fine to use ${containerEnv:XX} usage here*/
         "vscode": {
             "settings": {
-                "python.defaultInterpreterPath": "${env:HA_DIR}/venv/bin/python",
+                "python.defaultInterpreterPath": "${containerEnv:HA_DIR}/venv/bin/python",
                 "python.analysis.extraPaths": [
-                    "${env:HA_DIR}",
-                    "${env:HA_DIR}/venv/lib/python3.13/site-packages"
+                    "${containerEnv:HA_DIR}",
+                    "${containerEnv:HA_DIR}/venv/lib/python3.13/site-packages"
                 ],
                 "python.analysis.include": [
-                    "${env:WORKSPACE_DIR}/custom_components",
-                    "${env:WORKSPACE_DIR}/test",
-                    "${env:WORKSPACE_DIR}/skolmat-card"
+                    "${containerEnv:WORKSPACE_DIR}/custom_components",
+                    "${containerEnv:WORKSPACE_DIR}/test",
+                    "${containerEnv:WORKSPACE_DIR}/skolmat-card"
                 ],
                 "python.analysis.exclude": [
-                    "${env:HA_DIR}/**",
-                    "${env:HA_CONFIG_DIR}/**",
-                    "${env:WORKSPACE_DIR}/.devcontainer/**",
-                    "${env:WORKSPACE_DIR}/.git/**",
-                    "${env:WORKSPACE_DIR}/.github/**",
-                    "${env:WORKSPACE_DIR}/.vscode/**",
-                    "${env:WORKSPACE_DIR}/.pytest_cache/**",
-                    "${env:WORKSPACE_DIR}/temp/**",
-                    "${env:WORKSPACE_DIR}/skolmat-card/node_modules/**"
+                    "${containerEnv:HA_DIR}/**",
+                    "${containerEnv:HA_CONFIG_DIR}/**",
+                    "${containerEnv:WORKSPACE_DIR}/.devcontainer/**",
+                    "${containerEnv:WORKSPACE_DIR}/.git/**",
+                    "${containerEnv:WORKSPACE_DIR}/.github/**",
+                    "${containerEnv:WORKSPACE_DIR}/.vscode/**",
+                    "${containerEnv:WORKSPACE_DIR}/.pytest_cache/**",
+                    "${containerEnv:WORKSPACE_DIR}/temp/**",
+                    "${containerEnv:WORKSPACE_DIR}/skolmat-card/node_modules/**"
                 ],
                 "files.exclude": {
                     "**/.git": true,

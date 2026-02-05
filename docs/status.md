@@ -14,5 +14,4 @@ Known gaps and TODO (summary):
 
 References:
 - Task list: `docs/todo.md`
-- Legacy TODO notes: `TODO`
 - UC catalog: `test/fixtures/usecases.json`

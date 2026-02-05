@@ -13,11 +13,59 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-02-05
+- Decision: Use a single decluttering-card template for Skolmat panel card stacks.
+- Context: The test panel needed smaller, repeatable definitions without YAML anchors and with one reusable stack.
+- Impact: `vertical-stack` markdown + Skolmat card pairs now render via a single decluttering template with per-card variables and defaults.
+- References: .devcontainer/ha_config/skolmat-card-panel.yaml
+
+- Date: 2026-02-05
+- Decision: Coerce string config values for Skolmat card options from decluttering templates.
+- Context: Decluttering-card placeholders are parsed as strings; the Skolmat card expects booleans/integers for `show_dates` and `rolling_week_max_days`.
+- Impact: Skolmat card now normalizes string inputs for `show_dates` and `rolling_week_max_days` before validation.
+- References: skolmat-card/skolmat-card.js, skolmat-card/skolmat-card.legacy.js
+
+- Date: 2026-02-05
+- Decision: Treat `skolmat-card/skolmat-card.legacy.js` as immutable reference-only.
+- Context: The legacy file is a backup of the original card and should never be edited.
+- Impact: All changes must target the active card only; the legacy file remains untouched.
+- References: docs/design/card-contract.md, skolmat-card/skolmat-card.legacy.js
+
+- Date: 2026-02-05
+- Decision: Use local date components when building ISO keys for card rendering.
+- Context: Using `toISOString()` on local-midnight dates shifts keys in UTC+ timezones and can map entries to the wrong day.
+- Impact: The card now derives ISO dates from local year/month/day to keep day headers aligned with menu data.
+- References: skolmat-card/skolmat-card.js
+
+- Date: 2026-02-05
+- Decision: Rolling-week view only renders days with menu entries.
+- Context: `rolling_week_max_days` is a maximum; the card should not pad days without menu data.
+- Impact: Rolling-week skips dates with empty/missing entries and renders up to the maximum number of valid days.
+- References: skolmat-card/skolmat-card.js, docs/design/card-contract.md
+
+- Date: 2026-02-05
+- Decision: Allow forcing the card locale to `en` or `sv`, with `default` using HA language.
+- Context: Demo and testing require consistent language output independent of HA settings.
+- Impact: The card accepts a new `locale` config option and uses it to choose localization strings.
+- References: skolmat-card/skolmat-card.js, .devcontainer/ha_config/skolmat-card-panel.yaml
+
 - Date: 2026-02-03
 - Decision: Centralize test import bootstrapping in a shared helper module.
 - Context: Sandbox scripts and pytest needed consistent path setup and menu module aliasing.
 - Impact: Tests now call a shared bootstrap helper to align import resolution with pytest.
 - References: test/tests/helpers/bootstrap.py, test/tests/conftest.py, test/sandbox/test.py
+
+- Date: 2026-02-03
+- Decision: Add a card design contract for v2.1+ data shape and rendering rules.
+- Context: The card must migrate from week-keyed data to ISO-date keyed menu data while preserving behavior and introducing a localized no-menu fallback.
+- Impact: The card contract defines the ISO-date menu source, week computation, rendering order, and no-menu localization expectations.
+- References: docs/design/card-contract.md
+
+- Date: 2026-02-03
+- Decision: Support meal grouping and optional dish labels in the card.
+- Context: The menu data now includes `meal` and `label`, which should be displayed with configurable visibility while preserving grouping.
+- Impact: The card adds `show_meals` and `show_dish_labels` options with `if-multiple` defaults, and renders meal headers and labels when configured.
+- References: docs/design/card-contract.md
 
 - Date: 2026-01-24
 - Decision: Implement discovery keyword derivation with UI help text and low-signal day skipping.
@@ -234,3 +282,9 @@ Template:
 - Context: `feedparser.parse` returns a dict even on malformed RSS; we need a reliable failure signal.
 - Impact: RSS fetches now fail fast on malformed feeds while still allowing `bozo` feeds that produce entries.
 - References: custom_components/skolmat/menu.py
+
+- Date: 2026-02-03
+- Decision: Use container env expansion for devcontainer mounts and VS Code settings.
+- Context: Host-side `${env:...}` expansion left paths empty, breaking bind mounts and Python path configuration inside the container.
+- Impact: Devcontainer references now use `${containerEnv:...}` for `HA_DIR`, `HA_CONFIG_DIR`, and `WORKSPACE_DIR`.
+- References: .devcontainer/devcontainer.json
