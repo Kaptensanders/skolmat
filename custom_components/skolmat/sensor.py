@@ -12,14 +12,12 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.helpers.entity import DeviceInfo
-from homeassistant.helpers.translation import async_get_translations
 from homeassistant.util import slugify
 
 from .const import DOMAIN, CONF_NAME, CONF_URL
 from .menu import Menu
 
 _LOGGER = logging.getLogger(__name__)
-
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, add_entities):
     data = hass.data[DOMAIN][entry.entry_id]
@@ -41,6 +39,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, add_entitie
 class SkolmatSensor(RestoreEntity, SensorEntity):
 
     _attr_icon = "mdi:food"
+    _attr_translation_key = "menu"
 
     def __init__(self, hass, entry, menu:Menu, url_hash):
         self.hass = hass
@@ -56,7 +55,6 @@ class SkolmatSensor(RestoreEntity, SensorEntity):
 
         self._state: str | None = None
         self._attrs: dict[str, Any] = {}
-        self._no_food_state = "No food today"
 
     @property
     def name(self):
@@ -87,17 +85,6 @@ class SkolmatSensor(RestoreEntity, SensorEntity):
             self._state = last.state
             self._attrs = dict(last.attributes)
 
-        translations = await async_get_translations(
-            self.hass,
-            self.hass.config.language,
-            "state",
-            [DOMAIN],
-        )
-        self._no_food_state = translations.get(
-            f"component.{DOMAIN}.state.no_food_today",
-            self._no_food_state,
-        )
-
     async def async_update(self) -> None:
 
         session = async_get_clientsession(self.hass)
@@ -109,7 +96,7 @@ class SkolmatSensor(RestoreEntity, SensorEntity):
 
         today_key = date.today().isoformat()
         if not menu_data.get(today_key):
-            state = self._no_food_state
+            state = "no_food_today"
         else:
             state = self._menu.getReadableTodaySummary()
 

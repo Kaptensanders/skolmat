@@ -71,7 +71,13 @@
       "processor_fn_missing": "Processor function not found or not callable."
     }
   },
-  "state": {
-    "no_food_today": "No menu today"
+  "entity": {
+    "sensor": {
+      "menu": {
+        "state": {
+          "no_food_today": "No menu today"
+        }
+      }
+    }
   }
 }

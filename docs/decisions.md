@@ -13,6 +13,18 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-02-08
+- Decision: Default meal selection to empty in config/options flow.
+- Context: Empty selection already means "all meals", so preselecting all meals is unnecessary.
+- Impact: Config and options flows keep `meals_selected` empty unless the user explicitly selects meals.
+- References: custom_components/skolmat/config_flow.py
+
+- Date: 2026-02-08
+- Decision: Translate the no-menu sensor state via entity translation keys.
+- Context: Hassfest rejected a top-level `state` translation entry for the integration.
+- Impact: Sensor state uses `entity.sensor.menu.state.no_food_today`, and the sensor publishes `no_food_today` as the state value when no menu exists.
+- References: custom_components/skolmat/sensor.py, custom_components/skolmat/translations/en.json
+
 - Date: 2026-02-05
 - Decision: Use a single decluttering-card template for Skolmat panel card stacks.
 - Context: The test panel needed smaller, repeatable definitions without YAML anchors and with one reusable stack.

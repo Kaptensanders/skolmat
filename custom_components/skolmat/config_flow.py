@@ -167,7 +167,8 @@ class _SkolmatFlowMixin:
         if selected:
             self._data[CONF_MEALS_SELECTED] = [m for m in selected if m in available_meals]
         else:
-            self._data[CONF_MEALS_SELECTED] = available_meals
+            # Empty selection means "all"; keep empty to avoid preselecting meals.
+            self._data[CONF_MEALS_SELECTED] = []
 
         self._build_preview()
         return True
