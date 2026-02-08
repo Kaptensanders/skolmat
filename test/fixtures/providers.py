@@ -8,9 +8,10 @@ PROVIDERS = {
     "foodit":       {"name": "Blåsut/Dalen förskolor",  "url": "https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmaten0":   {"name": "Skolmaten broken URL",    "url": "https://skolmaten.se/skutehagens-sk", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},    
     "skolmaten1":   {"name": "Skutehagsskolan",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "skolmaten1b":  {"name": "Skutehagsskolan",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": skolmaten1bProcessor, "readableDaySummaryCB": None},
     "skolmaten2":   {"name": "Påskbergsskolan", "url": "https://skolmaten.se/paskbergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmaten3":   {"name": "Klarebergsskolan 4-6, 7-9", "url": "https://skolmaten.se/klarebergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmaten4":   {"name": "Stenbockskolan", "url": "https://skolmaten.se/stenbockskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmaten5":   {"name": "Hålta förskola", "url": "https://skolmaten.se/halta-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mateo1":       {"name": "Bosgårdsskolan", "url": "https://meny.mateo.se/molndal/66", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mateo2":       {"name": "Stallbackens förskola", "url": "https://meny.mateo.se/molndal/29", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mateo3":       {"name": "Emyhills förskola", "url": "https://meny.mateo.se/kavlinge-utbildning/88", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
@@ -33,9 +34,9 @@ PROVIDERS = {
 
 # PROVIDERS = {
 #     "foodit":       {"name": "foodit - Blåsut/Dalen förskolor",  "url": "https://webmenu.foodit.se/?r=1&m=180&p=1035&c=10228&w=0&v=Week&l=undefined", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-#     "skolmaten1":   {"name": "skolmaten - Skutehagsskolan - Org",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-#     "skolmaten1b":  {"name": "skolmaten - Skutehagsskolan - Processed",         "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": skolmaten1bProcessor, "readableDaySummaryCB": None},
+#     "skolmaten1":   {"name": "skolmaten - Skutehagsskolan", "url": "https://skolmaten.se/skutehagens-skolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "skolmaten2":   {"name": "skolmaten - Påskbergsskolan", "url": "https://skolmaten.se/paskbergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmaten5":   {"name": "skolmaten - Hålta förskola", "url": "https://skolmaten.se/halta-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "mateo1":       {"name": "mateo - Bosgårdsskolan", "url": "https://meny.mateo.se/molndal/66", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "mateo2":       {"name": "mateo- Stallbackens förskola", "url": "https://meny.mateo.se/molndal/29", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "matilda1":     {"name": "matilda - Skutskär skola", "url": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},

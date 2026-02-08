@@ -1,7 +1,7 @@
 import feedparser, re, asyncio, traceback, json, html  # noqa: E401
 from abc import ABC, abstractmethod
 from datetime import datetime, date, timezone, timedelta
-from dateutil import tz
+from dateutil import tz, parser
 from logging import getLogger
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
@@ -152,6 +152,10 @@ class Menu(ABC):
         retryDelay = self._faliureCount * 20 * 60 # mins
         return timedelta(seconds=retryDelay)
 
+
+    def _getWeekNumber (self, offset:int = 0):
+        weekDate = date.today() + timedelta(weeks=offset)
+        return weekDate.isocalendar()
 
     async def getMenu(self, aiohttp_session, force:bool=False) -> MenuData | None:
 
@@ -521,9 +525,65 @@ class FoodItMenu(Menu):
         return menu
 
 
+# class SkolmatenMenu(Menu):
+
+#     provider = "skolmaten.se"
+
+#     def __init__(self, 
+#                  asyncExecutor, url:str, 
+#                  customMenuEntryProcessorCB: Callable | None = None, 
+#                  readableDaySummaryCB: Callable | None = None
+#             ):
+
+#         super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+
+
+#     def _fixUrl(self, url:str) -> str:
+#         # https://skolmaten.se/skutehagens-skolan
+
+#         parsed = urlparse(url)
+#         schoolName = parsed.path.lstrip("/")
+
+#         if schoolName is None:
+#             raise ValueError("school name could not be extracted from url")
+
+#         newUrl = "https://skolmaten.se/api/4/rss/week/" + schoolName + "?locale=en"
+#         return newUrl
+
+#     async def _getFeed(self, aiohttp_session):
+        
+#         async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
+#             raw_feed = await response.text()
+#             return await self._parse_feed(raw_feed)
+        
+#     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
+#         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
+#             return entry
+        
+#         return self._createMenuEntry (order, "Lunch", raw_entry, f"Alt {order}")
+
+#     async def _loadMenu(self, aiohttp_session) -> MenuData:
+
+#         menuFeed = await self._getFeed(aiohttp_session)
+#         self._dumpData(menuFeed)
+
+#         menu:MenuData = {}
+
+#         for day in menuFeed["entries"]:
+#             entryDate = date(day['published_parsed'].tm_year, day['published_parsed'].tm_mon, day['published_parsed'].tm_mday)
+#             coursesList = day["summary"].split("<br />")
+#             courseNo = 1
+#             for course in coursesList:
+#                 menuEntry = self._processMenuEntry (entryDate, courseNo, course)
+#                 self._addMenuEntry(menu, entryDate, menuEntry)
+#                 courseNo = courseNo + 1
+
+#         return menu
+
 class SkolmatenMenu(Menu):
 
     provider = "skolmaten.se"
+
 
     def __init__(self, 
                  asyncExecutor, url:str, 
@@ -532,10 +592,15 @@ class SkolmatenMenu(Menu):
             ):
 
         super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        self.headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json", 
+            "Referer": f"https://{self.provider}/",
+            "client-token": "web-eaa12e50-c84c-4b4a-9cfe-4e3fcbcd9165"
+            }
 
 
-    def _fixUrl(self, url:str) -> str:
-        # https://skolmaten.se/skutehagens-skolan
+    def _fixUrl(self, url: str) -> str:
 
         parsed = urlparse(url)
         schoolName = parsed.path.lstrip("/")
@@ -543,107 +608,62 @@ class SkolmatenMenu(Menu):
         if schoolName is None:
             raise ValueError("school name could not be extracted from url")
 
-        newUrl = "https://skolmaten.se/api/4/rss/week/" + schoolName + "?locale=en"
+
+        newUrl = "https://skolmaten.se/api/4/menu/school/" + schoolName
         return newUrl
 
-    async def _getFeed(self, aiohttp_session):
-        
-        async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
-            raw_feed = await response.text()
-            return await self._parse_feed(raw_feed)
-        
+    async def _getWeek(self, aiohttp_session, url):
+
+        def remove_images(obj):
+            if isinstance(obj, dict):
+                return {k: remove_images(v) for k, v in obj.items() if k != "image"}
+            elif isinstance(obj, list):
+                return [remove_images(i) for i in obj]
+            return obj
+
+        async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
+            html = await response.text()
+            return json.loads(html, object_hook=remove_images)
+
     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
             return entry
-        
-        return self._createMenuEntry (order, "Lunch", raw_entry, f"Alt {order}")
+
+        labels = [a["sv"] for a in raw_entry["MealAttributes"]]
+        label = ", ".join(labels)
+
+        return self._createMenuEntry (order, "Lunch", raw_entry["name"], label)
 
     async def _loadMenu(self, aiohttp_session) -> MenuData:
 
-        menuFeed = await self._getFeed(aiohttp_session)
-        self._dumpData(menuFeed)
+            weekOffset = 0 if date.today().weekday() <= 5 else 1
+            thisWeek  = self._getWeekNumber (0 + weekOffset)
+            nextWeek  = self._getWeekNumber (1 + weekOffset)
 
-        menu:MenuData = {}
+            w1Url = f"{self.url}?year={thisWeek[0]}&week={thisWeek[1]}"
+            w2Url = f"{self.url}?year={nextWeek[0]}&week={nextWeek[1]}"
 
-        for day in menuFeed["entries"]:
-            entryDate = date(day['published_parsed'].tm_year, day['published_parsed'].tm_mon, day['published_parsed'].tm_mday)
-            coursesList = day["summary"].split("<br />")
-            courseNo = 1
-            for course in coursesList:
-                menuEntry = self._processMenuEntry (entryDate, courseNo, course)
-                self._addMenuEntry(menu, entryDate, menuEntry)
-                courseNo = courseNo + 1
-
-        return menu
-
-# class SkolmatenMenu(Menu):
-
-#     provider = "skolmaten.se"
-
-#     def __init__(self, asyncExecutor, url:str):
-#         # https://skolmaten.se/skutehagens-skolan
-
-#         super().__init__(asyncExecutor, url)
-#         self.headers = {"Content-Type": "application/json", "Accept": "application/json", "Referer": f"https://{self.provider}/"}
-
-#     def _fixUrl(self, url: str) -> str:
-
-#         parsed = urlparse(url)
-#         schoolName = parsed.path.lstrip("/")
-
-#         if schoolName is None:
-#             raise ValueError("school name could not be extracted from url")
-
-
-#         newUrl = "https://skolmaten.se/api/4/menu/school/" + schoolName
-#         return newUrl
-
-#     async def _getWeek(self, aiohttp_session, url):
-
-#         def remove_images(obj):
-#             if isinstance(obj, dict):
-#                 return {k: remove_images(v) for k, v in obj.items() if k != "image"}
-#             elif isinstance(obj, list):
-#                 return [remove_images(i) for i in obj]
-#             return obj
-
-#         try:
-#             async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
-#                 html = await response.text()
-#                 return json.loads(html, object_hook=remove_images)
-#         except Exception as err:
-
-#             log.exception(f"Failed to retrieve {url}")
-#             raise
-
-#     async def _loadMenu(self, aiohttp_session):
-
-#         try:
-#             shoolName = "Skutehagens skolan F-3, 4-6"
-#             thisWeek  = self.getWeek()
-#             nextWeek  = self.getWeek(nextWeek=True)
-
-#             w1Url = f"{self.url}?year={thisWeek[0]}&week={thisWeek[1]}"
-#             w2Url = f"{self.url}?year={nextWeek[0]}&week={nextWeek[1]}"
-
-#             w1 = await self._getWeek(aiohttp_session, w1Url)
-#             w2 = await self._getWeek(aiohttp_session, w2Url)
+            w1 = await self._getWeek(aiohttp_session, w1Url)
+            w2 = await self._getWeek(aiohttp_session, w2Url)
   
-#             dayEntries = [
-#                 *(w1["WeekState"]["Days"] if isinstance(w1.get("WeekState"), dict) else []),
-#                 *(w2["WeekState"]["Days"] if isinstance(w2.get("WeekState"), dict) else [])
-#             ]
-          
-#             for day in dayEntries:
-#                 entryDate = parser.isoparse(day["date"]).date()
-#                 courses = []
-#                 for course in day["Meals"]:
-#                     courses.append(course["name"])
-#                 self.appendEntry(entryDate, courses)
+            dayEntries = [
+                *(w1["WeekState"]["Days"] if isinstance(w1.get("WeekState"), dict) else []),
+                *(w2["WeekState"]["Days"] if isinstance(w2.get("WeekState"), dict) else [])
+            ]
 
-#         except Exception as err:
-#             log.exception(f"Failed to process:\n{w1Url}\nor\n{w2Url} ", exc_info=err)
-#             raise
+            self._dumpData(dayEntries)
+            menu:MenuData = {}
+
+            for day in dayEntries:
+                entryDate = parser.isoparse(day["date"]).date()
+                courseNo = 1
+                for course in day["Meals"]:
+                    menuEntry = self._processMenuEntry (entryDate, courseNo, course)
+                    self._addMenuEntry(menu, entryDate, menuEntry)
+                    courseNo = courseNo + 1
+            return menu
+
+
 
 class MatildaMenu (Menu):
     provider = "menu.matildaplatform.com"

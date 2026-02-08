@@ -1,3 +1,16 @@
+# IMMUTABLE: Entities used in this dashboard (update only when entities change)
+# - sensor.foodit_blasut_dalen_forskolor
+# - sensor.matilda_karlskoga_aldreomsorg_org
+# - sensor.matilda_kramfors_aldreboenden
+# - sensor.mashie_arhem_aldreboende_org
+# - sensor.mashie_arhem_aldreboende_processed
+# - sensor.mashie_brinkskolan
+# - sensor.matilda_karlskoga_aldreomsorg_processed
+# - sensor.skolmaten_paskbergsskolan
+# - sensor.skolmaten_skutehagsskolan
+# - sensor.skolmaten_halta_forskola
+# - sensor.matilda_skutskar_skola
+
 title: Skolmat
 decluttering_templates:
   skolmat_card_stack:
@@ -32,40 +45,120 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: "**[02]** - sensor.skolmaten_skutehagsskolan_processed <br> today | header: full"
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: "**[02]** - sensor.skolmaten_skutehagsskolan <br> today | header: full"
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'today'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[03]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[03]** - sensor.skolmaten_skutehagsskolan <br> week | header: full'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[04]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | show_dates: True'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[04]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | show_dates: True'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - show_dates: true
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[05]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[05]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[06]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | rolling_week_max_days: 10'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[06]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | rolling_week_max_days: 10'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - rolling_week_max_days: 10
+  - title: All Entities (Week)
+    path: all_entities_week
+    cards:
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.foodit_blasut_dalen_forskolor <br> week'
+          - entity: 'sensor.foodit_blasut_dalen_forskolor'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.matilda_karlskoga_aldreomsorg_org <br> week'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_org'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.matilda_kramfors_aldreboenden <br> week'
+          - entity: 'sensor.matilda_kramfors_aldreboenden'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.mashie_arhem_aldreboende_org <br> week'
+          - entity: 'sensor.mashie_arhem_aldreboende_org'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.mashie_arhem_aldreboende_processed <br> week'
+          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.mashie_brinkskolan <br> week'
+          - entity: 'sensor.mashie_brinkskolan'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.matilda_karlskoga_aldreomsorg_processed <br> week'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.skolmaten_paskbergsskolan <br> week'
+          - entity: 'sensor.skolmaten_paskbergsskolan'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.skolmaten_skutehagsskolan <br> week'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.skolmaten_halta_forskola <br> week'
+          - entity: 'sensor.skolmaten_halta_forskola'
+          - menu_type: 'week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.matilda_skutskar_skola <br> week'
+          - entity: 'sensor.matilda_skutskar_skola'
+          - menu_type: 'week'
+          - header: 'full'
   - title: All Week
     path: all_week
     cards:
@@ -79,15 +172,15 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[08]** - sensor.skolmaten_skutehagsskolan_org <br> week | header: short'
-          - entity: 'sensor.skolmaten_skutehagsskolan_org'
+          - summary: '**[08]** - sensor.skolmaten_skutehagsskolan <br> week | header: short'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'short'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[09]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: school-name'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[09]** - sensor.skolmaten_skutehagsskolan <br> week | header: school-name'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'school-name'
           - show_dates: true
@@ -101,22 +194,22 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[11]** - sensor.skutskar_skola <br> week | header: full'
-          - entity: 'sensor.skutskar_skola'
+          - summary: '**[11]** - sensor.matilda_skutskar_skola <br> week | header: full'
+          - entity: 'sensor.matilda_skutskar_skola'
           - menu_type: 'week'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[12]** - sensor.kramfors_aldreboenden <br> week | header: short'
-          - entity: 'sensor.kramfors_aldreboenden'
+          - summary: '**[12]** - sensor.matilda_kramfors_aldreboenden <br> week | header: short'
+          - entity: 'sensor.matilda_kramfors_aldreboenden'
           - menu_type: 'week'
           - header: 'short'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[13]** - sensor.karlskoga_aldreomsorg_org <br> week | header: school-name'
-          - entity: 'sensor.karlskoga_aldreomsorg_org'
+          - summary: '**[13]** - sensor.matilda_karlskoga_aldreomsorg_org <br> week | header: school-name'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_org'
           - menu_type: 'week'
           - header: 'school-name'
       - type: custom:decluttering-card
@@ -160,15 +253,15 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[19]** - sensor.skolmaten_skutehagsskolan_org <br> today | header: short'
-          - entity: 'sensor.skolmaten_skutehagsskolan_org'
+          - summary: '**[19]** - sensor.skolmaten_skutehagsskolan <br> today | header: short'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'today'
           - header: 'short'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[20]** - sensor.skolmaten_skutehagsskolan_processed <br> today | header: school-name'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[20]** - sensor.skolmaten_skutehagsskolan <br> today | header: school-name'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'today'
           - header: 'school-name'
       - type: custom:decluttering-card
@@ -181,22 +274,22 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[22]** - sensor.skutskar_skola <br> today | header: full'
-          - entity: 'sensor.skutskar_skola'
+          - summary: '**[22]** - sensor.matilda_skutskar_skola <br> today | header: full'
+          - entity: 'sensor.matilda_skutskar_skola'
           - menu_type: 'today'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[23]** - sensor.kramfors_aldreboenden <br> today | header: short'
-          - entity: 'sensor.kramfors_aldreboenden'
+          - summary: '**[23]** - sensor.matilda_kramfors_aldreboenden <br> today | header: short'
+          - entity: 'sensor.matilda_kramfors_aldreboenden'
           - menu_type: 'today'
           - header: 'short'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[24]** - sensor.karlskoga_aldreomsorg_org <br> today | header: school-name'
-          - entity: 'sensor.karlskoga_aldreomsorg_org'
+          - summary: '**[24]** - sensor.matilda_karlskoga_aldreomsorg_org <br> today | header: school-name'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_org'
           - menu_type: 'today'
           - header: 'school-name'
       - type: custom:decluttering-card
@@ -242,22 +335,15 @@ views:
           - type: custom:decluttering-card
             template: skolmat_card_stack
             variables:
-              - summary: '**[29]** - sensor.skolmaten_skutehagsskolan_org <br> week | header: full'
-              - entity: 'sensor.skolmaten_skutehagsskolan_org'
+              - summary: '**[29]** - sensor.skolmaten_skutehagsskolan <br> week | header: full'
+              - entity: 'sensor.skolmaten_skutehagsskolan'
               - menu_type: 'week'
               - header: 'full'
           - type: custom:decluttering-card
             template: skolmat_card_stack
             variables:
-              - summary: '**[30]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full'
-              - entity: 'sensor.skolmaten_skutehagsskolan_processed'
-              - menu_type: 'week'
-              - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[31]** - sensor.karlskoga_aldreomsorg_org <br> week | header: full'
-              - entity: 'sensor.karlskoga_aldreomsorg_org'
+              - summary: '**[31]** - sensor.matilda_karlskoga_aldreomsorg_org <br> week | header: full'
+              - entity: 'sensor.matilda_karlskoga_aldreomsorg_org'
               - menu_type: 'week'
               - header: 'full'
           - type: custom:decluttering-card
@@ -296,22 +382,15 @@ views:
           - type: custom:decluttering-card
             template: skolmat_card_stack
             variables:
-              - summary: '**[35]** - sensor.skolmaten_skutehagsskolan_org <br> today | header: full'
-              - entity: 'sensor.skolmaten_skutehagsskolan_org'
+              - summary: '**[35]** - sensor.skolmaten_skutehagsskolan <br> today | header: full'
+              - entity: 'sensor.skolmaten_skutehagsskolan'
               - menu_type: 'today'
               - header: 'full'
           - type: custom:decluttering-card
             template: skolmat_card_stack
             variables:
-              - summary: '**[36]** - sensor.skolmaten_skutehagsskolan_processed <br> today | header: full'
-              - entity: 'sensor.skolmaten_skutehagsskolan_processed'
-              - menu_type: 'today'
-              - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[37]** - sensor.karlskoga_aldreomsorg_org <br> today | header: full'
-              - entity: 'sensor.karlskoga_aldreomsorg_org'
+              - summary: '**[37]** - sensor.matilda_karlskoga_aldreomsorg_org <br> today | header: full'
+              - entity: 'sensor.matilda_karlskoga_aldreomsorg_org'
               - menu_type: 'today'
               - header: 'full'
           - type: custom:decluttering-card
@@ -332,8 +411,8 @@ views:
             template: skolmat_card_stack
             variables:
               - summary: '**[40]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full'
-              - entity: 'sensor.skolmaten_skutehagsskolan_processed'
-              - menu_type: 'week'
+              - entity: 'sensor.mashie_arhem_aldreboende_processed'
+              - menu_type: 'today'
               - header: 'full'
   - title: Header Styles & Sizes
     path: header_styles
@@ -341,30 +420,30 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[42]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: short | header_font: none'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[42]** - sensor.skolmaten_skutehagsskolan <br> week | header: short | header_font: none'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'short'
           - header_font: 'none'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[43]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: school-name'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[43]** - sensor.skolmaten_skutehagsskolan <br> week | header: school-name'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'school-name'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[44]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: none'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[44]** - sensor.skolmaten_skutehagsskolan <br> week | header: none'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'none'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[45]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap | header_fontsize: 18px'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[45]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap | header_fontsize: 18px'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - header_font: 'https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap'
@@ -372,8 +451,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[46]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap | header_fontsize: 3em'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[46]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap | header_fontsize: 3em'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - header_font: 'https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap'
@@ -381,8 +460,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[75]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap | header_fontsize: 2.4em'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[75]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap | header_fontsize: 2.4em'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - header_font: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap'
@@ -390,8 +469,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[76]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap | header_fontsize: 1.8em'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[76]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap | header_fontsize: 1.8em'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - header_font: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap'
@@ -399,8 +478,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[77]** - sensor.skolmaten_skutehagsskolan_processed <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Pacifico&display=swap | header_fontsize: 2.2em'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[77]** - sensor.skolmaten_skutehagsskolan <br> week | header: full | header_font: https://fonts.googleapis.com/css2?family=Pacifico&display=swap | header_fontsize: 2.2em'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'week'
           - header: 'full'
           - header_font: 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'
@@ -411,47 +490,47 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[47]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[47]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[48]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | show_dates: True'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[48]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | show_dates: True'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - show_dates: true
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[49]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | rolling_week_max_days: 3'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[49]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | rolling_week_max_days: 3'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - rolling_week_max_days: 3
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[50]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | rolling_week_max_days: 1'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[50]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | rolling_week_max_days: 1'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - rolling_week_max_days: 1
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[51]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | rolling_week_max_days: 7'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[51]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | rolling_week_max_days: 7'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - rolling_week_max_days: 7
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[52]** - sensor.skolmaten_skutehagsskolan_processed <br> rolling-week | header: full | rolling_week_max_days: 10'
-          - entity: 'sensor.skolmaten_skutehagsskolan_processed'
+          - summary: '**[52]** - sensor.skolmaten_skutehagsskolan <br> rolling-week | header: full | rolling_week_max_days: 10'
+          - entity: 'sensor.skolmaten_skutehagsskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
           - rolling_week_max_days: 10
@@ -472,15 +551,15 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[55]** - sensor.skutskar_skola <br> rolling-week | header: full'
-          - entity: 'sensor.skutskar_skola'
+          - summary: '**[55]** - sensor.matilda_skutskar_skola <br> rolling-week | header: full'
+          - entity: 'sensor.matilda_skutskar_skola'
           - menu_type: 'rolling-week'
           - header: 'full'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[56]** - sensor.kramfors_aldreboenden <br> rolling-week | header: full'
-          - entity: 'sensor.kramfors_aldreboenden'
+          - summary: '**[56]** - sensor.matilda_kramfors_aldreboenden <br> rolling-week | header: full'
+          - entity: 'sensor.matilda_kramfors_aldreboenden'
           - menu_type: 'rolling-week'
           - header: 'full'
       - type: custom:decluttering-card

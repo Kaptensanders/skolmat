@@ -14,6 +14,12 @@ Template:
 - References: <paths, issues, or PRs>
 
 - Date: 2026-02-08
+- Decision: In week view, render next week on empty weekend days when next week has entries.
+- Context: Weekend cards should skip an empty current week and show the next available week.
+- Impact: The card checks Saturday/Sunday with no entries and switches to next week only if it contains menu data.
+- References: skolmat-card/skolmat-card.js
+
+- Date: 2026-02-08
 - Decision: Default meal selection to empty in config/options flow.
 - Context: Empty selection already means "all meals", so preselecting all meals is unnecessary.
 - Impact: Config and options flows keep `meals_selected` empty unless the user explicitly selects meals.
