@@ -524,61 +524,76 @@ class FoodItMenu(Menu):
 
         return menu
 
+class MateoMenu(Menu):
 
-# class SkolmatenMenu(Menu):
+    provider = "mateo.se"
 
-#     provider = "skolmaten.se"
+    def __init__(self, 
+                 asyncExecutor, url:str, 
+                 customMenuEntryProcessorCB: Callable | None = None, 
+                 readableDaySummaryCB: Callable | None = None
+            ):
 
-#     def __init__(self, 
-#                  asyncExecutor, url:str, 
-#                  customMenuEntryProcessorCB: Callable | None = None, 
-#                  readableDaySummaryCB: Callable | None = None
-#             ):
-
-#         super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
-
-
-#     def _fixUrl(self, url:str) -> str:
-#         # https://skolmaten.se/skutehagens-skolan
-
-#         parsed = urlparse(url)
-#         schoolName = parsed.path.lstrip("/")
-
-#         if schoolName is None:
-#             raise ValueError("school name could not be extracted from url")
-
-#         newUrl = "https://skolmaten.se/api/4/rss/week/" + schoolName + "?locale=en"
-#         return newUrl
-
-#     async def _getFeed(self, aiohttp_session):
+        super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        self.headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json", 
+            "Referer": f"https://{self.provider}/",
+            }
         
-#         async with aiohttp_session.get(f"{self.url}?limit={self._weeks}") as response:
-#             raw_feed = await response.text()
-#             return await self._parse_feed(raw_feed)
-        
-#     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
-#         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
-#             return entry
-        
-#         return self._createMenuEntry (order, "Lunch", raw_entry, f"Alt {order}")
+    def _fixUrl(self, url: str) -> str:
 
-#     async def _loadMenu(self, aiohttp_session) -> MenuData:
+        parsed = urlparse(url)
+        id = parsed.path.rstrip("/").split("/")[-1]
 
-#         menuFeed = await self._getFeed(aiohttp_session)
-#         self._dumpData(menuFeed)
+        if not id.isdigit():
+            raise ValueError("school id could not be extracted from url")
 
-#         menu:MenuData = {}
+        newUrl = "https://meny-api.mateo.se/api/v1/days/" + id
+        return newUrl
 
-#         for day in menuFeed["entries"]:
-#             entryDate = date(day['published_parsed'].tm_year, day['published_parsed'].tm_mon, day['published_parsed'].tm_mday)
-#             coursesList = day["summary"].split("<br />")
-#             courseNo = 1
-#             for course in coursesList:
-#                 menuEntry = self._processMenuEntry (entryDate, courseNo, course)
-#                 self._addMenuEntry(menu, entryDate, menuEntry)
-#                 courseNo = courseNo + 1
+    async def _fetchMenu (self, aiohttp_session, startDate:date, endDate:date):
 
-#         return menu
+        url = f"{self.url}?from={startDate.isoformat()}&to={endDate.isoformat()}"
+        log.info(url)
+        async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
+            html = await response.text()
+            return json.loads(html)
+
+
+    def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
+        if entry := super()._processMenuEntry(entryDate, order, raw_entry):
+            return entry
+
+        log.info(raw_entry["labels"])
+
+        if raw_entry["labels"]:
+            label = ", ".join(label["name"].strip() for label in raw_entry["labels"])
+        else:
+            label = raw_entry["type"]
+
+        return self._createMenuEntry (order, "Lunch", raw_entry["name"], label)
+
+    async def _loadMenu(self, aiohttp_session) -> MenuData:
+
+        today = date.today()
+        firstDay = today - timedelta(days=today.weekday())
+        if today.weekday() >= 5:
+           firstDay += timedelta(days=7)
+
+        dayEntries = await self._fetchMenu(aiohttp_session, startDate=firstDay, endDate=(firstDay + timedelta(days=14)))
+
+        self._dumpData(dayEntries)
+        menu:MenuData = {}
+
+        for day in dayEntries:
+            entryDate = parser.isoparse(day["date"]).date()
+            courseNo = 1
+            for course in day["meals"]:
+                menuEntry = self._processMenuEntry (entryDate, courseNo, course)
+                self._addMenuEntry(menu, entryDate, menuEntry)
+                courseNo = courseNo + 1
+        return menu
 
 class SkolmatenMenu(Menu):
 
@@ -636,7 +651,7 @@ class SkolmatenMenu(Menu):
 
     async def _loadMenu(self, aiohttp_session) -> MenuData:
 
-            weekOffset = 0 if date.today().weekday() <= 5 else 1
+            weekOffset = 0 if date.today().weekday() < 5 else 1
             thisWeek  = self._getWeekNumber (0 + weekOffset)
             nextWeek  = self._getWeekNumber (1 + weekOffset)
 
@@ -708,13 +723,6 @@ class MatildaMenu (Menu):
         mealNo = 1
         lastDate = None
 
-        # - Seems data structure intention is single entry per meal, with multiple courses
-        #   but, sometimes, it is used as one entry per day, with all meals represented in the courses list
-        #   a course has optionName, but rarely used, this should probably be the Vegetarisk|Tillbehör|Dessert|Etc,  
-        # - most of the time, we see "Dessert" being its own course, so... is it dessert for Lunch or Dinner??
-        #   should probably be put as a label, indexed with order to make any meal have starter, main, dessert etc
-        # entry[name] can be null, but is probably intended for Lunch/Middag etc
-
         for meal in mealEntries:
             
             entryDate = datetime.strptime(meal["date"], "%Y-%m-%dT%H:%M:%S").date() # 2023-06-02T00:00:00
@@ -777,23 +785,6 @@ class MashieMenu(Menu):
         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
             return entry
 
-        # {
-        #     "PortionTId": "22f92f1c-1d09-436a-89df-16912b57df29",
-        #     "HasExtendedInfo": faypelse,
-        #     "MealPictureURL": null,
-        #     "MenuAlternativeName": "Lunch husman",
-        #     "DayMenuInfo": "",
-        #     "DayMenuName": "Kyckling i currysås*, ris , grönsaker",
-        #     "MealId": "6ee18775-8630-4465-8246-2fbc8e363fd7",
-        #     "ShowDayNutrient": false,
-        #     "ShowWeekNutrient": false,
-        #     "ShowIngredients": false,
-        #     "ShowAllergens": false,
-        #     "ShowClassifications": false,
-        #     "ShowClimateImpact": false,
-        #     "ShowOtherInformationButton": false
-        # },
-
         return self._createMenuEntry (order=order, 
                                       meal_raw=raw_entry["MenuAlternativeName"],
                                       dish_raw=raw_entry["DayMenuName"],
@@ -842,129 +833,5 @@ class MashieMenu(Menu):
                     menuEntry = self._processMenuEntry (entryDate, courseNo, course)
                     self._addMenuEntry(menu, entryDate, menuEntry)
                     courseNo += 1
-                
-        return menu
-
-
-class MateoMenu(Menu):
-    provider = "mateo.se"
-
-    def __init__(self, 
-                 asyncExecutor, url:str, 
-                 customMenuEntryProcessorCB: Callable | None = None, 
-                 readableDaySummaryCB: Callable | None = None
-            ):
-        
-        super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
-        self.headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36",
-                        "cookie": "cookieLanguage=sv-SE"} # set page lang to Swe
-        self.jsUrl = "https://meny.mateo.se/"
-        self.municipalities = "/mateo-menu/municipalities.json"
-        self.mateo_menu_shared_path = "/mateo.shared"
-
-
-    def _fixUrl(self, url:str) -> str:
-       return url
-
-    async def _constructJsUrl(self, url:str, aiohttp_session):
-        async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
-            html = await response.text()
-            soup = BeautifulSoup(html, 'html.parser')
-
-            # Find all <script> tags
-            scripts = soup.find_all('script')
-
-            # Extract the 'src' attribute from each <script> tag
-            for script in scripts:
-                src = script.get('src')
-                if src and '.js' in src:
-                    return f"{self.jsUrl}{src}" #https://meny.mateo.se/_expo/static/js/web/entry-61ca128073f368b722e0ab176fd2ee99.js similar to this
-
-    async def _getJsonBaseUrl(self, jsUrl, url, aiohttp_session):
-        async with aiohttp_session.get(jsUrl, headers=self.headers, raise_for_status=True) as response:
-            jsContent = await response.text()
-
-            if self.municipalities not in jsContent:
-                raise ValueError(f"Failed to find {self.municipalities} in js content on url {jsUrl}")
-
-            base_url = self._find_base_url(jsContent, self.municipalities)
-            if not base_url:
-                raise ValueError(f"Failed to base url in js content on url {jsUrl}")
-            return base_url
-    
-    # Search for the target URL within the text and extract the base URL, similar to https://objects.dc-fbg1.glesys.net
-    def _find_base_url(self, text, target):
-        match = re.search(r'(https?://[^\s]+)?' + re.escape(target), text)
-        if match:
-            base_url = match.group(1)
-            base_url = base_url.replace(self.mateo_menu_shared_path, "")
-            return base_url
-        else:
-            return None
-
-    def _construct_base_menu_file_url(self, url, base_url):
-        stripped_from_url = url.replace(self.jsUrl, "")
-        # Split by '/'
-        path, number = stripped_from_url.split('/')
-
-        # Replace hyphen with dot
-        modified_path = path.replace('-', '.')
-
-        # modified_path example: kavlinge.utbildning
-        # number example: 31
-        return  f"{base_url}/mateo.{modified_path}/menus/app/{number}" # Similar to https://objects.dc-fbg1.glesys.net/mateo.kavlinge.utbildning/menus/app/82
-
-    def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
-        if entry := super()._processMenuEntry(entryDate, order, raw_entry):
-            return entry
-        
-        return self._createMenuEntry (order=order,
-                                      meal_raw="Lunch", # mateo seem to have only lunch in the menus
-                                      dish_raw=raw_entry["name"],
-                                      label=None)
-
-    async def _loadMenu(self, aiohttp_session):
-
-
-        # maybe a bit overkill to get the data, seem to follow the pattern
-        # https://meny.mateo.se/kavlinge-utbildning/88 => https://objects.dc-fbg1.glesys.net/mateo.kavlinge.utbildning/menus/app/88_2.json
-        # https://meny.mateo.se/molndal/29 => https://objects.dc-fbg1.glesys.net/mateo.molndal/menus/app/29_2.json
-        # wehere .../..._<week>.json
-
-        jsUrl = await self._constructJsUrl(self.url, aiohttp_session)
-        json_base_url = await self._getJsonBaseUrl(jsUrl, self.url, aiohttp_session)
-        base_menu_file_url = self._construct_base_menu_file_url(self.url, json_base_url)
-
-         # Get today's date
-        today = date.today()
-
-        # Get ISO calendar (year, week, weekday)
-        _, iso_week, _ = today.isocalendar()
-        next_week_date = today + timedelta(weeks=1)
-        _, iso_week_2, _ = next_week_date.isocalendar()
-
-        menus_url_w1 = f"{base_menu_file_url}_{iso_week}.json"
-        menus_url_w2 = f"{base_menu_file_url}_{iso_week_2}.json"
-
-        async with aiohttp_session.get(menus_url_w1, headers=self.headers, raise_for_status=True) as response:
-            data = await response.text()
-        menuData = json.loads(data)
-
-        async with aiohttp_session.get(menus_url_w2, headers=self.headers, raise_for_status=True) as response:
-            data = await response.text()
-
-        menuData += json.loads(data)
-        self._dumpData(menuData)
-
-        menu:MenuData = {}
-
-        for item in menuData:
-            if isinstance(item, dict) and isinstance(item.get("meals"), list):
-                entryDate = datetime.strptime(item["date"], "%Y-%m-%dT%H:%M:%S.%fZ").date()
-                courseNo = 1
-                for meal in item["meals"]:
-                    menuEntry = self._processMenuEntry (entryDate, courseNo, meal)
-                    self._addMenuEntry(menu, entryDate, menuEntry)                        
-                    courseNo += 1 
 
         return menu

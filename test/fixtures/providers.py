@@ -1,6 +1,5 @@
 
 # processors
-from processors.skutehagens_skola import entryProcessor as skolmaten1bProcessor
 from processors.karlskoga_aldreomsorg import entryProcessor as matilda5bProcessor
 from processors.arhem_aldreboende import entryProcessor as mashie3bProcessor
 
@@ -12,9 +11,10 @@ PROVIDERS = {
     "skolmaten3":   {"name": "Klarebergsskolan 4-6, 7-9", "url": "https://skolmaten.se/klarebergsskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmaten4":   {"name": "Stenbockskolan", "url": "https://skolmaten.se/stenbockskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmaten5":   {"name": "Hålta förskola", "url": "https://skolmaten.se/halta-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "mateo1":       {"name": "Bosgårdsskolan", "url": "https://meny.mateo.se/molndal/66", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "mateo2":       {"name": "Stallbackens förskola", "url": "https://meny.mateo.se/molndal/29", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "mateo3":       {"name": "Emyhills förskola", "url": "https://meny.mateo.se/kavlinge-utbildning/88", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "mateo1":       {"name": "Element Trixarna DV", "url": "https://meny.mateo.se/molndal/375", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "mateo2":       {"name": "Ekskogens förskola", "url": "https://meny.mateo.se/molndal/158", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "mateo3":       {"name": "Lackalänga skola", "url": "https://meny.mateo.se/kavlinge-utbildning/337", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "mateo4":       {"name": "Ljungenskolan", "url": "https://meny.mateo.se/kavlinge-utbildning/340", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda1":     {"name": "Skutskär skola", "url": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda2":     {"name": "Parkskolan restaurang", "url": "https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda3":     {"name": "Dalajärs förskola", "url": "https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
