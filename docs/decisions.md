@@ -306,3 +306,27 @@ Template:
 - Context: Host-side `${env:...}` expansion left paths empty, breaking bind mounts and Python path configuration inside the container.
 - Impact: Devcontainer references now use `${containerEnv:...}` for `HA_DIR`, `HA_CONFIG_DIR`, and `WORKSPACE_DIR`.
 - References: .devcontainer/devcontainer.json
+
+- Date: 2026-02-08
+- Decision: Add a full Lovelace Visual UI editor for `skolmat-card`.
+- Context: Card configuration should be editable in the Home Assistant UI with live preview support, including all supported card options.
+- Impact: `skolmat-card` now exposes `getConfigElement()` and `getStubConfig()`, and ships `skolmat-card-editor` with controls for `entity`, `menu_type`, `header`, `header_font`, `header_fontsize`, `show_dates`, `rolling_week_max_days`, `show_meals`, `show_dish_labels`, and `locale`.
+- References: skolmat-card/skolmat-card.js, docs/todo.md
+
+- Date: 2026-02-08
+- Decision: Make `skolmat-card` visual editor normalize and emit explicit default values.
+- Context: The Lovelace preview and form state should be stable without requiring users to manually populate optional fields.
+- Impact: `getStubConfig()` includes all card defaults, and the editor merges missing values with defaults before rendering/emitting config.
+- References: skolmat-card/skolmat-card.js
+
+- Date: 2026-02-08
+- Decision: Enable gallery preview for `skolmat-card` and resolve preview entities from Skolmat sources only.
+- Context: The Lovelace card picker should render a working preview card with a valid Skolmat sensor when available.
+- Impact: `customCards.preview` is enabled and `getStubConfig()` now uses Skolmat-aware entity resolution (calendar attribute first, entity registry platform fallback).
+- References: skolmat-card/skolmat-card.js
+
+- Date: 2026-02-08
+- Decision: Select rolling-week days by first N non-empty menu dates from today forward.
+- Context: Limiting to the next N calendar dates could render fewer days than `rolling_week_max_days` when weekend/empty dates are in range.
+- Impact: Rolling-week now fills up to `rolling_week_max_days` with non-empty dates in chronological order, matching the expected behavior.
+- References: skolmat-card/skolmat-card.js

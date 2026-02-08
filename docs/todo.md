@@ -2,7 +2,7 @@
 
 ## Active phases
 
-- Add Lovelace UI editor for `skolmat-card` (later phase).
+- Lovelace UI editor for `skolmat-card` is implemented (2026-02-08).
 
 ## Config flow vs implementation findings
 
