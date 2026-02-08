@@ -29,6 +29,7 @@ from .const import (
     DOMAIN,
     CONF_NAME,
     CONF_URL,
+    CONF_PROVIDER,
     CONF_LUNCH_BEGIN,
     CONF_LUNCH_END,
     CONF_MEALS_SELECTED,
@@ -145,6 +146,7 @@ class _SkolmatFlowMixin:
             url,
             customMenuEntryProcessorCB=processor_cb,
         )
+        self._data[CONF_PROVIDER] = self._menu.provider
 
         session = async_get_clientsession(self.hass)
         menu_data = await self._menu.getMenu(session)

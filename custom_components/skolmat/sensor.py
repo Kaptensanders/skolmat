@@ -14,7 +14,7 @@ from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.util import slugify
 
-from .const import DOMAIN, CONF_NAME, CONF_URL
+from .const import DOMAIN, CONF_NAME, CONF_URL, CONF_PROVIDER
 from .menu import Menu
 
 _LOGGER = logging.getLogger(__name__)
@@ -70,10 +70,12 @@ class SkolmatSensor(RestoreEntity, SensorEntity):
 
     @property
     def device_info(self):
+        model = self._entry.data.get(CONF_PROVIDER) or getattr(self._menu, "provider", None)
         return DeviceInfo(
             identifiers={(DOMAIN, self._entry.entry_id)},
             name=self._name,
             manufacturer="Skolmat",
+            model=model,
         )
 
     async def async_added_to_hass(self):

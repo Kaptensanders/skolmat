@@ -20,6 +20,12 @@ Template:
 - References: skolmat-card/skolmat-card.js
 
 - Date: 2026-02-08
+- Decision: Persist detected provider in config data and expose it as device model.
+- Context: Home Assistant showed Skolmat device model as `Unknown` because entities set manufacturer only.
+- Impact: Config/options flow stores `provider` from the selected `Menu` subclass, and sensor/calendar `device_info.model` now uses that value (fallback to runtime menu provider for older entries).
+- References: custom_components/skolmat/config_flow.py, custom_components/skolmat/sensor.py, custom_components/skolmat/calendar.py, custom_components/skolmat/const.py
+
+- Date: 2026-02-08
 - Decision: Default meal selection to empty in config/options flow.
 - Context: Empty selection already means "all meals", so preselecting all meals is unnecessary.
 - Impact: Config and options flows keep `meals_selected` empty unless the user explicitly selects meals.

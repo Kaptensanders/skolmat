@@ -2,6 +2,7 @@ DOMAIN = "skolmat"
 
 CONF_NAME = "name"
 CONF_URL = "url"
+CONF_PROVIDER = "provider"
 CONF_LUNCH_BEGIN = "lunch_begin"
 CONF_LUNCH_END = "lunch_end"
 CONF_MEALS_SELECTED = "meals_selected"

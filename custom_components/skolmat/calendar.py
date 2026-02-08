@@ -19,6 +19,7 @@ from .const import (
     DOMAIN,
     CONF_NAME,
     CONF_URL,
+    CONF_PROVIDER,
     CONF_LUNCH_BEGIN,
     CONF_LUNCH_END,
     CALENDAR_HISTORY_DAYS,
@@ -84,10 +85,12 @@ class SkolmatCalendarEntity(CalendarEntity):
 
     @property
     def device_info(self):
+        model = self._entry.data.get(CONF_PROVIDER) or getattr(self._menu, "provider", None)
         return DeviceInfo(
             identifiers={(DOMAIN, self._entry.entry_id)},
             name=self._name,
             manufacturer="Skolmat",
+            model=model,
         )
 
     @property
