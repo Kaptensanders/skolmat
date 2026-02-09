@@ -13,6 +13,7 @@
 > * Card updated with some config options
 > * Added visual UI editor support to card 
 > * Added custom data preprocessor option for those multi-meal, multi course, custom key menues filtering cannot handle
+> * Added proper translations (sv/en) to both integration and card
 > * Issue and compability fixes
 >
 > ... **new config and data format makes this a breaking release. Delete the old device and add again using the new config flow**
