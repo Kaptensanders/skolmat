@@ -13,6 +13,12 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-02-09
+- Decision: Parse `meny.skolmat.info` as plain HTML with BeautifulSoup and merge two ISO weeks.
+- Context: A new provider serves backend-rendered HTML (no JSON/RSS API) with date and dish/allergen blocks.
+- Impact: `SkolmatInfoMenu` now fetches current+next week pages (`?year=YYYY&week=WW`), parses `time[datetime]` day sections, maps dishes and allergen labels into standard `MenuEntry`, and normalizes provider URLs to canonical path form.
+- References: custom_components/skolmat/menu.py, test/tests/test_skolmatinfo_menu.py
+
 - Date: 2026-02-08
 - Decision: In week view, render next week on empty weekend days when next week has entries.
 - Context: Weekend cards should skip an empty current week and show the next available week.

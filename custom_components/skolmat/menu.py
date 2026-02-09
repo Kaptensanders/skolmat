@@ -79,8 +79,13 @@ class Menu(ABC):
             return MashieMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         elif MateoMenu.provider in url:
             return MateoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        elif SkolmatInfoMenu.provider in url:
+            return SkolmatInfoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         else:
-            raise Exception(f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, {MatildaMenu.provider}, {MashieMenu.provider} or {MateoMenu.provider}")
+            raise Exception(
+                f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, "
+                f"{MatildaMenu.provider}, {MashieMenu.provider}, {MateoMenu.provider} or {SkolmatInfoMenu.provider}"
+            )
 
     def __init__(self, 
                  asyncExecutor, 
@@ -833,5 +838,109 @@ class MashieMenu(Menu):
                     menuEntry = self._processMenuEntry (entryDate, courseNo, course)
                     self._addMenuEntry(menu, entryDate, menuEntry)
                     courseNo += 1
+
+        return menu
+
+
+class SkolmatInfoMenu(Menu):
+
+    provider = "meny.skolmat.info"
+
+    def __init__(self,
+                 asyncExecutor, url:str,
+                 customMenuEntryProcessorCB: Callable | None = None,
+                 readableDaySummaryCB: Callable | None = None
+            ):
+
+        super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        self.headers = {
+            "user-agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/99.0.4844.82 Safari/537.36"
+            ),
+        }
+
+    def _fixUrl(self, url: str) -> str:
+        url = url.strip().rstrip("/")
+        if not url.startswith(("http://", "https://")):
+            url = f"https://{url}"
+
+        parsed = urlparse(url)
+        if not parsed.netloc or self.provider not in parsed.netloc:
+            raise ValueError("Skolmat.info URL must target meny.skolmat.info")
+
+        if not parsed.path:
+            raise ValueError("school path could not be extracted from url")
+
+        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}".rstrip("/")
+
+    def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
+        if entry := super()._processMenuEntry(entryDate, order, raw_entry):
+            return entry
+
+        return self._createMenuEntry(
+            order=order,
+            meal_raw="Lunch",
+            dish_raw=raw_entry.get("dish", ""),
+            label=raw_entry.get("label"),
+        )
+
+    async def _getWeek(self, aiohttp_session, year:int, week:int) -> str:
+        url = f"{self.url}?year={year}&week={week}"
+        async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
+            return await response.text()
+
+    def _parseWeekHtml(self, html_data: str) -> MenuData:
+        soup = BeautifulSoup(html_data, "html.parser")
+        menu:MenuData = {}
+
+        for time_tag in soup.find_all("time", attrs={"datetime": True}):
+            try:
+                entryDate = parser.isoparse(time_tag["datetime"]).date()
+            except Exception:
+                continue
+
+            day_info = time_tag.find_parent("div")
+            day_block = day_info.parent if day_info and day_info.parent else None
+            if not day_block:
+                continue
+
+            course_group = day_info.find_next_sibling("div")
+            if not course_group:
+                continue
+
+            courseNo = 1
+            for course in course_group.find_all("div", class_="space-y-2", recursive=False):
+                prose = course.find("div", class_=lambda c: c and "prose" in c)
+                dish = prose.get_text(" ", strip=True) if prose else ""
+
+                labels = []
+                for label_node in course.find_all("span", class_=lambda c: c and "text-sm" in c):
+                    value = normalizeString(label_node.get_text(" ", strip=True))
+                    if value and value not in labels:
+                        labels.append(value)
+
+                raw_entry = {
+                    "dish": dish,
+                    "label": ", ".join(labels) if labels else None,
+                }
+
+                menuEntry = self._processMenuEntry(entryDate, courseNo, raw_entry)
+                self._addMenuEntry(menu, entryDate, menuEntry)
+                courseNo += 1
+
+        return menu
+
+    async def _loadMenu(self, aiohttp_session) -> MenuData:
+        weekOffset = 0 if date.today().weekday() < 5 else 1
+        menu:MenuData = {}
+
+        for offset in range(self._weeks):
+            week_data = self._getWeekNumber(weekOffset + offset)
+            html_data = await self._getWeek(aiohttp_session, year=week_data[0], week=week_data[1])
+            parsed_week = self._parseWeekHtml(html_data)
+            for isodate, entries in parsed_week.items():
+                menu.setdefault(isodate, []).extend(entries)
 
         return menu

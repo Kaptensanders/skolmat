@@ -26,9 +26,12 @@ PROVIDERS = {
     "mashie3":      {"name": "Arhem äldreboende", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mashie3b":     {"name": "Arhem äldreboende", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": mashie3bProcessor, "readableDaySummaryCB": None},
     "mashie4":      {"name": "Brinkskolan", "url": "https://sodexo.mashie.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "mashie4b":     {"name": "Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
-}
+    "mashie4b":     {"name": "Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo1": {"name": "Lyckeby Kunskapscenter", "url": "https://meny.skolmat.info/blekinge/karlskrona/lyckeby-kunskapscenter", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo2": {"name": "Blå Ports förskola", "url": "https://meny.skolmat.info/blekinge/karlskrona/bla-ports-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo3": {"name": "Östra Torpskolan", "url": "https://meny.skolmat.info/blekinge/karlskrona/ostra-torpskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
 
+}
 
 # ha bootstrap standard set
 
@@ -46,6 +49,9 @@ PROVIDERS = {
 #     "mashie3":      {"name": "mashie - Arhem äldreboende - Org", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "mashie3b":     {"name": "mashie - Arhem äldreboende - Processed", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": mashie3bProcessor, "readableDaySummaryCB": None},
 #     "mashie4b":     {"name": "mashie - Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
+#     "mateo2":       {"name": "mateo - Ekskogens förskola", "url": "https://meny.mateo.se/molndal/158", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmatinfo1": {"name": "skolmatinfo - Lyckeby Kunskapscenter", "url": "https://meny.skolmat.info/blekinge/karlskrona/lyckeby-kunskapscenter", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+
 # }
 
 
