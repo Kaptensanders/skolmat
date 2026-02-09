@@ -141,7 +141,7 @@ If your kitchen misuse the provider schemas or imposes their own custom keys for
 ... or it can be used to do some custom filtering, or plant easter eggs in the menu data, etc etc
 
 Consider the example below:
-<img src="image-1.png" width="1369" />
+<img width="1371" height="1030" alt="image" src="https://github.com/user-attachments/assets/ab625e32-9563-48eb-9288-86764aaa340e" />
 
 custom_components/skolmat/processors/arhem_aldreboende.py:
 ```python
