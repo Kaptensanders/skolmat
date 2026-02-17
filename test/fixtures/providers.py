@@ -15,6 +15,7 @@ PROVIDERS = {
     "mateo2":       {"name": "Ekskogens förskola", "url": "https://meny.mateo.se/molndal/158", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mateo3":       {"name": "Lackalänga skola", "url": "https://meny.mateo.se/kavlinge-utbildning/337", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mateo4":       {"name": "Ljungenskolan", "url": "https://meny.mateo.se/kavlinge-utbildning/340", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "mateo5":       {"name": "Roslättskola", "url": "https://meny.mateo.se/svedala/273", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda1":     {"name": "Skutskär skola", "url": "https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda2":     {"name": "Parkskolan restaurang", "url": "https://menu.matildaplatform.com/meals/week/63fc8f84ccb95f5ce570a0d4_parkskolan-restaurang", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "matilda3":     {"name": "Dalajärs förskola", "url": "https://menu.matildaplatform.com/meals/week/6682a34d6337e8ced9340214_dalajars-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},

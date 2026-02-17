@@ -1,0 +1,264 @@
+// provider: mateo.se, URL: https://meny-api.mateo.se/api/v1/days/273
+
+[
+    {
+        "id": 7232,
+        "units_id": 273,
+        "date": "2026-02-09T00:00:00.000Z",
+        "deviation": null,
+        "meals": [
+            {
+                "id": 20585079,
+                "days_id": 7232,
+                "name": "Broccolibiffar med ost, kokt potatis och sås",
+                "type": "Dagens gröna",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585082,
+                "days_id": 7232,
+                "name": "Panerad fisk med kokt potatis och kall sås",
+                "type": "Lunch",
+                "image": "media/Panerad fisk Mateo_1738915102592.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 7233,
+        "units_id": 273,
+        "date": "2026-02-10T00:00:00.000Z",
+        "deviation": null,
+        "meals": [
+            {
+                "id": 20585093,
+                "days_id": 7233,
+                "name": "Cowboysoppa på vegfärs med bröd",
+                "type": "Dagens gröna",
+                "image": "media/Cowboysoppa på vegetarisk färs_1740050817018.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585096,
+                "days_id": 7233,
+                "name": "Grön ärtsoppa med bröd",
+                "type": "Lunch",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 7234,
+        "units_id": 273,
+        "date": "2026-02-11T00:00:00.000Z",
+        "deviation": null,
+        "meals": [
+            {
+                "id": 20585105,
+                "days_id": 7234,
+                "name": "Krämig södergryta med rotfrukter, dijon och rostad potatis",
+                "type": "Dagens gröna",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585108,
+                "days_id": 7234,
+                "name": " Krämig södergryta med fläsk, dijon och rostad potatis",
+                "type": "Lunch",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 7236,
+        "units_id": 273,
+        "date": "2026-02-12T00:00:00.000Z",
+        "deviation": null,
+        "meals": [
+            {
+                "id": 20585116,
+                "days_id": 7236,
+                "name": "Vårrullar med ris, sötsursås och soja",
+                "type": "Dagens gröna",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585118,
+                "days_id": 7236,
+                "name": "Nuggets med ris och sötsursås",
+                "type": "Lunch",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 7238,
+        "units_id": 273,
+        "date": "2026-02-13T00:00:00.000Z",
+        "deviation": "Alla hjärtan och mellofredag",
+        "meals": [
+            {
+                "id": 20585129,
+                "days_id": 7238,
+                "name": "Vegbollar med pasta och tomatsås",
+                "type": "Dagens gröna",
+                "image": null,
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585130,
+                "days_id": 7238,
+                "name": "Kycklingköttbullar med pasta och tomatsås",
+                "type": "Lunch",
+                "image": "media/Köttbullar med pasta Mateo_1738914095345.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 9982,
+        "units_id": 273,
+        "date": "2026-02-16T00:00:00.000Z",
+        "deviation": "Lovvecka",
+        "meals": [
+            {
+                "id": 20585140,
+                "days_id": 9982,
+                "name": "Kockens gröna val",
+                "type": "Dagens gröna",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585142,
+                "days_id": 9982,
+                "name": "Kockens val",
+                "type": "Lunch",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 9983,
+        "units_id": 273,
+        "date": "2026-02-17T00:00:00.000Z",
+        "deviation": "Lovvecka",
+        "meals": [
+            {
+                "id": 20585152,
+                "days_id": 9983,
+                "name": "Kockens grön val",
+                "type": "Dagens gröna",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585155,
+                "days_id": 9983,
+                "name": "Kockens gröna val",
+                "type": "Lunch",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 9984,
+        "units_id": 273,
+        "date": "2026-02-18T00:00:00.000Z",
+        "deviation": "Lovvecka",
+        "meals": [
+            {
+                "id": 20585162,
+                "days_id": 9984,
+                "name": "Kockens gröna val",
+                "type": "Dagens gröna",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585166,
+                "days_id": 9984,
+                "name": "Kockens val av fisk",
+                "type": "Lunch",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 9985,
+        "units_id": 273,
+        "date": "2026-02-19T00:00:00.000Z",
+        "deviation": "Lovvecka",
+        "meals": [
+            {
+                "id": 20585172,
+                "days_id": 9985,
+                "name": "Kockens val",
+                "type": "Dagens gröna",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585175,
+                "days_id": 9985,
+                "name": "Kockens val kött",
+                "type": "Lunch",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    },
+    {
+        "id": 9986,
+        "units_id": 273,
+        "date": "2026-02-20T00:00:00.000Z",
+        "deviation": "Lovvecka mellofredag",
+        "meals": [
+            {
+                "id": 20585181,
+                "days_id": 9986,
+                "name": "Kockens gröna val",
+                "type": "Dagens gröna",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            },
+            {
+                "id": 20585183,
+                "days_id": 9986,
+                "name": "Kockens val kyckling",
+                "type": "Lunch",
+                "image": "media/Kockens val Mateo_1738238309022.png",
+                "allergens": [],
+                "labels": []
+            }
+        ]
+    }
+]
