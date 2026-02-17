@@ -1,0 +1,819 @@
+// provider: menugo.se, URL: https://menugo.se/FetchTheMenu/%7B%22Kommunkod%22%3A%20%220381%22%2C%20%22L%C3%A4nkNamn%22%3A%20%22Gansta_forskola%22%7D
+
+[
+    {
+        "Datum": "2026-02-01",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-02",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Spaghetti och vegetarisk bolognese",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-03",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Korvstroganoff och ris",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-04",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "TEMAONSDAGAR Klimatvänligt",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Damaskus Dream wrap- Grönsaksbiff serveras med tabbouleh, yoghurtsås och libabröd",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-05",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Kyckling- och grönsaksgryta serveras med nudlar",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-06",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Fiskburgare serveras med bröd, klyftpotatis och tillbehör",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-07",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-08",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-09",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Kycklingcurry serveras med bulgur",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-10",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Fiskgratäng med ajvar- och kokosgrädde serveras med kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-11",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "TEMAONSDAGAR Klimatvänligt",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Streetfood Taco",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-12",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Cowboysoppa serveras med mjukt bröd och olika spreads",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-13",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Kebabgryta serveras med ris och vitlökssås",
+                "Matgrupp": [
+                    "Nötkött"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-14",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-15",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-16",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "SPORTLOV",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Pasta serveras med krämig tomat-och linssås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-17",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "SPORTLOV",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Kycklinggratäng och bulgur",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-18",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "SPORTLOV",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Kökets panerade fisk, skolans remouladsås och kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-19",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "SPORTLOV",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Pannkaka, sylt och keso ost .",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-20",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "SPORTLOV",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Tacogratäng",
+                "Matgrupp": [
+                    "Nötkött",
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-21",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-22",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-23",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Kokt potatis serveras med köttbullar, gräddsås och lingonsylt, picklad gurka",
+                "Matgrupp": [
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Vegobullar serveras med tabbouleh och yoghurtsås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-24",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Orientalisk fiskgratäng serveras med kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Inlagd sill serveras med kokt potatis och gräddfilsås",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Zucchinibiffar serveras med vitlökssås och currykornris",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-25",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Pasta med kycklingsås",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            },
+            {
+                "Namn": "Pasta med tomat- och basilikasås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-26",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Pannkaka serveras med kökets egna sylt",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            },
+            {
+                "Namn": "Högsbosoppa",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-27",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Varm korv och potatismos serveras med tillbehör",
+                "Matgrupp": [
+                    "Fläsk"
+                ]
+            },
+            {
+                "Namn": "Vegokorv och potatismos serveras med tillbehör",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-02-28",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-01",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-02",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Ugnstekt fisk med krispigt brödtäcke, kall sås och kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "\"Aloo Gobi\" Indisk currygryta med potatis, blomkål och kikärtor serveras med kornris",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-03",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Taco, tacosås bröd och massa grönsaker",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            },
+            {
+                "Namn": "Taco, tacosås bröd och massa grönsaker",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-04",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Hönsfreestelse",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            },
+            {
+                "Namn": "Mousakka",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-05",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Blodpudding och lingonsylt",
+                "Matgrupp": [
+                    "Fläsk",
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Potatisbullar, keso och lingonsylt",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-06",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Tomat-och ost lasagne",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            },
+            {
+                "Namn": "Ost- och broccolipaj",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-07",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-08",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-09",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "LOVDAG på skolorna",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Pastagratäng med krämig kycklingsås",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-10",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Panerad fisk, dansk remouladsås och kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Laxröra serveras med kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Morot-och linsbiff serveras med kornris och tzatziki",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-11",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Kycklingsoppa serveras mjukt bröd och pålägg",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            },
+            {
+                "Namn": "Soppa serveras mjukt bröd och pålägg",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-12",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Biff stroganoff serveras med kokt potatis och saltgurka",
+                "Matgrupp": [
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Vegetarisk Biff stroganoff serveras med kornris och saltgurka",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-13",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Poké bowl",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-14",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-15",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-16",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Pasta serveras med två olika såser",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-17",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "\"Chicken tikka masala\" Kycklinggryta med kokosgrädde, tomat och tikka masala serveras med bulgur samt yoghurtsås",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            },
+            {
+                "Namn": "Potatis- & baljväxtfärsgratäng serveras med vitlöksås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-18",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Biffar serveras med kokt potatis och gräddsås, lingon och inlagd gurka",
+                "Matgrupp": [
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Vegobullar serveras bulgur och tomatsås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-19",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Korv stroganoff serveras med ris",
+                "Matgrupp": [
+                    "Fläsk"
+                ]
+            },
+            {
+                "Namn": "Pannoumi stroganoff serveras med kornris",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-20",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Fiskburgare, klyftpotatis och tillbehör",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Vegoburgare, klyftpotatis och tillbehör",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-21",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-22",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-23",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Pasta och kalkonfärssås",
+                "Matgrupp": [
+                    "Kyckling"
+                ]
+            },
+            {
+                "Namn": "Pasta och krämig morotssås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-24",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Sprödbakad fisk, skolans remouladsås och kokt potatis",
+                "Matgrupp": [
+                    "Fisk"
+                ]
+            },
+            {
+                "Namn": "Blodpudding serveras med lingonsylt",
+                "Matgrupp": [
+                    "Fläsk",
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Gråärtsbiff serveras med yoghurtsås och kornbulgur",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-25",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "PÅSKLUNCH",
+                "Matgrupp": []
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-26",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Grekisk färslimpa, klyftpotatis och tzatziki",
+                "Matgrupp": [
+                    "Nötkött"
+                ]
+            },
+            {
+                "Namn": "Vegetarisk färslimpa serveras med kokt potatis och gräddsås",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-27",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Risgrynsgröt, mjukt bröd och pålägg",
+                "Matgrupp": []
+            },
+            {
+                "Namn": "Soppa, mjukt bröd och pålägg",
+                "Matgrupp": [
+                    "Vegetarisk"
+                ]
+            }
+        ]
+    },
+    {
+        "Datum": "2026-03-28",
+        "HighlightedDay": false,
+        "Maträtt": [
+            {
+                "Namn": "Meny saknad för denna dag.",
+                "Matgrupp": []
+            }
+        ]
+    }
+]

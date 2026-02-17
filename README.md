@@ -22,10 +22,18 @@
 #
 # skolmat custom component for Home Assistant
 Skolmat custom component for the food menu in Swedish schools (and some other places)
+This component is most probably only valid in Sweden. It leverages data from menu providers to create entities from a configured data source (url).
 
-## Description
-This component is most probably only valid in Sweden. It leverages data from skolmaten.se, webmenu.foodit.se, menu.matildaplatform.com, mpi.mashie.com or meny.mateo.se to create entities from a configured data source (url).
+### Supported menu providers
+* skolmaten.se
+* webmenu.foodit.se
+* menu.matildaplatform.com
+* mpi.mashie.com
+* meny.mateo.se
+* meny.skolmat.info
+* menugo.se
 
+### Home Assistant functionality
 The integration exposes **two entities per configured school**, tied to a Skolmat device:
 - a **sensor entity** showing today's lunch, and full menu data as attributes
 - a **calendar entity** showing lunch events for past and upcoming days (90 day event history kept)
@@ -134,6 +142,15 @@ If the url to your weekly menu contains `/public/app/` you should be fine. Other
    Example:  
    `https://meny.skolmat.info/blekinge/karlskrona/asposkolan`
 
+---
+
+### menugo.se
+1. Open https://menugo.se and navigate to your school/establishment.
+2. When you arrive at the page where you can see the menu, copy the url  
+   Example:  
+   `https://menugo.se/m/0127/Kassmyraskolan`
+
+---
 
 ## Custom data preprocesor (advanced)
 

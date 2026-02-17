@@ -11,6 +11,7 @@
 # - sensor.skolmaten_halta_forskola
 # - sensor.matilda_skutskar_skola
 # - sensor.skolmatinfo_lyckeby_kunskapscenter
+# - sensor.menugo_kassmyraskolan
 
 title: Skolmat
 decluttering_templates:
@@ -167,6 +168,13 @@ views:
           - entity: 'sensor.skolmatinfo_lyckeby_kunskapscenter'
           - menu_type: 'week'
           - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: 'sensor.menugo_kassmyraskolan <br> week'
+          - entity: 'sensor.menugo_kassmyraskolan'
+          - menu_type: 'week'
+          - header: 'full'
   - title: All Week
     path: all_week
     cards:
@@ -255,6 +263,13 @@ views:
           - entity: 'sensor.skolmatinfo_lyckeby_kunskapscenter'
           - menu_type: 'week'
           - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: '**[81]** - sensor.menugo_kassmyraskolan <br> week | header: full'
+          - entity: 'sensor.menugo_kassmyraskolan'
+          - menu_type: 'week'
+          - header: 'full'
   - title: All Today
     path: all_today
     cards:
@@ -340,6 +355,13 @@ views:
         variables:
           - summary: '**[79]** - sensor.skolmatinfo_lyckeby_kunskapscenter <br> today | header: full'
           - entity: 'sensor.skolmatinfo_lyckeby_kunskapscenter'
+          - menu_type: 'today'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: '**[82]** - sensor.menugo_kassmyraskolan <br> today | header: full'
+          - entity: 'sensor.menugo_kassmyraskolan'
           - menu_type: 'today'
           - header: 'full'
   - title: Org vs Processed Week
@@ -596,6 +618,13 @@ views:
         variables:
           - summary: '**[80]** - sensor.skolmatinfo_lyckeby_kunskapscenter <br> rolling-week | header: full'
           - entity: 'sensor.skolmatinfo_lyckeby_kunskapscenter'
+          - menu_type: 'rolling-week'
+          - header: 'full'
+      - type: custom:decluttering-card
+        template: skolmat_card_stack
+        variables:
+          - summary: '**[83]** - sensor.menugo_kassmyraskolan <br> rolling-week | header: full'
+          - entity: 'sensor.menugo_kassmyraskolan'
           - menu_type: 'rolling-week'
           - header: 'full'
   - title: Meal & Label Options

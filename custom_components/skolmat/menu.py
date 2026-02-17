@@ -4,7 +4,7 @@ from datetime import datetime, date, timezone, timedelta
 from dateutil import tz, parser
 from logging import getLogger
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 from collections.abc import Callable
 from typing import TypedDict, TypeAlias, Any
 from pathlib import Path
@@ -81,6 +81,8 @@ class Menu(ABC):
             return MateoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         elif SkolmatInfoMenu.provider in url:
             return SkolmatInfoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        elif MenuGoMenu.provider in url:
+            return MenuGoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         else:
             raise Exception(
                 f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, "
@@ -560,7 +562,6 @@ class MateoMenu(Menu):
     async def _fetchMenu (self, aiohttp_session, startDate:date, endDate:date):
 
         url = f"{self.url}?from={startDate.isoformat()}&to={endDate.isoformat()}"
-        log.info(url)
         async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
             html = await response.text()
             return json.loads(html)
@@ -569,8 +570,6 @@ class MateoMenu(Menu):
     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
             return entry
-
-        log.info(raw_entry["labels"])
 
         if raw_entry["labels"]:
             label = ", ".join(label["name"].strip() for label in raw_entry["labels"])
@@ -943,4 +942,106 @@ class SkolmatInfoMenu(Menu):
             for isodate, entries in parsed_week.items():
                 menu.setdefault(isodate, []).extend(entries)
 
+        return menu
+
+
+
+class MenuGoMenu(Menu):
+
+    provider = "menugo.se"
+
+    def __init__(self, 
+                 asyncExecutor, url:str, 
+                 customMenuEntryProcessorCB: Callable | None = None, 
+                 readableDaySummaryCB: Callable | None = None
+            ):
+
+        super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        self.headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json", 
+            "Referer": f"https://{self.provider}/",
+            }
+
+    def _fixUrl(self, url: str) -> str:
+
+        # https://menugo.se/m/0127/Bjorkstugan ->
+        # https://menugo.se/FetchTheMenu/{"Kommunkod":"0127","LänkNamn":"Bjorkstugan"} ->
+        # https://menugo.se/FetchTheMenu/%7B%22Kommunkod%22%3A%220127%22%2C%22L%C3%A4nkNamn%22%3A%22Kungstappan%22%7D
+
+        parsed = urlparse(url.strip())
+        parts = parsed.path.strip("/").split("/")
+
+        # Expected: ["m", "0127", "Bjorkstugan"]
+        if len(parts) < 3 or parts[0] != "m":
+            raise ValueError(f"Unexpected Menugo URL format: {parsed.path}")
+
+        uri = {
+            "Kommunkod": parts[1],
+            "LänkNamn": parts[2]
+        }
+        encoded = quote(json.dumps(uri, ensure_ascii=False), safe="")
+        url = f"https://menugo.se/FetchTheMenu/{encoded}"
+
+        return url
+    
+
+    async def _fetchMenu (self, aiohttp_session):
+
+        # no date/range arguments in the uri, seems to return a fixed range of weeks, so just fetch and parse
+        async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
+            html = await response.text()
+            data = json.loads(html)
+            return data["CacheObjekt"]
+
+    def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
+        if entry := super()._processMenuEntry(entryDate, order, raw_entry):
+            return entry
+
+        label = None
+        if raw_entry["Matgrupp"]:
+            label = ", ".join(raw_entry["Matgrupp"])
+
+        dish = raw_entry["Namn"].strip()
+
+        if dish == "Meny saknad för denna dag.":
+            return None
+
+        meal = None
+        if dish.lower().startswith("lunch:"):
+            meal = "Lunch"
+            dish = dish[len(meal) + 1:].lstrip()
+        elif dish.lower().startswith("middag:"):
+            meal = "Middag"
+            dish = dish[len(meal) + 1:].lstrip()
+
+        return self._createMenuEntry (order, meal, dish, label)
+
+    async def _loadMenu(self, aiohttp_session) -> MenuData:
+
+        today = date.today()
+        firstDay = today - timedelta(days=today.weekday())
+        if today.weekday() >= 5:
+           firstDay += timedelta(days=7)
+
+        endDate = firstDay + timedelta(days=14) 
+
+        data = await self._fetchMenu(aiohttp_session)
+        dayEntries = data.get("DatumObjekt", [])
+
+        self._dumpData(dayEntries)
+        menu:MenuData = {}
+
+        for day in dayEntries:
+            entryDate = parser.isoparse(day["Datum"]).date()
+            if entryDate > endDate:
+                break
+
+            courseNo = 1
+            for course in day["Maträtt"]:
+                menuEntry = self._processMenuEntry (entryDate, courseNo, course)
+                if menuEntry:
+                    self._addMenuEntry(menu, entryDate, menuEntry)
+                    courseNo = courseNo + 1
+        
         return menu
