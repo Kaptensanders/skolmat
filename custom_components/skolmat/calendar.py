@@ -29,6 +29,10 @@ from .menu import Menu
 _LOGGER = logging.getLogger(__name__)
 
 
+def _has_event_content(summary: str | None, description: str | None) -> bool:
+    return bool((summary or "").strip() or (description or "").strip())
+
+
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, add_entities):
     data = hass.data[DOMAIN][entry.entry_id]
     menu: Menu = data["menu"]
@@ -150,8 +154,13 @@ class SkolmatCalendarEntity(CalendarEntity):
         # Add today's menu to history if needed
         summary = self._menu.getReadableDaySummary(today)
         menu_text = self._menu.getReadableDayMenu(today)
-        if self._history.get(today_str) != {"summary": summary, "menu": menu_text}:
-            self._history[today_str] = {"summary": summary, "menu": menu_text}
+        today_info = {"summary": summary, "menu": menu_text}
+        if _has_event_content(summary, menu_text):
+            if self._history.get(today_str) != today_info:
+                self._history[today_str] = today_info
+                self._history_dirty = True
+        elif self._history.get(today_str) == {"summary": "", "menu": ""}:
+            self._history.pop(today_str, None)
             self._history_dirty = True
 
         # Prune history older than N days
@@ -173,6 +182,8 @@ class SkolmatCalendarEntity(CalendarEntity):
             day_date = date.fromisoformat(d)
             if day_date < today:
                 description = info.get("menu") or self._menu.getReadableDayMenu(day_date)
+                if not _has_event_content(info.get("summary"), description):
+                    continue
                 events.append(
                     self._build_event(
                         day=day_date,
@@ -187,24 +198,34 @@ class SkolmatCalendarEntity(CalendarEntity):
             menu_dates.add(day_date)
             if day_date < today:
                 continue
+            summary = self._menu.getReadableDaySummary(day_date)
+            description = self._menu.getReadableDayMenu(day_date)
+            if not _has_event_content(summary, description):
+                continue
             events.append(
                 self._build_event(
                     day=day_date,
-                    summary=self._menu.getReadableDaySummary(day_date),
-                    description=self._menu.getReadableDayMenu(day_date),
+                    summary=summary,
+                    description=description,
                 )
             )
 
         if today not in menu_dates and today_str in self._history:
             info = self._history[today_str]
             description = info.get("menu") or menu_text
-            events.append(
-                self._build_event(
-                    day=today,
-                    summary=info.get("summary", ""),
-                    description=description,
+            if not _has_event_content(info.get("summary"), description):
+                self._history.pop(today_str, None)
+                self._history_dirty = True
+            else:
+                events.append(
+                    self._build_event(
+                        day=today,
+                        summary=info.get("summary", ""),
+                        description=description,
+                    )
                 )
-            )
+
+        await self._async_save_history()
 
         events.sort(key=lambda e: self._normalize(e.start))
 

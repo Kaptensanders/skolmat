@@ -342,3 +342,9 @@ Template:
 - Context: Limiting to the next N calendar dates could render fewer days than `rolling_week_max_days` when weekend/empty dates are in range.
 - Impact: Rolling-week now fills up to `rolling_week_max_days` with non-empty dates in chronological order, matching the expected behavior.
 - References: skolmat-card/skolmat-card.js
+
+- Date: 2026-03-26
+- Decision: Skip blank calendar history/event entries when a provider returns no usable menu text.
+- Context: Some `skolmaten.se` URLs return `WeekState: null`, which previously produced an empty but valid menu fetch and a blank calendar event for today.
+- Impact: Calendar history is only persisted when summary or description has content, stale blank history for today is pruned, and blank events are skipped.
+- References: custom_components/skolmat/calendar.py, test/tests/test_calendar_empty_menu.py
