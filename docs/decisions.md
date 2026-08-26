@@ -13,6 +13,12 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-08-26
+- Decision: Fetch skolmat.info menus from the public JSON api instead of scraping `meny.skolmat.info` html.
+- Context: `meny.skolmat.info` now redirects to `www.skolmat.info`, which is client rendered, so the html parser returns an empty menu for every skolmat.info user. The new site calls `www.skolmat.info/api/public/matsedlar/<facilityId>?year=&week=`, which is public and needs no token.
+- Impact: `SkolmatInfoMenu.provider` widened from `meny.skolmat.info` to `skolmat.info`. Urls are reduced to a facility id, taken from the `facilityId` query parameter or an api url. Legacy urls keep working: the school name is resolved once against the public facility list at first fetch. Allergen enum codes (`VEGETARIAN`) are capitalized before normalization.
+- References: custom_components/skolmat/menu.py, test/tests/test_skolmatinfo_menu.py, test/fixtures/providers.py
+
 - Date: 2026-02-09
 - Decision: Parse `meny.skolmat.info` as plain HTML with BeautifulSoup and merge two ISO weeks.
 - Context: A new provider serves backend-rendered HTML (no JSON/RSS API) with date and dish/allergen blocks.

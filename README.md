@@ -30,7 +30,7 @@ This component is most probably only valid in Sweden. It leverages data from men
 * menu.matildaplatform.com
 * mpi.mashie.com
 * meny.mateo.se
-* meny.skolmat.info
+* skolmat.info
 * menugo.se
 
 ### Home Assistant functionality
@@ -135,12 +135,15 @@ If the url to your weekly menu contains `/public/app/` you should be fine. Other
 
 ---
 
-### meny.skolmat.info
-*Karlskrona and possibly other regions recently migrated from skolmaten.se to meny.skolmat.info.
-1. Open https://meny.skolmat.info/ and follow the links to find your school.
+### skolmat.info
+*Karlskrona, Malmö and possibly other regions migrated from skolmaten.se to skolmat.info.
+1. Open https://www.skolmat.info and select county, municipality and your school.
 2. When you arrive at the page with this week's menu, copy the url  
    Example:  
-   `https://meny.skolmat.info/blekinge/karlskrona/asposkolan`
+   `https://www.skolmat.info/matsedlar?countyCode=12&municipalityId=1280&facilityId=cmruebdqn000804jsdd2oi356`
+
+Older `https://meny.skolmat.info/...` urls still work - the school is looked up by name on
+first fetch - but the url above is the reliable one.
 
 ---
 

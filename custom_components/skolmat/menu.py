@@ -4,7 +4,7 @@ from datetime import datetime, date, timezone, timedelta
 from dateutil import tz, parser
 from logging import getLogger
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse, quote
+from urllib.parse import urlparse, quote, parse_qs
 from collections.abc import Callable
 from typing import TypedDict, TypeAlias, Any
 from pathlib import Path
@@ -843,7 +843,13 @@ class MashieMenu(Menu):
 
 class SkolmatInfoMenu(Menu):
 
-    provider = "meny.skolmat.info"
+    provider = "skolmat.info"
+
+    _API_BASE = "https://www.skolmat.info/api/public/matsedlar"
+    _WEEKDAYS = {
+        "MONDAY": 1, "TUESDAY": 2, "WEDNESDAY": 3, "THURSDAY": 4,
+        "FRIDAY": 5, "SATURDAY": 6, "SUNDAY": 7,
+    }
 
     def __init__(self,
                  asyncExecutor, url:str,
@@ -851,8 +857,10 @@ class SkolmatInfoMenu(Menu):
                  readableDaySummaryCB: Callable | None = None
             ):
 
+        self._legacyName: str | None = None
         super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         self.headers = {
+            "accept": "application/json",
             "user-agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -860,19 +868,72 @@ class SkolmatInfoMenu(Menu):
             ),
         }
 
+    @staticmethod
+    def _normalizeName(name: str) -> str:
+        name = name.lower()
+        for src_char, dst_char in (("å", "a"), ("ä", "a"), ("ö", "o"), ("é", "e"), ("ü", "u")):
+            name = name.replace(src_char, dst_char)
+        return "".join(c for c in name if c.isalnum())
+
     def _fixUrl(self, url: str) -> str:
+        """
+        Accepts, in order of preference:
+          https://www.skolmat.info/matsedlar?...&facilityId=<id>   (current site)
+          https://www.skolmat.info/api/public/matsedlar/<id>       (api url)
+          https://meny.skolmat.info/<region>/<municipality>/<school>  (legacy)
+
+        Legacy urls no longer resolve - meny.skolmat.info redirects to the new
+        client rendered site - so the school name is kept and resolved against
+        the public facility list on first fetch.
+        """
         url = url.strip().rstrip("/")
         if not url.startswith(("http://", "https://")):
             url = f"https://{url}"
 
         parsed = urlparse(url)
         if not parsed.netloc or self.provider not in parsed.netloc:
-            raise ValueError("Skolmat.info URL must target meny.skolmat.info")
+            raise ValueError("Skolmat.info url must target skolmat.info")
 
-        if not parsed.path:
-            raise ValueError("school path could not be extracted from url")
+        facilityId = parse_qs(parsed.query).get("facilityId", [None])[0]
 
-        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}".rstrip("/")
+        if not facilityId:
+            path = parsed.path.strip("/")
+            if path.startswith("api/public/matsedlar/"):
+                facilityId = path.rsplit("/", 1)[-1]
+            elif path and path != "matsedlar":
+                self._legacyName = path.rsplit("/", 1)[-1]
+
+        if facilityId:
+            return f"{self._API_BASE}/{facilityId}"
+
+        if self._legacyName:
+            return self._API_BASE
+
+        raise ValueError("facility id could not be extracted from url")
+
+    async def _resolveLegacyName(self, aiohttp_session) -> None:
+        """Map a school name from a legacy url to a facility id."""
+
+        wanted = self._normalizeName(self._legacyName)
+
+        async with aiohttp_session.get(
+            self._API_BASE, headers=self.headers, raise_for_status=True
+        ) as response:
+            data = await response.json(content_type=None)
+
+        for county in data.get("counties") or []:
+            for municipality in county.get("municipalities") or []:
+                entries = (municipality.get("facilities") or []) + (municipality.get("groups") or [])
+                for entry in entries:
+                    if self._normalizeName(entry.get("name", "")) == wanted:
+                        self.url = f"{self._API_BASE}/{entry['id']}"
+                        self._legacyName = None
+                        return
+
+        raise ValueError(
+            f"'{self._legacyName}' was not found at skolmat.info. "
+            "Open https://www.skolmat.info, select your school and use that url instead."
+        )
 
     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
@@ -881,47 +942,49 @@ class SkolmatInfoMenu(Menu):
         return self._createMenuEntry(
             order=order,
             meal_raw="Lunch",
-            dish_raw=raw_entry.get("dish", ""),
+            dish_raw=raw_entry.get("text", ""),
             label=raw_entry.get("label"),
         )
 
-    async def _getWeek(self, aiohttp_session, year:int, week:int) -> str:
+    async def _getWeek(self, aiohttp_session, year:int, week:int) -> Any:
         url = f"{self.url}?year={year}&week={week}"
         async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
-            return await response.text()
+            return await response.json(content_type=None)
 
-    def _parseWeekHtml(self, html_data: str) -> MenuData:
-        soup = BeautifulSoup(html_data, "html.parser")
+    def _parseWeek(self, payload: Any) -> MenuData:
         menu:MenuData = {}
 
-        for time_tag in soup.find_all("time", attrs={"datetime": True}):
+        week = (payload or {}).get("week") or {}
+        year = week.get("year")
+        weekNumber = week.get("weekNumber")
+        if not year or not weekNumber:
+            return menu
+
+        for dayName, day in (week.get("days") or {}).items():
+            weekDay = self._WEEKDAYS.get(str(dayName).upper())
+            if not weekDay or not day or not day.get("isOpen", True):
+                continue
+
             try:
-                entryDate = parser.isoparse(time_tag["datetime"]).date()
-            except Exception:
-                continue
-
-            day_info = time_tag.find_parent("div")
-            day_block = day_info.parent if day_info and day_info.parent else None
-            if not day_block:
-                continue
-
-            course_group = day_info.find_next_sibling("div")
-            if not course_group:
+                entryDate = date.fromisocalendar(year, weekNumber, weekDay)
+            except ValueError:
                 continue
 
             courseNo = 1
-            for course in course_group.find_all("div", class_="space-y-2", recursive=False):
-                prose = course.find("div", class_=lambda c: c and "prose" in c)
-                dish = prose.get_text(" ", strip=True) if prose else ""
-
+            for row in day.get("rows") or []:
                 labels = []
-                for label_node in course.find_all("span", class_=lambda c: c and "text-sm" in c):
-                    value = normalizeString(label_node.get_text(" ", strip=True))
+                for allergen in row.get("allergens") or []:
+                    value = allergen.get("name") if isinstance(allergen, dict) else allergen
+                    value = str(value) if value else ""
+                    if value.isupper():
+                        # the api serves allergens as enum codes, e.g. VEGETARIAN
+                        value = value.capitalize()
+                    value = normalizeString(value)
                     if value and value not in labels:
                         labels.append(value)
 
                 raw_entry = {
-                    "dish": dish,
+                    "text": row.get("text", ""),
                     "label": ", ".join(labels) if labels else None,
                 }
 
@@ -932,14 +995,18 @@ class SkolmatInfoMenu(Menu):
         return menu
 
     async def _loadMenu(self, aiohttp_session) -> MenuData:
+
+        if self._legacyName:
+            await self._resolveLegacyName(aiohttp_session)
+
         weekOffset = 0 if date.today().weekday() < 5 else 1
         menu:MenuData = {}
 
         for offset in range(self._weeks):
             week_data = self._getWeekNumber(weekOffset + offset)
-            html_data = await self._getWeek(aiohttp_session, year=week_data[0], week=week_data[1])
-            parsed_week = self._parseWeekHtml(html_data)
-            for isodate, entries in parsed_week.items():
+            payload = await self._getWeek(aiohttp_session, year=week_data[0], week=week_data[1])
+            self._dumpData(payload)
+            for isodate, entries in self._parseWeek(payload).items():
                 menu.setdefault(isodate, []).extend(entries)
 
         return menu
