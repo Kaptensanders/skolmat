@@ -715,10 +715,31 @@ class MatildaMenu (Menu):
     
     async def _loadMenu(self, aiohttp_session):
 
-        w1 = await self._getWeek(aiohttp_session, self.url)
-        w2 = await self._getWeek(aiohttp_session, "https://menu.matildaplatform.com" + w1["nextURL"])
+        # menu.matildaplatform.com no longer server-renders the menu: __NEXT_DATA__
+        # only carries distributorName/canonicalId, so neither "meals" nor "nextURL"
+        # is available. The page now calls /api/menu, which takes an arbitrary date
+        # range - so both weeks come from a single request.
+        match = re.search(r"/meals/week/([0-9a-fA-F]{24})", self.url)
+        if not match:
+            raise ValueError(f"Could not extract distributorId from url: {self.url}")
+        distributorId = match.group(1)
 
-        mealEntries = [*w1["meals"], *w2["meals"]]
+        today = date.today()
+        startDate = today - timedelta(days=today.weekday())   # monday this week
+        endDate = startDate + timedelta(days=13)              # sunday next week
+
+        apiUrl = (
+            "https://menu.matildaplatform.com/api/menu"
+            f"?distributorId={distributorId}"
+            f"&startDate={startDate.isoformat()}"
+            f"&endDate={endDate.isoformat()}"
+            "&lang=sv"
+        )
+
+        async with aiohttp_session.get(apiUrl, headers=self.headers, raise_for_status=True) as response:
+            data = json.loads(await response.text())
+
+        mealEntries = data.get("meals") or []
 
         self._dumpData(mealEntries)
 
