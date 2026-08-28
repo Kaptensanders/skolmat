@@ -158,6 +158,9 @@ If the menu URL does not match one of the supported providers above, Skolmat tre
 custom JSON menu URL. This makes it possible to use a self-hosted JSON file or endpoint without
 adding a dedicated provider to the integration.
 
+Big ups to [@McBenac](https://github.com/McBenac) for adding this handy JSON escape hatch —
+`200 OK`, lunch is served.
+
 > **Important:** This is fallback behavior. A misspelled or outdated URL for a supported
 > provider will also select the custom JSON provider. Skolmat writes a warning to the Home
 > Assistant log whenever this happens. If configuration fails unexpectedly, check both the URL
