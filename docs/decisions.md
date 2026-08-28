@@ -348,3 +348,9 @@ Template:
 - Context: Some `skolmaten.se` URLs return `WeekState: null`, which previously produced an empty but valid menu fetch and a blank calendar event for today.
 - Impact: Calendar history is only persisted when summary or description has content, stale blank history for today is pruned, and blank events are skipped.
 - References: custom_components/skolmat/calendar.py, test/tests/test_calendar_empty_menu.py
+
+- Date: 2026-08-26
+- Decision: Add `CustomJsonMenu` as a generic catch-all provider for URLs that do not match a recognized provider.
+- Context: Some schools/sites publish menus as a plain, self-hosted JSON file with no dedicated integration; `createMenu()` previously raised on any unrecognized URL instead of offering a fallback.
+- Impact: `createMenu()`'s `else` branch now returns `CustomJsonMenu` instead of raising, parsing a JSON object keyed by ISO dates into `MenuData`. No config flow changes were needed. See `docs/custom-json-provider.md` for the schema.
+- References: custom_components/skolmat/menu.py, test/tests/test_customjson_menu.py, docs/custom-json-provider.md

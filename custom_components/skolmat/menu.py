@@ -84,10 +84,9 @@ class Menu(ABC):
         elif MenuGoMenu.provider in url:
             return MenuGoMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
         else:
-            raise Exception(
-                f"URL not recognized as {SkolmatenMenu.provider}, {FoodItMenu.provider}, "
-                f"{MatildaMenu.provider}, {MashieMenu.provider}, {MateoMenu.provider} or {SkolmatInfoMenu.provider}"
-            )
+            # Catch-all: any URL not recognized as one of the providers above is
+            # treated as a generic JSON source (see CustomJsonMenu for the expected schema).
+            return CustomJsonMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
 
     def __init__(self, 
                  asyncExecutor, 
@@ -1043,5 +1042,77 @@ class MenuGoMenu(Menu):
                 if menuEntry:
                     self._addMenuEntry(menu, entryDate, menuEntry)
                     courseNo = courseNo + 1
-        
+
         return menu
+
+
+class CustomJsonMenu(Menu):
+
+    provider = "custom_json"
+
+    def __init__(self,
+                 asyncExecutor, url:str,
+                 customMenuEntryProcessorCB: Callable | None = None,
+                 readableDaySummaryCB: Callable | None = None
+            ):
+
+        super().__init__(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
+        self.headers = {"Accept": "application/json"}
+
+    def _fixUrl(self, url: str) -> str:
+        url = url.strip()
+        if not url.startswith(("http://", "https://")):
+            url = f"https://{url}"
+        return url
+
+    async def _fetchMenu(self, aiohttp_session):
+        async with aiohttp_session.get(self.url, headers=self.headers, raise_for_status=True) as response:
+            html = await response.text()
+            return json.loads(html)
+
+    def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
+        if entry := super()._processMenuEntry(entryDate, order, raw_entry):
+            return entry
+
+        return self._createMenuEntry(
+            order=order,
+            meal_raw=raw_entry.get("meal"),
+            dish_raw=raw_entry.get("dish") or "",
+            label=raw_entry.get("label"),
+        )
+
+    def _parseMenuData(self, data) -> MenuData:
+        """
+        Parse a plain JSON object keyed by ISO dates (YYYY-MM-DD) into MenuData.
+        Synchronous and side-effect free (no I/O) so it can be unit tested directly.
+        """
+
+        if not isinstance(data, dict):
+            raise ValueError("Expected a JSON object keyed by ISO dates (YYYY-MM-DD)")
+
+        menu: MenuData = {}
+
+        for key, entries in data.items():
+            try:
+                entryDate = date.fromisoformat(key)
+            except ValueError:
+                raise ValueError(f"Invalid date key {key!r}, expected ISO format (YYYY-MM-DD)")
+
+            if not isinstance(entries, list):
+                raise ValueError(f"Expected a list of menu entries for date {key!r}")
+
+            for index, raw_entry in enumerate(entries):
+                if not isinstance(raw_entry, dict):
+                    raise ValueError(
+                        f"Expected a JSON object for each menu entry in {key!r}, got {type(raw_entry).__name__}"
+                    )
+                order = raw_entry.get("order") if isinstance(raw_entry.get("order"), int) else index + 1
+                menuEntry = self._processMenuEntry(entryDate, order, raw_entry)
+                self._addMenuEntry(menu, entryDate, menuEntry)
+
+        return menu
+
+    async def _loadMenu(self, aiohttp_session) -> MenuData:
+        data = await self._fetchMenu(aiohttp_session)
+        self._dumpData(data)
+        return self._parseMenuData(data)
