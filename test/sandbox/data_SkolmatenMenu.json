@@ -1,0 +1,554 @@
+// provider: skolmaten.se, URL: https://skolmaten.se/api/4/menu/school/skutehagens-skolan
+
+[
+    {
+        "id": "16c9cda9-5701-431b-979c-288489195405",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-24T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:34:09.420Z",
+        "updatedAt": "2026-08-11T05:34:09.420Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "69f055dd-8a7c-4ebe-b904-e66b7a331be8",
+        "Meals": [
+            {
+                "id": "d6f995c0-5beb-42ba-bf5f-0570d2646732",
+                "name": "Korvstroganoff med ris",
+                "order": 0,
+                "createdAt": "2026-08-11T05:34:09.413Z",
+                "updatedAt": "2026-08-11T05:34:09.413Z",
+                "dayId": "16c9cda9-5701-431b-979c-288489195405",
+                "mealAttributeIds": [
+                    "e07158df-d241-49b5-b520-3aef3a2f80a9"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "e07158df-d241-49b5-b520-3aef3a2f80a9",
+                        "oldId": "4867978693705728",
+                        "name": "pork",
+                        "order": 3,
+                        "en": "Pork",
+                        "sv": "Fläsk",
+                        "imageUrl": "https://lh3.googleusercontent.com/54PHjbKcKD_jfmzxPCPwkywDH4RYhp4UH3ptCToEFoK_bWoN-KdInhhm5fWDGWxsb2AunG3DVFLVJm6RKw",
+                        "createdAt": "2025-02-13T17:15:17.871Z",
+                        "updatedAt": "2025-02-13T17:15:17.871Z"
+                    }
+                ]
+            },
+            {
+                "id": "b0be32f0-9fbb-4068-ba24-d405167de2ea",
+                "name": "Vegetarisk stroganoff med ris",
+                "order": 1,
+                "createdAt": "2026-08-11T05:34:09.413Z",
+                "updatedAt": "2026-08-11T05:34:09.413Z",
+                "dayId": "16c9cda9-5701-431b-979c-288489195405",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "8a683213-2951-478a-af7f-ad125f18ec35",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-25T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:34:09.420Z",
+        "updatedAt": "2026-08-11T05:34:09.420Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "69f055dd-8a7c-4ebe-b904-e66b7a331be8",
+        "Meals": [
+            {
+                "id": "4143041d-f121-4248-92af-5e9f4ecd2c94",
+                "name": "Panerad fisk med potatis och kall sås",
+                "order": 0,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "8a683213-2951-478a-af7f-ad125f18ec35",
+                "mealAttributeIds": [
+                    "2056d68e-d15a-422c-9e13-848099d2acb1"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "2056d68e-d15a-422c-9e13-848099d2acb1",
+                        "oldId": "4727241205350400",
+                        "name": "fish",
+                        "order": 7,
+                        "en": "Fish",
+                        "sv": "Fisk",
+                        "imageUrl": "https://lh3.googleusercontent.com/zgT4i0Lhvz3KvrbqYdPqWfkMwv7Byb5boPJoLYaE5clCMWYzijwC_3yOe7AzWds26hCZxdOHhbOtXrdRnHU",
+                        "createdAt": "2025-02-13T17:15:17.868Z",
+                        "updatedAt": "2025-02-13T17:15:17.868Z"
+                    }
+                ]
+            },
+            {
+                "id": "a7b36b06-1811-48e4-b03e-2321ddbf26d8",
+                "name": "Ostgratinerad broccoli med potatis ",
+                "order": 1,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "8a683213-2951-478a-af7f-ad125f18ec35",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "eecbdc87-64c9-4b54-b068-1703a8e90284",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-26T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:34:09.420Z",
+        "updatedAt": "2026-08-11T05:34:09.420Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "69f055dd-8a7c-4ebe-b904-e66b7a331be8",
+        "Meals": [
+            {
+                "id": "4b7604f0-523d-4310-acbb-a9c16f8913de",
+                "name": "Wokade nudlar med kyckling",
+                "order": 0,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "eecbdc87-64c9-4b54-b068-1703a8e90284",
+                "mealAttributeIds": [
+                    "c47bdd32-88b8-4c9e-9b3a-e91a769030d9"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "c47bdd32-88b8-4c9e-9b3a-e91a769030d9",
+                        "oldId": "6652174258929664",
+                        "name": "bird",
+                        "order": 24,
+                        "en": "Bird",
+                        "sv": "Fågel",
+                        "imageUrl": "https://lh3.googleusercontent.com/NS-2tvsrH-FVUsNW1JSIIINurTs14c6ct3jL31Rx5iRrgK6Zq8OH6vhm29aYSWL1A328A-a96LebGUbbBwE5WBqvyV0QWuw6",
+                        "createdAt": "2025-02-13T17:15:18.132Z",
+                        "updatedAt": "2025-02-13T17:15:18.132Z"
+                    }
+                ]
+            },
+            {
+                "id": "203e5ab0-fdb0-4825-b759-40d34256d48d",
+                "name": "Wokade nudlar med grönsaker",
+                "order": 1,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "eecbdc87-64c9-4b54-b068-1703a8e90284",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "6e997d6b-7f6c-4186-aeb5-d46c25ed78c8",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-27T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:34:09.420Z",
+        "updatedAt": "2026-08-11T05:34:09.420Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "69f055dd-8a7c-4ebe-b904-e66b7a331be8",
+        "Meals": [
+            {
+                "id": "29513ea5-0b90-4145-ae04-92b03d795d1c",
+                "name": "Pastasallad, plocka din egen sallad",
+                "order": 0,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "6e997d6b-7f6c-4186-aeb5-d46c25ed78c8",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "46a6af32-91a0-4582-a97b-a0a97685ffaa",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-28T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:34:09.420Z",
+        "updatedAt": "2026-08-11T05:34:09.420Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "69f055dd-8a7c-4ebe-b904-e66b7a331be8",
+        "Meals": [
+            {
+                "id": "dffba6b9-fde7-4d39-900e-b5a1ea683801",
+                "name": "Morotslasagne",
+                "order": 0,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "46a6af32-91a0-4582-a97b-a0a97685ffaa",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            },
+            {
+                "id": "c034246f-f06d-42dc-b1ea-d0fd53e0f65d",
+                "name": "Kökets val",
+                "order": 1,
+                "createdAt": "2026-08-11T05:34:09.414Z",
+                "updatedAt": "2026-08-11T05:34:09.414Z",
+                "dayId": "46a6af32-91a0-4582-a97b-a0a97685ffaa",
+                "mealAttributeIds": [],
+                "MealAttributes": []
+            }
+        ]
+    },
+    {
+        "id": "7a69a422-723c-4632-8b22-f260a568e5a3",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-08-31T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:38:31.651Z",
+        "updatedAt": "2026-08-11T05:38:31.651Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "e2b2a1dc-a588-481b-a1d6-7c39ede4d2b7",
+        "Meals": [
+            {
+                "id": "ba305eec-248f-4c66-9507-e735e755f62c",
+                "name": "Tortellini i krämig tomatsås",
+                "order": 0,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "7a69a422-723c-4632-8b22-f260a568e5a3",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            },
+            {
+                "id": "4319e4cd-161f-4533-a7b5-77b5c0cf9cfb",
+                "name": "Vårrullar med ris och sweetschilisås",
+                "order": 1,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "7a69a422-723c-4632-8b22-f260a568e5a3",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "56835b50-2837-4aa4-a1cf-a091a661beba",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-09-01T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:38:31.651Z",
+        "updatedAt": "2026-08-11T05:38:31.651Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "e2b2a1dc-a588-481b-a1d6-7c39ede4d2b7",
+        "Meals": [
+            {
+                "id": "6717cc88-120a-42bc-a361-214ae098fb96",
+                "name": "Fiskbullar i dillsås med kokt potatis",
+                "order": 0,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "56835b50-2837-4aa4-a1cf-a091a661beba",
+                "mealAttributeIds": [
+                    "2056d68e-d15a-422c-9e13-848099d2acb1"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "2056d68e-d15a-422c-9e13-848099d2acb1",
+                        "oldId": "4727241205350400",
+                        "name": "fish",
+                        "order": 7,
+                        "en": "Fish",
+                        "sv": "Fisk",
+                        "imageUrl": "https://lh3.googleusercontent.com/zgT4i0Lhvz3KvrbqYdPqWfkMwv7Byb5boPJoLYaE5clCMWYzijwC_3yOe7AzWds26hCZxdOHhbOtXrdRnHU",
+                        "createdAt": "2025-02-13T17:15:17.868Z",
+                        "updatedAt": "2025-02-13T17:15:17.868Z"
+                    }
+                ]
+            },
+            {
+                "id": "e062734b-5596-4421-a7d1-dc2ef28c1c6a",
+                "name": "Vegetarisk moussaka",
+                "order": 1,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "56835b50-2837-4aa4-a1cf-a091a661beba",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3ac684a8-e7e6-496f-9dfd-983096f64c28",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-09-02T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:38:31.651Z",
+        "updatedAt": "2026-08-11T05:38:31.651Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "e2b2a1dc-a588-481b-a1d6-7c39ede4d2b7",
+        "Meals": [
+            {
+                "id": "64c0efaf-52f5-4444-8e82-3a7b0819c403",
+                "name": "Chili sin carne med bulgur och tillbehör",
+                "order": 0,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "3ac684a8-e7e6-496f-9dfd-983096f64c28",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a2f80c8e-31f3-48fd-9991-ee62c6d1fc4c",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-09-03T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:38:31.651Z",
+        "updatedAt": "2026-08-11T05:38:31.651Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "e2b2a1dc-a588-481b-a1d6-7c39ede4d2b7",
+        "Meals": [
+            {
+                "id": "3d2d92c5-ebbe-4f12-8bc7-07255521c882",
+                "name": "Thom kha gaigryta med ris",
+                "order": 0,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "a2f80c8e-31f3-48fd-9991-ee62c6d1fc4c",
+                "mealAttributeIds": [
+                    "c47bdd32-88b8-4c9e-9b3a-e91a769030d9"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "c47bdd32-88b8-4c9e-9b3a-e91a769030d9",
+                        "oldId": "6652174258929664",
+                        "name": "bird",
+                        "order": 24,
+                        "en": "Bird",
+                        "sv": "Fågel",
+                        "imageUrl": "https://lh3.googleusercontent.com/NS-2tvsrH-FVUsNW1JSIIINurTs14c6ct3jL31Rx5iRrgK6Zq8OH6vhm29aYSWL1A328A-a96LebGUbbBwE5WBqvyV0QWuw6",
+                        "createdAt": "2025-02-13T17:15:18.132Z",
+                        "updatedAt": "2025-02-13T17:15:18.132Z"
+                    }
+                ]
+            },
+            {
+                "id": "0923a52b-1e1c-49fa-914d-7a91b07e88ed",
+                "name": "Vegetarisk thaigryta med ris",
+                "order": 1,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "a2f80c8e-31f3-48fd-9991-ee62c6d1fc4c",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "61d831ab-d3fd-4076-986c-cabd32a6600c",
+        "oldId": null,
+        "cancelled": null,
+        "date": "2026-09-04T00:00:00.000Z",
+        "createdAt": "2026-08-11T05:38:31.651Z",
+        "updatedAt": "2026-08-11T05:38:31.651Z",
+        "menuId": "29f13515-185f-4df5-b39b-bca0a2bc4fc8",
+        "weekStateId": "e2b2a1dc-a588-481b-a1d6-7c39ede4d2b7",
+        "Meals": [
+            {
+                "id": "31fe8327-03bb-409f-9215-57d194f68ffc",
+                "name": "Köttfärssås med spaghetti",
+                "order": 0,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "61d831ab-d3fd-4076-986c-cabd32a6600c",
+                "mealAttributeIds": [
+                    "fe50c904-4d2c-40fa-98da-066358cb2dea",
+                    "e07158df-d241-49b5-b520-3aef3a2f80a9"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "e07158df-d241-49b5-b520-3aef3a2f80a9",
+                        "oldId": "4867978693705728",
+                        "name": "pork",
+                        "order": 3,
+                        "en": "Pork",
+                        "sv": "Fläsk",
+                        "imageUrl": "https://lh3.googleusercontent.com/54PHjbKcKD_jfmzxPCPwkywDH4RYhp4UH3ptCToEFoK_bWoN-KdInhhm5fWDGWxsb2AunG3DVFLVJm6RKw",
+                        "createdAt": "2025-02-13T17:15:17.871Z",
+                        "updatedAt": "2025-02-13T17:15:17.871Z"
+                    },
+                    {
+                        "id": "fe50c904-4d2c-40fa-98da-066358cb2dea",
+                        "oldId": "5290191158771712",
+                        "name": "beef",
+                        "order": 8,
+                        "en": "Beef",
+                        "sv": "Nöt",
+                        "imageUrl": "https://lh3.googleusercontent.com/7Jo5zmYjaaubMgvXLT_W8aGi3wXy60tYSMLHMppwomv-WUj0o7wWXJvHptiNoQ_K3el32uyzgQcaq75cjSJ7",
+                        "createdAt": "2025-02-13T17:15:18.114Z",
+                        "updatedAt": "2025-02-13T17:15:18.114Z"
+                    }
+                ]
+            },
+            {
+                "id": "37460699-83ac-4f89-910a-d11b3cd6ad95",
+                "name": "Sojafärssås med spaghetti",
+                "order": 1,
+                "createdAt": "2026-08-11T05:38:31.645Z",
+                "updatedAt": "2026-08-11T05:38:31.645Z",
+                "dayId": "61d831ab-d3fd-4076-986c-cabd32a6600c",
+                "mealAttributeIds": [
+                    "95b62ba0-65da-4dee-8793-12d66a26bf53"
+                ],
+                "MealAttributes": [
+                    {
+                        "id": "95b62ba0-65da-4dee-8793-12d66a26bf53",
+                        "oldId": "5712403623837696",
+                        "name": "vegetarian",
+                        "order": 0,
+                        "en": "Vegetarian",
+                        "sv": "Vegetariskt",
+                        "imageUrl": "https://lh3.googleusercontent.com/ob4ViqVKW4Y5W4jpJ8Hz1NYzLOXBk9bLAuvHIyDul4cp2by8atI-WWfsCuhhS5mA5WDjN8fKubt6mw1i4VU",
+                        "createdAt": "2025-02-13T17:15:17.860Z",
+                        "updatedAt": "2025-02-13T17:15:17.860Z"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -699,12 +699,30 @@ class MatildaMenu (Menu):
     def _fixUrl(self, url: str) -> str:
         return url
 
-    async def _getWeek(self, aiohttp_session, url):
-        async with aiohttp_session.get(url, headers=self.headers, raise_for_status=True) as response:
-            html = await response.text()
-            soup = BeautifulSoup(html, 'html.parser')
-            jsonData = soup.select("#__NEXT_DATA__")[0].string
-            return json.loads(jsonData)["props"]["pageProps"]
+
+    def _extractDistributorId(self, url: str) -> str:
+        match = re.search(r'/week/([a-f0-9]+)', url)
+        if not match:
+            raise ValueError(f"MatildaMenu: could not extract distributorId from url: {url}. Expected format: https://menu.matildaplatform.com/menu/week/<distributorId>_<name>")
+        return match.group(1)
+
+    async def _getMenuData(self, aiohttp_session, startDate: date, endDate: date):
+
+        distributorId = self._extractDistributorId(self.url)
+
+        apiUrl = (
+            "https://menu.matildaplatform.com/api/menu"
+            f"?distributorId={distributorId}"
+            f"&startDate={startDate.isoformat()}"
+            f"&endDate={endDate.isoformat()}"
+            "&lang=sv"
+        )
+
+        async with aiohttp_session.get(apiUrl, headers=self.headers, raise_for_status=True) as response:
+            data = await response.json(content_type=None)
+
+        return data["meals"]
+
 
     def _processMenuEntry(self, entryDate, order:int, raw_entry:Any) -> MenuEntry:
         if entry := super()._processMenuEntry(entryDate, order, raw_entry):
@@ -714,10 +732,12 @@ class MatildaMenu (Menu):
     
     async def _loadMenu(self, aiohttp_session):
 
-        w1 = await self._getWeek(aiohttp_session, self.url)
-        w2 = await self._getWeek(aiohttp_session, "https://menu.matildaplatform.com" + w1["nextURL"])
 
-        mealEntries = [*w1["meals"], *w2["meals"]]
+        today = date.today()
+        startDate = today - timedelta(days=today.weekday())
+        endDate = startDate + timedelta(days=13)
+
+        mealEntries = await self._getMenuData(aiohttp_session, startDate, endDate)
 
         self._dumpData(mealEntries)
 

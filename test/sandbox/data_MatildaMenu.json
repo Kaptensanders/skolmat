@@ -1,0 +1,559 @@
+// provider: menu.matildaplatform.com, URL: https://menu.matildaplatform.com/meals/week/63fc6e2dccb95f5ce56d8ada_skolor
+
+[
+    {
+        "name": null,
+        "date": "2026-08-24T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fiskpuck och kall sås",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Potatis",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-08-25T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Rispytt",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-08-26T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Hönssoppa",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Bröd, pålägg, dryck och grönt",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-08-27T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Köttfärssås, ketchup",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Pasta ",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-08-28T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Potatisbullar, keso och lingonsylt",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-08-31T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kyckling och kall sås",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Couscous",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-09-01T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Ost- och broccolisås",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Pasta ",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-09-02T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Fisk under sprött täcke och sås",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Potatis",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-09-03T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Kycklingfärsbiffar och brunsås",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Potatis",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    },
+    {
+        "name": null,
+        "date": "2026-09-04T00:00:00",
+        "dateDescription": null,
+        "holidayName": null,
+        "lang": null,
+        "order": 3,
+        "description": "\r\n",
+        "distributor": {
+            "id": "63fc6e2dccb95f5ce56d8ada",
+            "name": "Skolor"
+        },
+        "courses": [
+            {
+                "id": "0",
+                "name": "Korvstroganoff",
+                "optionName": null,
+                "description": null,
+                "order": 1,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Ris / Havreris",
+                "optionName": null,
+                "description": null,
+                "order": 2,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            },
+            {
+                "id": "0",
+                "name": "Grönsaker, bröd och dryck",
+                "optionName": null,
+                "description": null,
+                "order": 3,
+                "labelOfContents": null,
+                "ingredients": [],
+                "media": [],
+                "knownAllergens": [],
+                "tags": [],
+                "nutrients": [],
+                "prices": [],
+                "co2Equivalents": null
+            }
+        ]
+    }
+]
