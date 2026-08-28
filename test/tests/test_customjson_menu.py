@@ -1,6 +1,8 @@
+import logging
+
 import pytest
 
-from menu import CustomJsonMenu
+from menu import CustomJsonMenu, Menu
 
 
 SAMPLE = {
@@ -16,6 +18,19 @@ SAMPLE = {
 
 def _menu():
     return CustomJsonMenu(asyncExecutor=None, url="https://www.mysite.se/lunch.json")
+
+
+def test_create_menu_logs_custom_json_fallback(caplog):
+    url = "https://www.mysite.se/lunch.json"
+
+    with caplog.at_level(logging.WARNING):
+        menu = Menu.createMenu(asyncExecutor=None, url=url)
+
+    assert isinstance(menu, CustomJsonMenu)
+    assert (
+        "Menu URL did not match a known provider; falling back to the custom JSON provider: "
+        f"{url}"
+    ) in caplog.messages
 
 
 def test_customjson_two_dates_multiple_dishes_order_preserved():

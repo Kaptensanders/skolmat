@@ -86,6 +86,10 @@ class Menu(ABC):
         else:
             # Catch-all: any URL not recognized as one of the providers above is
             # treated as a generic JSON source (see CustomJsonMenu for the expected schema).
+            log.info(
+                "Menu URL '%s' did not match a known provider; trying to load it as a custom JSON provider",
+                url,
+            )
             return CustomJsonMenu(asyncExecutor, url, customMenuEntryProcessorCB, readableDaySummaryCB)
 
     def __init__(self, 

@@ -14,6 +14,12 @@ Template:
 - References: <paths, issues, or PRs>
 
 - Date: 2026-08-28
+- Decision: Log a warning whenever `Menu.createMenu()` selects `CustomJsonMenu` as its catch-all provider.
+- Context: The PR 45 fallback makes an unrecognized or misspelled provider URL look intentional until its fetch or parsing fails.
+- Impact: Config-flow discovery and runtime setup now clearly identify that the URL matched no known provider and is being interpreted as custom JSON.
+- References: custom_components/skolmat/menu.py, test/tests/test_customjson_menu.py
+
+- Date: 2026-08-28
 - Decision: Read `skolmat.info` menus from its public JSON API using the facility ID in the public menu URL.
 - Context: The provider replaced its path-based `meny.skolmat.info` pages with client-rendered `www.skolmat.info/matsedlar` pages; menu data is no longer present in the page HTML.
 - Impact: `SkolmatInfoMenu` resolves `facilityId` to `/api/public/matsedlar/{facilityId}`, loads two ISO weeks as JSON, derives dates from weekday keys, and ignores provider allergen metadata rather than using it as dish labels.

@@ -152,6 +152,53 @@ If the url to your weekly menu contains `/public/app/` you should be fine. Other
 
 ---
 
+### Custom JSON URL — fallback behavior
+
+If the menu URL does not match one of the supported providers above, Skolmat treats it as a
+custom JSON menu URL. This makes it possible to use a self-hosted JSON file or endpoint without
+adding a dedicated provider to the integration.
+
+> **Important:** This is fallback behavior. A misspelled or outdated URL for a supported
+> provider will also select the custom JSON provider. Skolmat writes a warning to the Home
+> Assistant log whenever this happens. If configuration fails unexpectedly, check both the URL
+> and the log.
+
+The endpoint must return a JSON object keyed by dates in `YYYY-MM-DD` format. Each date contains
+a list of menu entries:
+
+```json
+{
+  "2026-04-28": [
+    {
+      "meal": "Lunch",
+      "dish": "Pasta carbonara",
+      "label": "",
+      "order": 1
+    },
+    {
+      "meal": "Lunch",
+      "dish": "Vegetarian lasagna",
+      "label": "Vegetarian",
+      "order": 2
+    }
+  ]
+}
+```
+
+`dish` is required. `meal`, `label`, and the integer `order` are optional. When `order` is
+omitted, entries are numbered according to their position in the list. Entries with a missing
+or empty `dish` are ignored.
+
+The URL may point to a static file and does not need to return an
+`application/json` Content-Type; Skolmat parses the response body as JSON. If the URL has no
+scheme, `https://` is added automatically. Invalid JSON, an unexpected structure, an invalid
+date, a non-successful HTTP response, or a network error causes the config flow to report that
+the menu could not be fetched.
+
+
+---
+
+
 ## Custom data preprocesor (advanced)
 
 From version 3.0, custom python preprocessors can be used to manipulate the data entries into whatever you want.<br>
@@ -217,4 +264,3 @@ def entryProcessor(entryDate: date, order: int, raw_entry) -> MenuEntry:
 *Example processors:*<br>
 [`arhem_aldreboende.py`](custom_components/skolmat/processors/arhem_aldreboende.py)<br>
 [`karlskoga_aldreomsorg.py`](custom_components/skolmat/processors/karlskoga_aldreomsorg.py)
-

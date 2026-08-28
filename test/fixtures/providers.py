@@ -30,7 +30,8 @@ PROVIDERS = {
     "skolmatinfo2": {"name": "Blå Ports förskola", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=C35BF3A3-EADC-4322-A24B-B85383208A8A", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "skolmatinfo3": {"name": "Östra Torpskolan", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=2E815AF5-B428-498C-B9A4-BB69041C29D3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "menugo1":      {"name": "Gånsta förskola", "url": "https://menugo.se/m/0381/Gansta_forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "menugo2":      {"name": "Kassmyraskolan", "url": "https://menugo.se/m/0127/Kassmyraskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
+    "menugo2":      {"name": "Kassmyraskolan", "url": "https://menugo.se/m/0127/Kassmyraskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "customJSON":   {"name": "Custom JSON url", "url": "https://mycustomjson.school/1234567", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
 
 
 }
