@@ -2,8 +2,6 @@
 # - sensor.foodit_blasut_dalen_forskolor
 # - sensor.matilda_karlskoga_aldreomsorg_org
 # - sensor.matilda_kramfors_aldreboenden
-# - sensor.mashie_arhem_aldreboende_org
-# - sensor.mashie_arhem_aldreboende_processed
 # - sensor.mashie_brinkskolan
 # - sensor.matilda_karlskoga_aldreomsorg_processed
 # - sensor.skolmaten_paskbergsskolan
@@ -103,20 +101,6 @@ views:
         variables:
           - summary: 'sensor.matilda_kramfors_aldreboenden <br> week'
           - entity: 'sensor.matilda_kramfors_aldreboenden'
-          - menu_type: 'week'
-          - header: 'full'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
-          - summary: 'sensor.mashie_arhem_aldreboende_org <br> week'
-          - entity: 'sensor.mashie_arhem_aldreboende_org'
-          - menu_type: 'week'
-          - header: 'full'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
-          - summary: 'sensor.mashie_arhem_aldreboende_processed <br> week'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
           - menu_type: 'week'
           - header: 'full'
       - type: custom:decluttering-card
@@ -238,20 +222,6 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[15]** - sensor.mashie_arhem_aldreboende_org <br> week | header: full'
-          - entity: 'sensor.mashie_arhem_aldreboende_org'
-          - menu_type: 'week'
-          - header: 'full'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
-          - summary: '**[16]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: short'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
-          - menu_type: 'week'
-          - header: 'short'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
           - summary: '**[17]** - sensor.mashie_brinkskolan <br> week | header: school-name'
           - entity: 'sensor.mashie_brinkskolan'
           - menu_type: 'week'
@@ -332,20 +302,6 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[26]** - sensor.mashie_arhem_aldreboende_org <br> today | header: full'
-          - entity: 'sensor.mashie_arhem_aldreboende_org'
-          - menu_type: 'today'
-          - header: 'full'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
-          - summary: '**[27]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: short'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
-          - menu_type: 'today'
-          - header: 'short'
-      - type: custom:decluttering-card
-        template: skolmat_card_stack
-        variables:
           - summary: '**[28]** - sensor.mashie_brinkskolan <br> today | header: school-name'
           - entity: 'sensor.mashie_brinkskolan'
           - menu_type: 'today'
@@ -397,20 +353,6 @@ views:
               - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
               - menu_type: 'week'
               - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[33]** - sensor.mashie_arhem_aldreboende_org <br> week | header: full'
-              - entity: 'sensor.mashie_arhem_aldreboende_org'
-              - menu_type: 'week'
-              - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[34]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full'
-              - entity: 'sensor.mashie_arhem_aldreboende_processed'
-              - menu_type: 'week'
-              - header: 'full'
   - title: Org vs Processed Today
     path: compare_today
     type: panel
@@ -442,20 +384,6 @@ views:
             variables:
               - summary: '**[38]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full'
               - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
-              - menu_type: 'today'
-              - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[39]** - sensor.mashie_arhem_aldreboende_org <br> today | header: full'
-              - entity: 'sensor.mashie_arhem_aldreboende_org'
-              - menu_type: 'today'
-              - header: 'full'
-          - type: custom:decluttering-card
-            template: skolmat_card_stack
-            variables:
-              - summary: '**[40]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full'
-              - entity: 'sensor.mashie_arhem_aldreboende_processed'
               - menu_type: 'today'
               - header: 'full'
   - title: Header Styles & Sizes
@@ -633,8 +561,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[58]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: none | show_dish_labels: none'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[58]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: none | show_dish_labels: none'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'none'
@@ -642,8 +570,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[59]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: none | show_dish_labels: always'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[59]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: none | show_dish_labels: always'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'none'
@@ -651,8 +579,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[60]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: none | show_dish_labels: if-multiple'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[60]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: none | show_dish_labels: if-multiple'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'none'
@@ -660,8 +588,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[61]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: always | show_dish_labels: none'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[61]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: always | show_dish_labels: none'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'always'
@@ -669,8 +597,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[62]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: always | show_dish_labels: always'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[62]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: always | show_dish_labels: always'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'always'
@@ -678,8 +606,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[63]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: always | show_dish_labels: if-multiple'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[63]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: always | show_dish_labels: if-multiple'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'always'
@@ -687,8 +615,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[64]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: none'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[64]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: none'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'if-multiple'
@@ -696,8 +624,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[65]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: always'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[65]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: always'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'if-multiple'
@@ -705,8 +633,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[66]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: if-multiple'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[66]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | show_meals: if-multiple | show_dish_labels: if-multiple'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - show_meals: 'if-multiple'
@@ -715,8 +643,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[67]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full | show_meals: none | show_dish_labels: none'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[67]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> week | header: full | show_meals: none | show_dish_labels: none'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'week'
           - header: 'full'
           - show_meals: 'none'
@@ -724,8 +652,8 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[68]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full | show_meals: always | show_dish_labels: always'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[68]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> week | header: full | show_meals: always | show_dish_labels: always'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'week'
           - header: 'full'
           - show_meals: 'always'
@@ -736,48 +664,48 @@ views:
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[69]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full | locale: default'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[69]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> week | header: full | locale: default'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'week'
           - header: 'full'
           - locale: 'default'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[70]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | locale: default'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[70]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | locale: default'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - locale: 'default'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[71]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full | locale: en'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[71]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> week | header: full | locale: en'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'week'
           - header: 'full'
           - locale: 'en'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[72]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | locale: en'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[72]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | locale: en'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - locale: 'en'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[73]** - sensor.mashie_arhem_aldreboende_processed <br> week | header: full | locale: sv'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[73]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> week | header: full | locale: sv'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'week'
           - header: 'full'
           - locale: 'sv'
       - type: custom:decluttering-card
         template: skolmat_card_stack
         variables:
-          - summary: '**[74]** - sensor.mashie_arhem_aldreboende_processed <br> today | header: full | locale: sv'
-          - entity: 'sensor.mashie_arhem_aldreboende_processed'
+          - summary: '**[74]** - sensor.matilda_karlskoga_aldreomsorg_processed <br> today | header: full | locale: sv'
+          - entity: 'sensor.matilda_karlskoga_aldreomsorg_processed'
           - menu_type: 'today'
           - header: 'full'
           - locale: 'sv'
