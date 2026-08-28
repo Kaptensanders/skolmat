@@ -1,9 +1,15 @@
 ![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=)
 ![Version](https://img.shields.io/github/v/release/Kaptensanders/skolmat)
 
-## ⚠️ Version 3.0 release information
+## ℹ️ Version 3.2.0 release information
+> * Fixed [#43](https://github.com/Kaptensanders/skolmat/issues/43), skolmat.info changed URL and data format
+> * Fixed [#47](https://github.com/Kaptensanders/skolmat/issues/47), Matilda changed URL and data format
+> * Added [@McBenac](https://github.com/McBenac)'s custom JSON provider as fallback provider, [#42](https://github.com/Kaptensanders/skolmat/issues/42), [#45](https://github.com/Kaptensanders/skolmat/pull/45) 
 
-> **3.0 is a Breaking release**
+
+## ℹ️ Version 3.0 release information
+
+> **⚠️ 3.0 is a Breaking release**
 > <br>The Skolmat integration started out as a simple integration for parsing skolmaten.se and populating a card. Now it grew to support multiple providers, some of which serves multiple meals a day and during weekends. Data structures from all providers are different, and on top of already weak schemas, kitchens impose their own keys and structures, making generic structuring rules hard. <br>So long time coming, the Skolmat data structures needed to be refactored to more robustly support generic handling and filtering.<br><br>
 > **3.0 highlights**
 > * Config flow has multiple filtering options to support better daily summaries for calendar events.
@@ -158,8 +164,7 @@ If the menu URL does not match one of the supported providers above, Skolmat tre
 custom JSON menu URL. This makes it possible to use a self-hosted JSON file or endpoint without
 adding a dedicated provider to the integration.
 
-Big ups to [@McBenac](https://github.com/McBenac) for adding this handy JSON escape hatch —
-`200 OK`, lunch is served.
+*Big ups to [@McBenac](https://github.com/McBenac) for adding this.*
 
 > **Important:** This is fallback behavior. A misspelled or outdated URL for a supported
 > provider will also select the custom JSON provider. Skolmat writes a warning to the Home
