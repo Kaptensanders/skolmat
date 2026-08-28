@@ -13,6 +13,12 @@ Template:
 - Impact: <what changes or constraints follow>
 - References: <paths, issues, or PRs>
 
+- Date: 2026-08-28
+- Decision: Read `skolmat.info` menus from its public JSON API using the facility ID in the public menu URL.
+- Context: The provider replaced its path-based `meny.skolmat.info` pages with client-rendered `www.skolmat.info/matsedlar` pages; menu data is no longer present in the page HTML.
+- Impact: `SkolmatInfoMenu` resolves `facilityId` to `/api/public/matsedlar/{facilityId}`, loads two ISO weeks as JSON, derives dates from weekday keys, and ignores provider allergen metadata rather than using it as dish labels.
+- References: custom_components/skolmat/menu.py, test/tests/test_skolmatinfo_menu.py, test/fixtures/providers.py
+
 - Date: 2026-02-09
 - Decision: Parse `meny.skolmat.info` as plain HTML with BeautifulSoup and merge two ISO weeks.
 - Context: A new provider serves backend-rendered HTML (no JSON/RSS API) with date and dish/allergen blocks.

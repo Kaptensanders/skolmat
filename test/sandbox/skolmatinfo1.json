@@ -1,0 +1,137 @@
+{
+"ok": true,
+"facility": {
+"id": "63C603F7-53F6-4E8C-B84B-6118D0B595F7",
+"name": "Lyckeby Kunskapscenter",
+"avatarPath": null,
+"municipalityId": "1081",
+"municipalityName": "Karlskrona",
+"countyCode": "10",
+"countyName": "Blekinge"
+},
+"week": {
+"year": 2026,
+"weekNumber": 35,
+"freeText": "Med reservation för ändringar i matsedeln",
+"freeTextPosition": "TOP",
+"days": {
+"MONDAY": {
+"isOpen": true,
+"rows": [
+{
+"id": "17577b05-7b3d-4098-9e62-00b1a82c4c43",
+"text": "Pasta med spenat och ostsås",
+"allergens": [
+"VEGETARIAN"
+]
+},
+{
+"id": "53f8118a-f127-4c03-a042-12d68bddf86a",
+"text": "Pasta serveras med ost & skinksås ",
+"allergens": [
+"PORK"
+]
+}
+]
+},
+"TUESDAY": {
+"isOpen": true,
+"rows": [
+{
+"id": "5eceb770-9a6d-400d-8b04-32dc839495c5",
+"text": "Grönsaksragu serveras med kokt potatis",
+"allergens": [
+"VEGETARIAN"
+]
+},
+{
+"id": "0522742c-b838-43c5-b8b1-c191f809f6b4",
+"text": "Krämig örtbakad fisk serveras med kokt potatis ",
+"allergens": [
+"FISH"
+]
+}
+]
+},
+"WEDNESDAY": {
+"isOpen": true,
+"rows": [
+{
+"id": "127c1473-0116-4408-8bcc-58bee89f790b",
+"text": "Korv serveras med potatismos, ketchup och senap",
+"allergens": [
+"VEGETARIAN"
+]
+},
+{
+"id": "ef98fb9c-ef6b-415c-97fa-667f43e59f31",
+"text": "Stekt kycklingkorv serveras med potatismos, ketchup och senap",
+"allergens": [
+"POULTRY"
+]
+}
+]
+},
+"THURSDAY": {
+"isOpen": true,
+"rows": [
+{
+"id": "50045c96-f41d-407b-93f2-0f1495ded207",
+"text": "Gulaschsoppa serveras med bröd och ost",
+"allergens": [
+"VEGETARIAN"
+]
+},
+{
+"id": "48a40c04-965c-44f7-a3b4-b3e84cc57ed0",
+"text": "Gulaschsoppa serveras med bröd och ost",
+"allergens": [
+"BEEF"
+]
+}
+]
+},
+"FRIDAY": {
+"isOpen": true,
+"rows": [
+{
+"id": "cc3cb2f4-fafc-4a04-9830-8ad666d6b9da",
+"text": " Grönsaksbiffar serveras med stekt lök, rostad potatis och pepparsås",
+"allergens": [
+"VEGETARIAN"
+]
+},
+{
+"id": "67529382-ce44-4403-adb7-36679573706c",
+"text": "Kycklingpannbiffar serveras med stekt lök, rostad potatis och pepparsås",
+"allergens": [
+"POULTRY"
+]
+}
+]
+},
+"SATURDAY": {
+"isOpen": false,
+"rows": [
+{
+"id": "b2624295-20fb-4394-b8b3-ae602a2fbab6",
+"text": "",
+"allergens": []
+}
+]
+},
+"SUNDAY": {
+"isOpen": false,
+"rows": [
+{
+"id": "f8a0a672-2a14-49c0-8de7-f048d1fb7333",
+"text": "",
+"allergens": []
+}
+]
+}
+},
+"persisted": true,
+"updatedAt": "2026-08-25T05:42:59.865Z"
+}
+}

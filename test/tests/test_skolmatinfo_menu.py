@@ -1,78 +1,117 @@
+import pytest
+
 from menu import SkolmatInfoMenu
 
 
-SAMPLE_HTML = """
-<!DOCTYPE html>
-<html lang="sv-se">
-<body>
-<main class="grow">
-    <div class="container px-content py-12">
-        <div class="space-y-10">
-            <div class="flex items-start gap-x-4 sm:gap-x-8">
-                <div class="w-28 sm:w-36 shrink-0">
-                    <time datetime="2026-02-02">2026-02-02</time>
-                </div>
-                <div class="space-y-3">
-                    <div class="space-y-2">
-                        <div class="prose max-w-none">
-                            <p>Spaghetti Baljonese serveras med ketchup</p>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-3 mt-2">
-                            <span class="text-sm text-neutral-700">Vegetariskt</span>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="prose max-w-none">
-                            <p>Speghetti Bolognese serveras med ketchup</p>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-3 mt-2">
-                            <span class="text-sm text-neutral-700">Nötkött</span>
-                            <span class="text-sm text-neutral-700">Griskött</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-start gap-x-4 sm:gap-x-8">
-                <div class="w-28 sm:w-36 shrink-0">
-                    <time datetime="2026-02-03">2026-02-03</time>
-                </div>
-                <div class="space-y-3">
-                    <div class="space-y-2">
-                        <div class="prose max-w-none">
-                            <p>Fiskburgare med bröd, klyftpotatis och örtaioli</p>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-3 mt-2">
-                            <span class="text-sm text-neutral-700">Fisk</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-</body>
-</html>
-"""
+PUBLIC_URL = (
+    "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081"
+    "&facilityId=63C603F7-53F6-4E8C-B84B-6118D0B595F7"
+)
+
+SAMPLE_DATA = {
+    "ok": True,
+    "facility": {
+        "id": "63C603F7-53F6-4E8C-B84B-6118D0B595F7",
+        "name": "Lyckeby Kunskapscenter",
+        "municipalityId": "1081",
+        "municipalityName": "Karlskrona",
+        "countyCode": "10",
+        "countyName": "Blekinge",
+    },
+    "week": {
+        "year": 2026,
+        "weekNumber": 35,
+        "freeText": "Med reservation för ändringar i matsedeln",
+        "freeTextPosition": "TOP",
+        "days": {
+            "MONDAY": {
+                "isOpen": True,
+                "rows": [
+                    {
+                        "id": "17577b05-7b3d-4098-9e62-00b1a82c4c43",
+                        "text": "Pasta med spenat och ostsås",
+                        "allergens": ["VEGETARIAN"],
+                    },
+                    {
+                        "id": "53f8118a-f127-4c03-a042-12d68bddf86a",
+                        "text": "Pasta serveras med ost & skinksås ",
+                        "allergens": ["PORK"],
+                    },
+                ],
+            },
+            "TUESDAY": {
+                "isOpen": True,
+                "rows": [
+                    {
+                        "id": "0522742c-b838-43c5-b8b1-c191f809f6b4",
+                        "text": "Krämig örtbakad fisk serveras med kokt potatis ",
+                        "allergens": ["FISH"],
+                    }
+                ],
+            },
+            "SATURDAY": {
+                "isOpen": False,
+                "rows": [
+                    {
+                        "id": "b2624295-20fb-4394-b8b3-ae602a2fbab6",
+                        "text": "",
+                        "allergens": [],
+                    }
+                ],
+            },
+        },
+        "persisted": True,
+        "updatedAt": "2026-08-25T05:42:59.865Z",
+    },
+}
 
 
-def test_skolmatinfo_parse_week_html():
-    menu = SkolmatInfoMenu(asyncExecutor=None, url="https://meny.skolmat.info/blekinge/karlskrona/lyckeby-kunskapscenter")
+def test_skolmatinfo_rewrites_public_url_to_api_url():
+    menu = SkolmatInfoMenu(asyncExecutor=None, url=PUBLIC_URL)
 
-    parsed = menu._parseWeekHtml(SAMPLE_HTML)
+    assert menu.url == (
+        "https://www.skolmat.info/api/public/matsedlar/"
+        "63C603F7-53F6-4E8C-B84B-6118D0B595F7"
+    )
 
-    assert sorted(parsed.keys()) == ["2026-02-02", "2026-02-03"]
 
-    day1 = parsed["2026-02-02"]
-    assert len(day1) == 2
-    assert day1[0]["meal"] == "Lunch"
-    assert day1[0]["dish"] == "Spaghetti Baljonese serveras med ketchup"
-    assert day1[0]["label"] == "Vegetariskt"
-    assert day1[0]["order"] == 1
-    assert day1[1]["label"] == "Nötkött, Griskött"
-    assert day1[1]["order"] == 2
+def test_skolmatinfo_rejects_url_without_facility_id():
+    with pytest.raises(ValueError, match="Invalid URL, expected format"):
+        SkolmatInfoMenu(
+            asyncExecutor=None,
+            url="https://www.skolmat.info/matsedlar?countyCode=10",
+        )
 
-    day2 = parsed["2026-02-03"]
-    assert len(day2) == 1
-    assert day2[0]["meal"] == "Lunch"
-    assert day2[0]["dish"] == "Fiskburgare med bröd, klyftpotatis och örtaioli"
-    assert day2[0]["label"] == "Fisk"
+
+def test_skolmatinfo_parse_week_data():
+    menu = SkolmatInfoMenu(asyncExecutor=None, url=PUBLIC_URL)
+
+    parsed = menu._parseWeekData(SAMPLE_DATA)
+
+    assert sorted(parsed.keys()) == ["2026-08-24", "2026-08-25"]
+
+    monday = parsed["2026-08-24"]
+    assert monday == [
+        {
+            "meal": "Lunch",
+            "dish": "Pasta med spenat och ostsås",
+            "label": None,
+            "order": 1,
+        },
+        {
+            "meal": "Lunch",
+            "dish": "Pasta serveras med ost & skinksås",
+            "label": None,
+            "order": 2,
+        },
+    ]
+
+    tuesday = parsed["2026-08-25"]
+    assert tuesday == [
+        {
+            "meal": "Lunch",
+            "dish": "Krämig örtbakad fisk serveras med kokt potatis",
+            "label": None,
+            "order": 1,
+        }
+    ]

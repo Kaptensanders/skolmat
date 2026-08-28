@@ -1,0 +1,281 @@
+// provider: skolmat.info, URL: https://www.skolmat.info/api/public/matsedlar/2E815AF5-B428-498C-B9A4-BB69041C29D3
+
+{
+    "weeks": [
+        {
+            "ok": true,
+            "facility": {
+                "id": "2E815AF5-B428-498C-B9A4-BB69041C29D3",
+                "name": "Östra Torpskolan",
+                "avatarPath": null,
+                "municipalityId": "1081",
+                "municipalityName": "Karlskrona",
+                "countyCode": "10",
+                "countyName": "Blekinge"
+            },
+            "week": {
+                "year": 2026,
+                "weekNumber": 35,
+                "freeText": "Med reservation för ändringar i matsedeln",
+                "freeTextPosition": "TOP",
+                "days": {
+                    "MONDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "17577b05-7b3d-4098-9e62-00b1a82c4c43",
+                                "text": "Pasta med spenat och ostsås",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "53f8118a-f127-4c03-a042-12d68bddf86a",
+                                "text": "Pasta serveras med ost & skinksås ",
+                                "allergens": [
+                                    "PORK"
+                                ]
+                            }
+                        ]
+                    },
+                    "TUESDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "5eceb770-9a6d-400d-8b04-32dc839495c5",
+                                "text": "Grönsaksragu serveras med kokt potatis",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "0522742c-b838-43c5-b8b1-c191f809f6b4",
+                                "text": "Krämig örtbakad fisk serveras med kokt potatis ",
+                                "allergens": [
+                                    "FISH"
+                                ]
+                            }
+                        ]
+                    },
+                    "WEDNESDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "127c1473-0116-4408-8bcc-58bee89f790b",
+                                "text": "Korv serveras med potatismos, ketchup och senap",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "ef98fb9c-ef6b-415c-97fa-667f43e59f31",
+                                "text": "Stekt kycklingkorv serveras med potatismos, ketchup och senap",
+                                "allergens": [
+                                    "POULTRY"
+                                ]
+                            }
+                        ]
+                    },
+                    "THURSDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "50045c96-f41d-407b-93f2-0f1495ded207",
+                                "text": "Gulaschsoppa serveras med bröd och ost",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "48a40c04-965c-44f7-a3b4-b3e84cc57ed0",
+                                "text": "Gulaschsoppa serveras med bröd och ost",
+                                "allergens": [
+                                    "BEEF"
+                                ]
+                            }
+                        ]
+                    },
+                    "FRIDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "cc3cb2f4-fafc-4a04-9830-8ad666d6b9da",
+                                "text": " Grönsaksbiffar serveras med stekt lök, rostad potatis och pepparsås",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "67529382-ce44-4403-adb7-36679573706c",
+                                "text": "Kycklingpannbiffar serveras med stekt lök, rostad potatis och pepparsås",
+                                "allergens": [
+                                    "POULTRY"
+                                ]
+                            }
+                        ]
+                    },
+                    "SATURDAY": {
+                        "isOpen": false,
+                        "rows": [
+                            {
+                                "id": "b2624295-20fb-4394-b8b3-ae602a2fbab6",
+                                "text": "",
+                                "allergens": []
+                            }
+                        ]
+                    },
+                    "SUNDAY": {
+                        "isOpen": false,
+                        "rows": [
+                            {
+                                "id": "f8a0a672-2a14-49c0-8de7-f048d1fb7333",
+                                "text": "",
+                                "allergens": []
+                            }
+                        ]
+                    }
+                },
+                "persisted": true,
+                "updatedAt": "2026-08-25T05:42:59.865Z"
+            }
+        },
+        {
+            "ok": true,
+            "facility": {
+                "id": "2E815AF5-B428-498C-B9A4-BB69041C29D3",
+                "name": "Östra Torpskolan",
+                "avatarPath": null,
+                "municipalityId": "1081",
+                "municipalityName": "Karlskrona",
+                "countyCode": "10",
+                "countyName": "Blekinge"
+            },
+            "week": {
+                "year": 2026,
+                "weekNumber": 36,
+                "freeText": "Med reservation för ändringar i matsedeln",
+                "freeTextPosition": "TOP",
+                "days": {
+                    "MONDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "0a7e69fd-49c9-408e-aef8-a6650d5436e5",
+                                "text": "Stuvade makaroner och vegobollar serveras med ketchup",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "b2bf5139-49d6-4fa5-9fbe-e818bccc9043",
+                                "text": "Stuvade makaroner och köttbullar serveras med ketchup",
+                                "allergens": [
+                                    "PORK",
+                                    "BEEF"
+                                ]
+                            }
+                        ]
+                    },
+                    "TUESDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "743a6371-6736-406d-b5ed-5b3c45b882ad",
+                                "text": "Våra egna kesobiffar serveras med kokt potatis och dansk remouladsås ",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "698edc6f-fafe-4c14-981f-6bb5aa84f1e3",
+                                "text": "Stekt fisk serveras med kokt potatis och dansk remouladsås",
+                                "allergens": [
+                                    "FISH"
+                                ]
+                            }
+                        ]
+                    },
+                    "WEDNESDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "efefc907-5fb9-43b9-8316-3135b9c4c67f",
+                                "text": "Chili Sin Carne serveras med ris och nacochips",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "3c5cb879-64df-456c-b4ba-7c0e5fca3ca6",
+                                "text": "Chili Con Carne serveras med ris och nacochips",
+                                "allergens": [
+                                    "BEEF"
+                                ]
+                            }
+                        ]
+                    },
+                    "THURSDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "1782d122-1a94-48bb-a916-54e2f82f25e2",
+                                "text": "Solskensoppa serveras med bröd och ost",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "75d9d986-cda8-4069-9c42-522e66e4595f",
+                                "text": "Kycklingsoppa serveras med bröd och ost",
+                                "allergens": [
+                                    "POULTRY"
+                                ]
+                            }
+                        ]
+                    },
+                    "FRIDAY": {
+                        "isOpen": true,
+                        "rows": [
+                            {
+                                "id": "35908652-1a39-4b65-9153-5717db3f9e32",
+                                "text": "Persiljekryddade grönsaksbiffar serveras med rostad potatis och gräddsås",
+                                "allergens": [
+                                    "VEGETARIAN"
+                                ]
+                            },
+                            {
+                                "id": "8de0e538-3c5a-4bce-a33d-43f4f36d5774",
+                                "text": "Helstekt karré serveras med rostad potatis och gräddsås",
+                                "allergens": [
+                                    "PORK"
+                                ]
+                            }
+                        ]
+                    },
+                    "SATURDAY": {
+                        "isOpen": false,
+                        "rows": [
+                            {
+                                "id": "82836adb-2eae-4091-8235-b2b2ea1a5e84",
+                                "text": "",
+                                "allergens": []
+                            }
+                        ]
+                    },
+                    "SUNDAY": {
+                        "isOpen": false,
+                        "rows": [
+                            {
+                                "id": "578f969d-1685-4fe0-bcab-49d797ea7f62",
+                                "text": "",
+                                "allergens": []
+                            }
+                        ]
+                    }
+                },
+                "persisted": true,
+                "updatedAt": "2026-07-17T09:34:24.945Z"
+            }
+        }
+    ]
+}

@@ -26,9 +26,9 @@ PROVIDERS = {
     "mashie2":      {"name": "Ekhaga", "url": "https://mpi.mashie.matildaplatform.com/public/app/Bjuvs%20kommun/c19fee26", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mashie3":      {"name": "Brinkskolan", "url": "https://sodexo.mashie.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "mashie3b":     {"name": "Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "skolmatinfo1": {"name": "Lyckeby Kunskapscenter", "url": "https://meny.skolmat.info/blekinge/karlskrona/lyckeby-kunskapscenter", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "skolmatinfo2": {"name": "Blå Ports förskola", "url": "https://meny.skolmat.info/blekinge/karlskrona/bla-ports-forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-    "skolmatinfo3": {"name": "Östra Torpskolan", "url": "https://meny.skolmat.info/blekinge/karlskrona/ostra-torpskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo1": {"name": "Lyckeby Kunskapscenter", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=63C603F7-53F6-4E8C-B84B-6118D0B595F7", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo2": {"name": "Blå Ports förskola", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=C35BF3A3-EADC-4322-A24B-B85383208A8A", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+    "skolmatinfo3": {"name": "Östra Torpskolan", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=2E815AF5-B428-498C-B9A4-BB69041C29D3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "menugo1":      {"name": "Gånsta förskola", "url": "https://menugo.se/m/0381/Gansta_forskola", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
     "menugo2":      {"name": "Kassmyraskolan", "url": "https://menugo.se/m/0127/Kassmyraskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
 
@@ -52,11 +52,10 @@ PROVIDERS = {
 #     "mashie3b":     {"name": "mashie - Arhem äldreboende - Processed", "url": "https://mpi.mashie.com/public/app/Sigtuna%20Kommun/c32fae7a", "customMenuEntryProcessorCB": mashie3bProcessor, "readableDaySummaryCB": None},
 #     "mashie4b":     {"name": "mashie - Brinkskolan", "url": "https://sodexo.mashie.matildaplatform.com/public/menu/T%C3%A4by%20skolor%20Norr/5678b8c3", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
 #     "mateo2":       {"name": "mateo - Ekskogens förskola", "url": "https://meny.mateo.se/molndal/158", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
-#     "skolmatinfo1": {"name": "skolmatinfo - Lyckeby Kunskapscenter", "url": "https://meny.skolmat.info/blekinge/karlskrona/lyckeby-kunskapscenter", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
+#     "skolmatinfo1": {"name": "skolmatinfo - Lyckeby Kunskapscenter", "url": "https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=63C603F7-53F6-4E8C-B84B-6118D0B595F7", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None},
 #     "menugo2":      {"name": "menugo - Kassmyraskolan", "url": "https://menugo.se/m/0127/Kassmyraskolan", "customMenuEntryProcessorCB": None, "readableDaySummaryCB": None}
 
 # }
-
 
 
 

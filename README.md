@@ -9,7 +9,7 @@
 > * Config flow has multiple filtering options to support better daily summaries for calendar events.
 > * skolmaten.se back to using the api instead of rss
 > * mateo.se switched to new api
-> * added provider meny.skolmat.info
+> * added provider skolmat.info
 > * Card updated with some config options
 > * Added visual UI editor support to card 
 > * Added custom data preprocessor option for those multi-meal, multi course, custom key menues filtering cannot handle
@@ -30,7 +30,7 @@ This component is most probably only valid in Sweden. It leverages data from men
 * menu.matildaplatform.com
 * mpi.mashie.com
 * meny.mateo.se
-* meny.skolmat.info
+* skolmat.info
 * menugo.se
 
 ### Home Assistant functionality
@@ -135,12 +135,12 @@ If the url to your weekly menu contains `/public/app/` you should be fine. Other
 
 ---
 
-### meny.skolmat.info
-*Karlskrona and possibly other regions recently migrated from skolmaten.se to meny.skolmat.info.
-1. Open https://meny.skolmat.info/ and follow the links to find your school.
+### skolmat.info
+*Karlskrona and other regions provide their menus through skolmat.info.*
+1. Open https://www.skolmat.info/matsedlar and follow the links to find your school.
 2. When you arrive at the page with this week's menu, copy the url  
    Example:  
-   `https://meny.skolmat.info/blekinge/karlskrona/asposkolan`
+   `https://www.skolmat.info/matsedlar?countyCode=10&municipalityId=1081&facilityId=63C603F7-53F6-4E8C-B84B-6118D0B595F7`
 
 ---
 
@@ -217,6 +217,4 @@ def entryProcessor(entryDate: date, order: int, raw_entry) -> MenuEntry:
 *Example processors:*<br>
 [`arhem_aldreboende.py`](custom_components/skolmat/processors/arhem_aldreboende.py)<br>
 [`karlskoga_aldreomsorg.py`](custom_components/skolmat/processors/karlskoga_aldreomsorg.py)
-
-
 

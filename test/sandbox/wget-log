@@ -1,0 +1,11 @@
+--2026-08-28 08:53:42--  https://www.skolmat.info/matsedlar?countyCode=10
+Resolving www.skolmat.info (www.skolmat.info)... 216.150.1.1
+Connecting to www.skolmat.info (www.skolmat.info)|216.150.1.1|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18860 (18K) [text/html]
+Saving to: 'matsedlar?countyCode=10'
+
+matsedlar?countyCode=10                             0%[                                                                                                             ]       0  --.-KB/s               matsedlar?countyCode=10                           100%[============================================================================================================>]  18.42K  --.-KB/s    in 0.004s  
+
+2026-08-28 08:53:43 (4.21 MB/s) - 'matsedlar?countyCode=10' saved [18860/18860]
+
