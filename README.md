@@ -4,7 +4,9 @@
 ## ℹ️ Version 3.2.0 release information
 > * Fixed [#43](https://github.com/Kaptensanders/skolmat/issues/43), skolmat.info changed URL and data format
 > * Fixed [#47](https://github.com/Kaptensanders/skolmat/issues/47), Matilda changed URL and data format
-> * Added [@McBenac](https://github.com/McBenac)'s custom JSON provider as fallback provider, [#42](https://github.com/Kaptensanders/skolmat/issues/42), [#45](https://github.com/Kaptensanders/skolmat/pull/45) 
+> * Added [@McBenac](https://github.com/McBenac)'s custom JSON provider as fallback provider, [#42](https://github.com/Kaptensanders/skolmat/issues/42), [#45](https://github.com/Kaptensanders/skolmat/pull/45)
+> * Added [@Jolsar](https://github.com/Jolsar)'s fix for blank calendar events [#40](https://github.com/Kaptensanders/skolmat/issues/40),  [#41](https://github.com/Kaptensanders/skolmat/pull/45)
+
 
 
 ## ℹ️ Version 3.0 release information
